@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var texvcjs = require('../');
+
+program
+	.version(texvcjs.version)
+	.usage('[options] <tex input>');
+
+program.parse(process.argv);
+
+var input = program.args.join(' ');
+
+var result = texvcjs.check(input);
+console.log(result.output);
+process.exit(result.status);
