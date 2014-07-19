@@ -1,10 +1,9 @@
 {
 	"predef": [
-		"ve",
-
 		"setImmediate",
 
-		"QUnit",
+		"describe",
+		"it",
 
 		"Map",
 		"Promise",
