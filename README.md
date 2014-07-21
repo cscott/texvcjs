@@ -28,7 +28,7 @@ bin/texvcjs '\sin(x)+{}{}\cos(x)^2 newcommand'
 ```
 which should emit:
 ```
-FIXME
++\sin(x)+{}{}\cos(x)^{2}newcommand
 ```
 
 ## API
@@ -40,8 +40,22 @@ var texvcjs = require('texvcjs');
 
 var result = texvcjs.check('\\sin(x)+{}{}\\cos(x)^2 newcommand');
 console.log(result.status);
-console.log(result.output); // cleaned/validated output
+console.log(result.output || ''); // cleaned/validated output
 ```
+
+If the `output` field is not `undefined`, then validation was successful.
+
+The `status` field is a single character:
+* `+`: Success! The result is in the `output` field.
+* `F`: A TeX function was not recognized.  The function name is in the
+  `details` field.
+* `S`: A parsing error occurred.
+* `-`: Some other problem occurred.
+
+For status types `F`, `S`, and `-`, the position of the error may be found
+in the `line`, `column` and `offset` fields of the result.  More information
+about the problem can be found in the `details` field of the result, which
+is a string.
 
 ## License
 

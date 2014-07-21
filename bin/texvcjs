@@ -12,5 +12,11 @@ program.parse(process.argv);
 var input = program.args.join(' ');
 
 var result = texvcjs.check(input);
-console.log(result.output);
+if (result.status === '+') {
+	console.log(result.status + (result.output || ''));
+} else if (result.status === 'F') {
+	console.log(result.status + (result.details || ''));
+} else {
+	console.log(result.status);
+}
 process.exit(result.status);
