@@ -4,7 +4,8 @@
   "description": "A TeX/LaTeX validator for mediawiki.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jshint . && mocha"
+    "build": "node -e 'require(\"./lib/build-parser\")'",
+    "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && mocha"
   },
   "repository": {
     "type": "git",
