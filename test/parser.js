@@ -9,7 +9,7 @@ describe('Parse', function() {
 	    var p = Parser.parse(e);
 	});
     });
-    it.skip('should parse texvc example', function() {
+    it('should parse texvc example', function() {
 	var p = Parser.parse('\\sin(x)+{}{}\\cos(x)^2 newcommand');
     });
 });
