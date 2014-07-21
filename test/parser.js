@@ -11,6 +11,8 @@ describe('Parse', function() {
 	});
     });
     it('should parse texvc example', function() {
-	var p = Parser.parse('\\sin(x)+{}{}\\cos(x)^2 newcommand');
+	var e = '\\sin(x)+{}{}\\cos(x)^2 newcommand';
+	var p = Parser.parse(e);
+	//console.log(JSON.stringify(e), '->', p.toString());
     });
 });
