@@ -28,4 +28,40 @@ describe('API', function() {
 	var result = texvcjs.check('^');
 	assert.equal(result.status, 'S');
     });
+
+    var testcases = [
+	// From MathInputCheckTexvcTest:
+	// testGetValidTex()
+	{ in: '\\newcommand{\\text{do evil things}}',
+	  status: 'F', details: '\\newcommand' },
+	{ in: '\\sin\\left(\\frac12x\\right)',
+	  output: '\\sin \\left({\\frac  12}x\\right)' },
+	// testGetValidTexCornerCases()
+	{ in: '\\reals',
+	  output: '\\mathbb{R}' },
+	{ in: '\\lbrack',
+	  output: '\\lbrack ' },
+	// testConvertTexvcError
+	{ in: '\\figureEightIntegral',
+	  status: 'F', details: '\\figureEightIntegral' },
+	// My own test cases:
+	{ in: '\\diamondsuit' },
+	{ in: '\\sinh x' },
+	{ in: '\\begin{foo}\\end{foo}',
+	  status: 'F', details: '\\begin{foo}' },
+	{ in: '\\hasOwnProperty',
+	  status: 'F', details: '\\hasOwnProperty' }
+    ];
+    testcases.forEach(function(t) {
+	it('should check '+JSON.stringify(t.in), function() {
+	    var result = texvcjs.check(t.in);
+	    assert.equal(result.status, t.status || '+');
+	    if (t.status === '+') {
+		assert.equal(result.output, t.output || t.in);
+	    }
+	    if (t.status === 'F') {
+		assert.equal(result.details, t.details);
+	    }
+	});
+    });
 });
