@@ -21,7 +21,7 @@
         "url": "https://github.com/cscott/texvcjs/issues"
     },
     "dependencies": {
-        "commander": "~2.2.0",
+        "commander": "~2.3.0",
         "pegjs": "~0.8.0"
     },
     "devDependencies": {
