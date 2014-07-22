@@ -6,10 +6,12 @@
 A TeX/LaTeX validator.
 
 `texvcjs` takes user input and validates it while replacing
-MediaWiki-specific functions.  It is a JavaScript port of [texvc].
+MediaWiki-specific functions.  It is a JavaScript port of [texvc],
+which was originally written in ocaml for the [Math extension].
 
-It was written for the [mw-ocg-latexer] PDF-generation backend of
-the mediawiki [Offline Collection Generator] extension.
+The `texvcjs` library was originally written to be used by the
+[mw-ocg-latexer] PDF-generation backend of the mediawiki
+[Collection extension].
 
 ## Installation
 
@@ -18,6 +20,10 @@ Node version 0.8 and 0.10 are tested to work.
 Install the node package depdendencies with:
 ```
 npm install
+```
+Ensure everything works:
+```
+npm test
 ```
 
 ## Running
@@ -64,6 +70,9 @@ Copyright (c) 2014 C. Scott Ananian
 Licensed under GPLv2.
 
 [mw-ocg-latexer]: https://github.com/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
+[texvc]: https://git.wikimedia.org/blob/mediawiki%2Fextensions%2FMath/REL1_23/texvccheck%2FREADME
+[Math extension]: https://www.mediawiki.org/wiki/Extension:Math
+[Collection extension]: https://www.mediawiki.org/wiki/Extension:Collection
 
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
