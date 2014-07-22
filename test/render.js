@@ -18,10 +18,10 @@ var testcases = [
 
 describe('Render', function() {
     testcases.forEach(function(tc) {
-	var input = tc.in;
-	var output = tc.out || input;
-	it('should correctly render '+JSON.stringify(input), function() {
-	    assert.equal(render(Parser.parse(input)), output);
-	});
+        var input = tc.in;
+        var output = tc.out || input;
+        it('should correctly render '+JSON.stringify(input), function() {
+            assert.equal(render(Parser.parse(input)), output);
+        });
     });
 });

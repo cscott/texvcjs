@@ -24,6 +24,7 @@
 	"strict": true,
 	"trailing": true,
 
+	"indent": 4,
 	"smarttabs": true,
 	"multistr": true,
 
