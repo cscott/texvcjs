@@ -1,5 +1,8 @@
 # texvcjs x.x.x (not yet released)
 
+* Changed return value of low-level `parse` API to allow providing
+  more detailed information about the TeX functions encountered.
+
 # texvcjs 0.2.0 (2014-07-23)
 
 * Bug fixes to \begin{...} ... \end{...} environment parsing.

@@ -180,7 +180,7 @@ describe('Low-level API', function() {
             (expected ? tc.yes : tc.no).forEach(function(target) {
                 it('should ' + (expected ? '' : 'not ') + 'find ' + target +
                    ' in ' + tc.input.replace(/\n/g,' '), function() {
-                       var p = texvcjs.parse(tc.input, { debug: true });
+                       var p = texvcjs.parse(tc.input, { debug: true }).result;
                        var contains_func = function(t) {
                                return t.contains_func(target);
                        };

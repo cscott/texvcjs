@@ -21,7 +21,7 @@ describe('Render', function() {
         var input = tc.in;
         var output = tc.out || input;
         it('should correctly render '+JSON.stringify(input), function() {
-            assert.equal(render(Parser.parse(input)), output);
+            assert.equal(render(Parser.parse(input).result), output);
         });
     });
 });
