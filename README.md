@@ -63,6 +63,13 @@ in the `line`, `column` and `offset` fields of the result.  More information
 about the problem can be found in the `details` field of the result, which
 is a string.
 
+### Low-level API
+
+The low level parser, abstract syntax tree (AST), and renderer are also
+exported from the module.  This allows you to define more interesting
+queries on the input source.  An example can be found in `test/lowlevel.js`
+which tests for the presence of a specific TeX function in the input.
+
 ## License
 
 Copyright (c) 2014 C. Scott Ananian
