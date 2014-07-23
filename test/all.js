@@ -342,7 +342,22 @@ describe('Comprehensive test cases', function() {
         'litsq_zq': {
             input: ']^2',
             output: ']^{2}'
-        }
+        },
+        'Matrices': (function() {
+            var ENV =
+                ['matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix',
+                 'array','align','alignat','smallmatrix','cases'];
+            return {
+                input: ENV.map(function(env) {
+                    return '\\begin{'+env+'} a & b \\\\ c & d \\end{'+env+'}';
+                }).join(''),
+                output: ENV.map(function(env) {
+                    if (env==='align') { env = 'aligned'; }
+                    if (env==='alignat') { env = 'alignedat'; }
+                    return '{\\begin{'+env+'}a&b\\\\c&d\\end{'+env+'}}';
+                }).join('')
+            };
+        })()
     };
     Object.keys(testcases).forEach(function(title) {
         describe(title, function() {
