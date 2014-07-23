@@ -65,7 +65,7 @@ describe('Comprehensive test cases', function() {
         },
         'Literals (1)': {
             input:
-                '\\AA \\aleph \\alpha \\amalg \\And \\angle \\approx ' +
+                '\\aleph \\alpha \\amalg \\And \\angle \\approx ' +
                 '\\approxeq \\ast \\asymp \\backepsilon \\backprime ' +
                 '\\backsim \\backsimeq \\barwedge \\Bbbk \\because \\beta ' +
                 '\\beth \\between \\bigcap \\bigcirc \\bigcup \\bigodot ' +
@@ -139,7 +139,7 @@ describe('Comprehensive test cases', function() {
                 '\\succnapprox \\succneqq \\succnsim \\succsim \\sum ' +
                 '\\supset \\Supset \\supseteq \\supseteqq \\supsetneq ' +
                 '\\supsetneqq \\surd \\swarrow \\tau \\textstyle ' +
-                '\\textvisiblespace \\therefore \\theta \\Theta ' +
+                '\\therefore \\theta \\Theta ' +
                 '\\thickapprox \\thicksim \\times \\to \\top \\triangle ' +
                 '\\triangledown \\triangleleft \\trianglelefteq \\triangleq ' +
                 '\\triangleright \\trianglerighteq \\underbrace \\underline ' +
@@ -155,24 +155,28 @@ describe('Comprehensive test cases', function() {
         },
         'Literals (2)': {
             input:
-                '\\Coppa\\coppa\\Digamma\\euro\\geneuro\\geneuronarrow' +
+                '\\AA\\Coppa\\coppa\\Digamma\\euro\\geneuro\\geneuronarrow' +
                 '\\geneurowide\\Koppa\\koppa\\officialeuro\\Sampi\\sampi' +
-                '\\Stigma\\stigma\\varstigma',
+                '\\Stigma\\stigma\\textvisiblespace\\varstigma',
             output:
-                '\\mbox{\\Coppa} \\mbox{\\coppa} \\mbox{\\Digamma} ' +
-                '\\mbox{\\euro} \\mbox{\\geneuro} \\mbox{\\geneuronarrow} ' +
-                '\\mbox{\\geneurowide} \\mbox{\\Koppa} \\mbox{\\koppa} ' +
-                '\\mbox{\\officialeuro} \\mbox{\\Sampi} \\mbox{\\sampi} ' +
-                '\\mbox{\\Stigma} \\mbox{\\stigma} \\mbox{\\varstigma} '
+                '\\mbox{\\AA} \\mbox{\\Coppa} \\mbox{\\coppa} ' +
+                '\\mbox{\\Digamma} \\mbox{\\euro} \\mbox{\\geneuro} ' +
+                '\\mbox{\\geneuronarrow} \\mbox{\\geneurowide} ' +
+                '\\mbox{\\Koppa} \\mbox{\\koppa} \\mbox{\\officialeuro} ' +
+                '\\mbox{\\Sampi} \\mbox{\\sampi} \\mbox{\\Stigma} ' +
+                '\\mbox{\\stigma} \\mbox{\\textvisiblespace} ' +
+                '\\mbox{\\varstigma} '
         },
         'Literals (2\')': {
             /* We can parse what we emit (but the ocaml version can't) */
             input:
-                '\\mbox{\\Coppa} \\mbox{\\coppa} \\mbox{\\Digamma} ' +
-                '\\mbox{\\euro} \\mbox{\\geneuro} \\mbox{\\geneuronarrow} ' +
-                '\\mbox{\\geneurowide} \\mbox{\\Koppa} \\mbox{\\koppa} ' +
-                '\\mbox{\\officialeuro} \\mbox{\\Sampi} \\mbox{\\sampi} ' +
-                '\\mbox{\\Stigma} \\mbox{\\stigma} \\mbox{\\varstigma} ',
+                '\\mbox{\\AA} \\mbox{\\Coppa} \\mbox{\\coppa} ' +
+                '\\mbox{\\Digamma} \\mbox{\\euro} \\mbox{\\geneuro} ' +
+                '\\mbox{\\geneuronarrow} \\mbox{\\geneurowide} ' +
+                '\\mbox{\\Koppa} \\mbox{\\koppa} \\mbox{\\officialeuro} ' +
+                '\\mbox{\\Sampi} \\mbox{\\sampi} \\mbox{\\Stigma} ' +
+                '\\mbox{\\stigma} \\mbox{\\textvisiblespace} ' +
+                '\\mbox{\\varstigma} ',
             skipOcaml: true
         },
         'Literals (3)': {
