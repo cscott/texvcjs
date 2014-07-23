@@ -146,7 +146,6 @@ describe('Low-level API', function() {
         }
     }, 1);
 
-console.log(ast.Tex.LR.prototype);
     var testcases = [
         { input: '\\left(abc\\right)',  yes: ['\\left', '\\right'] },
         { input: '\\sin(x)+\\cos(x)^2', yes: ['\\sin', '\\cos'] },
