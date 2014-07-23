@@ -9,7 +9,8 @@ program
     .version(json.version)
     .usage('[options] <tex input>')
     .option('--rebuild', 'Rebuild PEGjs grammar before parsing')
-    .option('-v, --verbose', 'Show verbose error information');
+    .option('-v, --verbose', 'Show verbose error information')
+    .option('-D, --debug', 'Show stack trace on failure');
 
 program.parse(process.argv);
 
@@ -20,7 +21,7 @@ if (program.rebuild) {
 }
 
 var texvcjs = require('../');
-var result = texvcjs.check(input);
+var result = texvcjs.check(input, { debug: program.debug });
 if (result.status === '+') {
     util.print(result.status + (result.output || ''));
 } else if (result.status === 'F' || program.verbose) {
