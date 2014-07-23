@@ -1,6 +1,6 @@
 {
     "name": "texvcjs",
-    "version": "0.2.0",
+    "version": "0.2.0-git",
     "description": "A TeX/LaTeX validator for mediawiki.",
     "main": "lib/index.js",
     "scripts": {
