@@ -23,6 +23,10 @@ describe('Low-level API', function() {
             return target === '\\mbox' ||
                 t === ('\\mbox{'+target+'}');
         }
+        // special case #3: \\color, \\pagecolor, \\definecolor
+        if (/^\\(color|pagecolor|definecolor) /.test(t)) {
+            return t.slice(0, target.length+1) === (target + ' ');
+        }
         return t === target;
     };
     // This is a function of one argument, which becomes the first argument
@@ -171,7 +175,15 @@ describe('Low-level API', function() {
                  '\\end{array}',
           yes: [ '\\begin{array}', '\\end{array}', '\\alpha', '\\beta',
                  '\\gamma', '\\delta' ],
-          no:  [ '\\begin', '\\end' ]
+          no:  [ '\\begin', '\\end', '\\hline' ]
+        },
+        { input: '\\color[rgb]{0,1,.2}',
+          yes: [ '\\color' ],
+          no: [ '\\c', 'rgb', '\\pagecolor', '\\definecolor' ]
+        },
+        { input: '\\definecolor{blue}{cmyk}{1,0,0,0}\\pagecolor{blue}',
+          yes: [ '\\definecolor', '\\pagecolor' ],
+          no: [ '\\color', 'cmyk', 'blue', '\\blue' ]
         }
     ];
     testcases.forEach(function(tc) {
