@@ -118,9 +118,8 @@ describe('Comprehensive test cases', function() {
                 '\\nsupseteq \\nsupseteqq \\ntriangleleft \\ntrianglelefteq ' +
                 '\\ntriangleright \\ntrianglerighteq \\nu \\nvdash \\nVdash ' +
                 '\\nvDash \\nVDash \\nwarrow \\odot \\oint \\omega \\Omega ' +
-                '\\ominus \\oplus \\oslash \\otimes \\overbrace ' +
-                '\\overleftarrow \\overleftrightarrow \\overline ' +
-                '\\overrightarrow \\P \\pagecolor \\parallel \\partial ' +
+                '\\ominus \\oplus \\oslash \\otimes ' +
+                '\\P \\pagecolor \\parallel \\partial ' +
                 '\\perp \\phi \\Phi \\pi \\Pi \\pitchfork \\pm \\prec ' +
                 '\\precapprox \\preccurlyeq \\preceq \\precnapprox ' +
                 '\\precneqq \\precnsim \\precsim \\prime \\prod \\projlim ' +
@@ -142,7 +141,7 @@ describe('Comprehensive test cases', function() {
                 '\\therefore \\theta \\Theta ' +
                 '\\thickapprox \\thicksim \\times \\to \\top \\triangle ' +
                 '\\triangledown \\triangleleft \\trianglelefteq \\triangleq ' +
-                '\\triangleright \\trianglerighteq \\underbrace \\underline ' +
+                '\\triangleright \\trianglerighteq ' +
                 '\\upharpoonleft \\upharpoonright \\uplus \\upsilon ' +
                 '\\Upsilon \\upuparrows \\varepsilon \\varinjlim ' +
                 '\\varkappa \\varliminf \\varlimsup \\varnothing \\varphi ' +
@@ -150,7 +149,7 @@ describe('Comprehensive test cases', function() {
                 '\\varsubsetneq \\varsubsetneqq \\varsupsetneq ' +
                 '\\varsupsetneqq \\vartheta \\vartriangle \\vartriangleleft ' +
                 '\\vartriangleright \\vdash \\Vdash \\vDash \\vdots \\vee ' +
-                '\\veebar \\vline \\Vvdash \\wedge \\widehat \\widetilde ' +
+                '\\veebar \\vline \\Vvdash \\wedge ' +
                 '\\wp \\wr \\xi \\Xi \\zeta '
         },
         'Literals (2)': {
@@ -265,8 +264,10 @@ describe('Comprehensive test cases', function() {
                 '\\mathcal{A}\\mathclose{A}\\mathfrak{A}\\mathit{A}' +
                 '\\mathop{A}\\mathopen{A}\\mathord{A}\\mathpunct{A}' +
                 '\\mathrel{A}\\mathrm{A}\\mathsf{A}\\mathtt{A}' +
-                '\\operatorname{A}\\pmod{A}\\sqrt{A}\\textbf{A}\\textit{A}' +
-                '\\textrm{A}\\textsf{A}\\texttt{A}\\tilde{A}\\vec{A}' +
+                '\\operatorname{A}\\overleftarrow{A}\\overleftrightarrow{A}' +
+                '\\overline{A}\\overrightarrow{A}\\pmod{A}\\sqrt{A}' +
+                '\\textbf{A}\\textit{A}\\textrm{A}\\textsf{A}\\texttt{A}' +
+                '\\tilde{A}\\underline{A}\\vec{A}\\widehat{A}\\widetilde{A}' +
                 '\\xcancel{A}\\xleftarrow{A}\\xrightarrow{A}',
             output:
                 '{\\acute {A}}{\\bar {A}}{\\bcancel {A}}{\\bmod {A}}' +
@@ -276,9 +277,12 @@ describe('Comprehensive test cases', function() {
                 '{\\mathclose {A}}{\\mathfrak {A}}{\\mathit {A}}' +
                 '{\\mathop {A}}{\\mathopen {A}}{\\mathord {A}}' +
                 '{\\mathpunct {A}}{\\mathrel {A}}\\mathrm {A} {\\mathsf {A}}' +
-                '{\\mathtt {A}}\\operatorname {A} {\\pmod {A}}{\\sqrt {A}}' +
+                '{\\mathtt {A}}\\operatorname {A} {\\overleftarrow {A}}' +
+                '{\\overleftrightarrow {A}}{\\overline {A}}' +
+                '{\\overrightarrow {A}}{\\pmod {A}}{\\sqrt {A}}' +
                 '{\\textbf {A}}{\\textit {A}}{\\textrm {A}}{\\textsf {A}}' +
-                '{\\texttt {A}}{\\tilde {A}}{\\vec {A}}{\\xcancel {A}}' +
+                '{\\texttt {A}}{\\tilde {A}}{\\underline {A}}{\\vec {A}}' +
+                '{\\widehat {A}}{\\widetilde {A}}{\\xcancel {A}}' +
                 '{\\xleftarrow {A}}{\\xrightarrow {A}}',
             skipOcaml: 'double spacing and extra braces'
         },
@@ -295,6 +299,10 @@ describe('Comprehensive test cases', function() {
         'FUN_AR1NB (2)': {
             input: '\\mathbb {A} \\mathbf {B} \\mathrm {C} ',
             skipOcaml: 'extra braces'
+        },
+        'FUN_AR1NB (3)': {
+            input: '\\overbrace {A} _{b}^{c}\\underbrace {C} _{d}^{e}',
+            skipOcaml: 'ocaml bug'
         },
         'FUN_AR1OPT': {
             input:
