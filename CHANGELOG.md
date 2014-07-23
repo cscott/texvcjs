@@ -7,6 +7,7 @@
   \overleftrightarrow, \overline, \overrightarrow, \underbrace, and
   \underline.
 * Only allow \hline at the start of rows in a matrix context.
+* Be stricter when parsing \color, \definecolor, and \pagecolor.
 
 # texvcjs 0.2.0 (2014-07-23)
 

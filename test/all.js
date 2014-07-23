@@ -78,10 +78,10 @@ describe('Comprehensive test cases', function() {
                 '\\cdots \\centerdot \\checkmark \\chi \\circ \\circeq ' +
                 '\\circlearrowleft \\circlearrowright \\circledast ' +
                 '\\circledcirc \\circleddash \\circledS \\clubsuit \\colon ' +
-                '\\color \\complement \\cong \\coprod \\cup \\Cup ' +
+                '\\complement \\cong \\coprod \\cup \\Cup ' +
                 '\\curlyeqprec \\curlyeqsucc \\curlyvee \\curlywedge ' +
                 '\\curvearrowleft \\curvearrowright \\dagger \\daleth ' +
-                '\\dashv \\ddagger \\ddots \\definecolor \\delta \\Delta ' +
+                '\\dashv \\ddagger \\ddots \\delta \\Delta ' +
                 '\\diagdown \\diagup \\diamond \\Diamond \\diamondsuit ' +
                 '\\digamma \\displaystyle \\div \\divideontimes \\doteq ' +
                 '\\doteqdot \\dotplus \\dots \\dotsb \\dotsc \\dotsi \\dotsm ' +
@@ -119,7 +119,7 @@ describe('Comprehensive test cases', function() {
                 '\\ntriangleright \\ntrianglerighteq \\nu \\nvdash \\nVdash ' +
                 '\\nvDash \\nVDash \\nwarrow \\odot \\oint \\omega \\Omega ' +
                 '\\ominus \\oplus \\oslash \\otimes ' +
-                '\\P \\pagecolor \\parallel \\partial ' +
+                '\\P \\parallel \\partial ' +
                 '\\perp \\phi \\Phi \\pi \\Pi \\pitchfork \\pm \\prec ' +
                 '\\precapprox \\preccurlyeq \\preceq \\precnapprox ' +
                 '\\precneqq \\precnsim \\precsim \\prime \\prod \\projlim ' +
@@ -369,7 +369,21 @@ describe('Comprehensive test cases', function() {
                     return '{\\begin{'+env+'}a&b\\\\\\hline c&d\\end{'+env+'}}';
                 }).join('')
             };
-        })()
+        })(),
+        'Color (1)': {
+            input: '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color {mycolor}'
+        },
+        'Color (2)': {
+            input:
+                '\\color {blue}\\color [named]{blue}\\color [gray]{0.5}' +
+                '\\color [rgb]{0,1,0}\\color [cmyk]{1,0,0,0}'
+        },
+        'Color (3)': {
+            input:
+                '\\pagecolor {blue}\\pagecolor [named]{blue}' +
+                '\\pagecolor [gray]{0.5}\\pagecolor [rgb]{0,1,0}' +
+                '\\pagecolor [cmyk]{1,0,0,0}'
+        }
     };
     Object.keys(testcases).forEach(function(title) {
         describe(title, function() {
