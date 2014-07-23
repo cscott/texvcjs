@@ -50,7 +50,10 @@ describe('API', function() {
         { in: '\\begin{foo}\\end{foo}',
           status: 'F', details: '\\begin{foo}' },
         { in: '\\hasOwnProperty',
-          status: 'F', details: '\\hasOwnProperty' }
+          status: 'F', details: '\\hasOwnProperty' },
+	// \hline only in array
+	{ in: '\\hline', status: 'S' },
+	{ in: '\\begin{array}\\hline a \\\\ \\hline\\hline b \\end{array}' }
     ];
     testcases.forEach(function(t) {
         it('should check '+JSON.stringify(t.in), function() {

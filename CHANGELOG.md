@@ -6,6 +6,7 @@
 * Require mandatory argument for \overbrace, \overleftarrow,
   \overleftrightarrow, \overline, \overrightarrow, \underbrace, and
   \underline.
+* Only allow \hline at the start of rows in a matrix context.
 
 # texvcjs 0.2.0 (2014-07-23)
 

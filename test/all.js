@@ -92,7 +92,7 @@ describe('Comprehensive test cases', function() {
                 '\\Game \\gamma \\Gamma \\geq \\geqq \\geqslant \\gets \\gg ' +
                 '\\ggg \\gimel \\gnapprox \\gneq \\gneqq \\gnsim \\gtrapprox ' +
                 '\\gtrdot \\gtreqless \\gtreqqless \\gtrless \\gtrsim ' +
-                '\\gvertneqq \\hbar \\heartsuit \\hline \\hookleftarrow ' +
+                '\\gvertneqq \\hbar \\heartsuit \\hookleftarrow ' +
                 '\\hookrightarrow \\hslash \\iff \\iiiint \\iiint \\iint ' +
                 '\\Im \\imath \\implies \\in \\infty \\injlim \\int ' +
                 '\\intercal \\iota \\jmath \\kappa \\lambda \\Lambda \\land ' +
@@ -361,12 +361,12 @@ describe('Comprehensive test cases', function() {
                  'array','align','alignat','smallmatrix','cases'];
             return {
                 input: ENV.map(function(env) {
-                    return '\\begin{'+env+'} a & b \\\\ c & d \\end{'+env+'}';
+                    return '\\begin{'+env+'} a & b \\\\\\hline c & d \\end{'+env+'}';
                 }).join(''),
                 output: ENV.map(function(env) {
                     if (env==='align') { env = 'aligned'; }
                     if (env==='alignat') { env = 'alignedat'; }
-                    return '{\\begin{'+env+'}a&b\\\\c&d\\end{'+env+'}}';
+                    return '{\\begin{'+env+'}a&b\\\\\\hline c&d\\end{'+env+'}}';
                 }).join('')
             };
         })()
