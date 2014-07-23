@@ -21,12 +21,12 @@
         "url": "https://github.com/cscott/texvcjs/issues"
     },
     "dependencies": {
-        "commander": "~2.3.0",
-        "pegjs": "~0.8.0"
+        "commander": "~2.3.0"
     },
     "devDependencies": {
         "jshint": "~2.5.2",
-        "mocha": "~1.20.1"
+        "mocha": "~1.20.1",
+        "pegjs": "~0.8.0"
     },
     "bin": {
         "texvcjs": "./bin/texvcjs"
