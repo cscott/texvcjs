@@ -50,9 +50,9 @@ describe('ast.Tex.contains_func', function() {
             (expected ? tc.yes : tc.no).forEach(function(target) {
                 it('should ' + (expected ? '' : 'not ') + 'find ' + target +
                    ' in ' + tc.input.replace(/\n/g,' '), function() {
-                       var p = texvcjs.parse(tc.input, { debug: true }).result;
+                       var p = texvcjs.parse(tc.input, { debug: true });
                        assert.equal(texvcjs.contains_func(p, target),
-                                    expected);
+                                    expected ? target : false);
                    });
             });
         });

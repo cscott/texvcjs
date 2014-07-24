@@ -1,7 +1,5 @@
 # texvcjs x.x.x (not yet released)
 
-* Changed return value of low-level `parse` API to allow providing
-  more detailed information about the TeX functions encountered.
 * Switch to text mode before emitting \AA and \textvisiblespace.
 * Require mandatory argument for \overbrace, \overleftarrow,
   \overleftrightarrow, \overline, \overrightarrow, \underbrace, and
@@ -10,6 +8,8 @@
 * Be stricter when parsing \color, \definecolor, and \pagecolor.
 * Add `contains_func` to the API, to test for the presence of specific
   TeX functions in the validated/translated input string.
+* Return `<foo>_required` fields in the result of `check` to provide
+  more detailed information about the TeX functions encountered.
 
 # texvcjs 0.2.0 (2014-07-23)
 

@@ -63,6 +63,12 @@ in the `line`, `column` and `offset` fields of the result.  More information
 about the problem can be found in the `details` field of the result, which
 is a string.
 
+The fields `ams_required`, `cancel_required`, `color_required`,
+`euro_required`, and `teubner_required` are set to `true` iff the input
+string requires the use of the corresponding LaTeX packages.
+The `ams_required` field requires the use of the `amsmath` and `amssymb`
+packages.
+
 ### Low-level API
 
 The low level parser, abstract syntax tree (AST), and renderer are also
