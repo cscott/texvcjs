@@ -8,6 +8,8 @@
   \underline.
 * Only allow \hline at the start of rows in a matrix context.
 * Be stricter when parsing \color, \definecolor, and \pagecolor.
+* Add `contains_func` to the API, to test for the presence of specific
+  TeX functions in the validated/translated input string.
 
 # texvcjs 0.2.0 (2014-07-23)
 

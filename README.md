@@ -67,8 +67,9 @@ is a string.
 
 The low level parser, abstract syntax tree (AST), and renderer are also
 exported from the module.  This allows you to define more interesting
-queries on the input source.  An example can be found in `test/lowlevel.js`
-which tests for the presence of a specific TeX function in the input.
+queries on the input source.  An example can be found in `lib/astutil.js`
+which defines a visitor function to test for the presence of specific
+TeX functions in the input.
 
 ## License
 
