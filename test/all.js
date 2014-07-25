@@ -383,6 +383,12 @@ describe('Comprehensive test cases', function() {
                 '\\pagecolor {blue}\\pagecolor [named]{blue}' +
                 '\\pagecolor [gray]{0.5}\\pagecolor [rgb]{0,1,0}' +
                 '\\pagecolor [cmyk]{1,0,0,0}'
+        },
+        'Color (4)': {
+            input:
+                '\\definecolor{mycolor}{RGB}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
+            output:
+                '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color [cmyk]{0,1,0,1}'
         }
     };
     Object.keys(testcases).forEach(function(title) {

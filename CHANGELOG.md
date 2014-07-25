@@ -1,5 +1,8 @@
 # texvcjs x.x.x (not yet released)
 
+* Color models for \color, \definecolor, and \pagecolor are now
+  case-insensitive.
+
 # texvcjs 0.3.0 (2014-07-24)
 
 * Switch to text mode before emitting \AA and \textvisiblespace.
