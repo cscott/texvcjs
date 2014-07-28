@@ -5,6 +5,7 @@
 * Accept all valid UTF-16 characters in box commands (\mbox, \text, etc).
 * Bug fixes to matrix environment parsing: improve parsing of
   mandatory arguments to array/alignof.
+* Add 287,201 test cases from enwiki.
 
 # texvcjs 0.3.0 (2014-07-24)
 
