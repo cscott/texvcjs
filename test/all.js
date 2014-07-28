@@ -389,6 +389,9 @@ describe('Comprehensive test cases', function() {
                 '\\definecolor{mycolor}{RGB}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
             output:
                 '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color [cmyk]{0,1,0,1}'
+        },
+        'Unicode': {
+            input: '{\\mbox{💩\uD83D\uDCA9}}'
         }
     };
     Object.keys(testcases).forEach(function(title) {
