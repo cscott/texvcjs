@@ -355,21 +355,35 @@ describe('Comprehensive test cases', function() {
             input: ']^2',
             output: ']^{2}'
         },
-        'Matrices': (function() {
+        'Matrices (1)': (function() {
             var ENV =
                 ['matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix',
                  'array','align','alignat','smallmatrix','cases'];
+            var arg = function(env) {
+                switch (env) {
+                case 'array': return '{|c||c|}';
+                case 'alignedat': case 'alignat': return '{3}';
+                default: return '';
+                }
+            };
             return {
                 input: ENV.map(function(env) {
-                    return '\\begin{'+env+'} a & b \\\\\\hline c & d \\end{'+env+'}';
+                    return '\\begin{'+env+'}'+arg(env)+' a & b \\\\\\hline c & d \\end{'+env+'}';
                 }).join(''),
                 output: ENV.map(function(env) {
                     if (env==='align') { env = 'aligned'; }
                     if (env==='alignat') { env = 'alignedat'; }
-                    return '{\\begin{'+env+'}a&b\\\\\\hline c&d\\end{'+env+'}}';
+                    return '{\\begin{'+env+'}'+arg(env)+'a&b\\\\\\hline c&d\\end{'+env+'}}';
                 }).join('')
             };
         })(),
+        'Matrices (2)': {
+            input: '{\\begin{array}{|c|}\\hline {\\!n\\!}\\\\\\hline \\end{array}}'
+        },
+        'Matrices (3)': {
+            input: '\\begin{alignedat} { 3 } a & b & c \\end{alignedat}',
+            output: '{\\begin{alignedat}{3}a&b&c\\end{alignedat}}'
+        },
         'Color (1)': {
             input: '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color {mycolor}'
         },

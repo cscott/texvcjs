@@ -54,8 +54,8 @@ describe('API', function() {
           status: 'F', details: '\\hasOwnProperty' },
     // \hline only in array
     { in: '\\hline', status: 'S' },
-    { in: '\\begin{array}\\hline a \\\\ \\hline\\hline b \\end{array}',
-      output: '{\\begin{array}\\hline a\\\\\\hline \\hline b\\end{array}}' },
+    { in: '\\begin{array}{c}\\hline a \\\\ \\hline\\hline b \\end{array}',
+      output: '{\\begin{array}{c}\\hline a\\\\\\hline \\hline b\\end{array}}' },
     // required packages
     { in: '\\Diamond ',
       ams_required: true },

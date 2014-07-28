@@ -27,13 +27,16 @@ describe('ast.Tex.contains_func', function() {
         { input: '{\\frac{\\sideset{_\\dagger}{^\\bold{x}}\\prod}{\\hat{a}}}',
           yes: ['\\frac','\\sideset','\\dagger','\\mathbf','\\prod','\\hat'],
           no:  ['\\bold'] },
-        { input: '\\begin{array}\n' +
+        { input: '\\begin{array}{l|r}\n' +
                  '\\alpha & \\beta \\\\\n' +
                  '\\gamma & \\delta\n' +
                  '\\end{array}',
           yes: [ '\\begin{array}', '\\end{array}', '\\alpha', '\\beta',
                  '\\gamma', '\\delta' ],
           no:  [ '\\begin', '\\end', '\\hline' ]
+        },
+        { input: '\\begin{array}{l|r}\\hline a & b\\end{array}',
+          yes: [ '\\begin{array}', '\\end{array}', '\\hline' ]
         },
         { input: '\\color[rgb]{0,1,.2}',
           yes: [ '\\color' ],
