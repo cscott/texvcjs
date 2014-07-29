@@ -201,6 +201,8 @@ describe('All formulae from en-wiki:', function() {
                     assert.ok(!good, f);
                 } else {
                     assert.ok(good, f);
+                    assert.equal(texvcjs.check(result.output).status, '+',
+                                 f+' -> '+result.output);
                 }
             });
         });

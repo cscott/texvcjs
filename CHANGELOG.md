@@ -6,6 +6,7 @@
 * Bug fixes to matrix environment parsing: improve parsing of
   mandatory arguments to array/alignof.
 * Add 287,201 test cases from enwiki.
+* Ensure braces always surround function arguments when they are needed.
 
 # texvcjs 0.3.0 (2014-07-24)
 

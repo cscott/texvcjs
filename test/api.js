@@ -35,7 +35,7 @@ describe('API', function() {
         { in: '\\newcommand{\\text{do evil things}}',
           status: 'F', details: '\\newcommand' },
         { in: '\\sin\\left(\\frac12x\\right)',
-          output: '\\sin \\left({\\frac 12}x\\right)' },
+          output: '\\sin \\left({\\frac {1}{2}}x\\right)' },
         // testGetValidTexCornerCases()
         { in: '\\reals',
           output: '\\mathbb {R} ',
