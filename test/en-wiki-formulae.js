@@ -22,6 +22,7 @@ var tryocaml = function(input, output, done, fixDoubleSpacing) {
 };
 
 var known_bad = Object.create(null);
+var texvc_bugs = Object.create(null);
 [
     // Illegal TeX function: \fint
     "\\fint",
@@ -33,7 +34,10 @@ var known_bad = Object.create(null);
     "</nowiki> tag exists if that was the only help page you read. If you looked at [[Help:Math]] (also known as [[Help:Displaying a formula]], [[Help:Formula]] and a bunch of other names), the first thing it says is \"MediaWiki uses a subset of TeX markup\"; a bit later, under \"[[Help:Math#Syntax|Syntax]]\", it says \"Math markup goes inside <nowiki><math> ... ",
 
      // colors should be 0-1, not 0-255
-    "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto g\\circ h",
+    {
+        input: "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto g\\circ h",
+        texvc: '+'
+    },
 
     // unicode literal: ≠
     "\\frac{a}{b}, a, b \\in \\mathbb{Z}, b ≠ 0",
@@ -51,7 +55,10 @@ var known_bad = Object.create(null);
     "(r−k)!",
 
     // colors are 0-1
-    "\\definecolor{red}{RGB}{255,0,0}\\pagecolor{red}e^{i \\pi} + 1 = 0\\,\\!",
+    {
+        input: "\\definecolor{red}{RGB}{255,0,0}\\pagecolor{red}e^{i \\pi} + 1 = 0\\,\\!",
+        texvc: '+'
+    },
 
     // anomalous @ (but this is valid in math mode)
     "ckl@ckl",
@@ -78,7 +85,10 @@ var known_bad = Object.create(null);
     " \\y (s)  ",
 
      // colors should be 0-1, not 0-255
-    "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}z=re^{i\\phi}=x+iy \\,\\!",
+    {
+        input: "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}z=re^{i\\phi}=x+iy \\,\\!",
+        texvc: '+'
+    },
 
     // should be \left\{ not \left{
     "\\delta M_i^{-1} = - \\propto \\sum_{n=1}^N D_i \\left[ n \\right] \\left[ \\sum_{j \\in C \\left{i\\right} } F_{j i} \\left[ n - 1 \\right] + Fext_i \\left[ n^-1 \\right] \\right]",
@@ -120,7 +130,10 @@ var known_bad = Object.create(null);
     "sin 2α",
 
      // colors should be 0-1, not 0-255
-    "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}e^{i \\pi} + 1 = 0\\,\\!",
+    {
+        input: "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}e^{i \\pi} + 1 = 0\\,\\!",
+        texvc: '+'
+    },
 
     // unicode literal: ∈
     "\\sum_{v=∈V}^{dv} i",
@@ -150,7 +163,10 @@ var known_bad = Object.create(null);
     "K_i = \\gamma^{L} _{i} * P_{i,Sat} \\frac{{P}}",
 
      // colors should be 0-1, not 0-255
-    "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto f\\circ g",
+    {
+        input: "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto f\\circ g",
+        texvc: '+'
+    },
 
     // wikitext
     " it has broken spacing -->&nbsp;meters. LIGO should be able to detect gravitational waves as small as <math>h \\approx 5\\times 10^{-22}",
@@ -163,7 +179,23 @@ var known_bad = Object.create(null);
 
     // unicode literals: ⊈, Ō
     "⊈Ō",
-].forEach(function(s) { known_bad[s] = true; });
+].forEach(function(s) {
+    if (typeof(s)==='string') { s = { input: s }; }
+    known_bad[s.input] = true;
+    if (s.texvc) {
+        texvc_bugs[s.input] = true;
+    }
+});
+
+// paper over insignificant differences between texvccheck and texvcjs
+var normalize = function(s) {
+    s = s.replace(/(\\[a-z]+)\s*\{/g, '$1 {');
+    for (var os = s; ; os = s) {
+        s = s.replace(/\{\{([^{}]*(|\{[^{}]*\}[^{}]*))\}\}/g, '{$1}');
+        if (os === s) { break; }
+    }
+    return s;
+};
 
 // mocha is too slow if we run these as 287,201 individual test cases.
 // run them in chunks in order to speed up reporting.
@@ -173,36 +205,65 @@ describe('All formulae from en-wiki:', function() {
     // read test cases
     var formulae =
         fs.readFileSync(path.join(__dirname, 'en-wiki-formulae.txt'), 'utf8').
-        split(/\n+/g);
+        split(/\n/g);
+    var texvccheck =
+        fs.readFileSync(path.join(__dirname, 'en-wiki-formulae.texvccheck'), 'utf8').
+        split(/\n/g);
+    var testcases = formulae.map(function(f, i) {
+        return { input: f, texvccheck: texvccheck[i] };
+    });
+    // XXX
+    //testcases = testcases.slice(0,100);
+    //CHUNKSIZE = 1;
 
     // group them into chunks
-    var grouped = (function(arr, n) {
+    var mkgroups = function(arr, n) {
         var result = [], group = [];
         var seen = Object.create(null);
         arr.forEach(function(elem) {
-            if (seen[elem]) { return; } else { seen[elem] = true; }
+            if (seen[elem.input]) { return; } else { seen[elem.input] = true; }
             group.push(elem);
             if (group.length >= n) {
                 result.push(group);
                 group = [];
             }
         });
-        result.push(group);
+        if (group.length > 0) {
+            result.push(group);
+        }
         return result;
-    })(formulae, CHUNKSIZE);
+    };
+    var grouped = mkgroups(testcases, CHUNKSIZE);
 
     // create a mocha test case for each chunk
     grouped.forEach(function(group) {
-        it(group[0] + ' ... ' + group[group.length-1], function() {
-            group.forEach(function(f) {
+        it(group[0].input + ' ... ' + group[group.length-1].input, function() {
+            group.forEach(function(testcase) {
+                var f = testcase.input;
                 var result = texvcjs.check(f);
                 var good = (result.status === '+');
+                var texvcstatus = testcase.texvccheck.charAt(0).
+                    replace(/E/, 'S');
                 if (known_bad[f]) {
                     assert.ok(!good, f);
+                    if (!texvc_bugs[f]) {
+                        assert.equal(result.status, texvcstatus, 'bad? '+JSON.stringify(testcase));
+                    }
                 } else {
                     assert.ok(good, f);
-                    assert.equal(texvcjs.check(result.output).status, '+',
-                                 f+' -> '+result.output);
+                    var r1 = texvcjs.check(result.output);
+                    assert.equal(r1.status, '+', f+' -> '+result.output);
+                    assert.equal(result.status, testcase.texvccheck.charAt(0), 'good? '+JSON.stringify(testcase));
+                    if (false) {
+                        var r2 = texvcjs.check(testcase.texvccheck.slice(1));
+                        // we should parse our output the same as the output
+                        // from texvc.
+                        assert.equal(r1.output, r2.output, f);
+                    } else if (false) {
+                        assert.equal(normalize(result.output),
+                                     normalize(testcase.texvccheck.slice(1)),
+                                     f);
+                    }
                 }
             });
         });
