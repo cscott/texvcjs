@@ -1,4 +1,4 @@
-# texvcjs x.x.x (not yet released)
+# texvcjs 0.3.1 (2014-07-29)
 
 * Color models for \color, \definecolor, and \pagecolor are now
   case-insensitive.
