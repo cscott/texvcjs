@@ -170,6 +170,8 @@ var known_bad = Object.create(null);
 var CHUNKSIZE = 1000;
 
 describe('All formulae from en-wiki:', function() {
+    this.timeout(0);
+
     // read test cases
     var formulae =
         fs.readFileSync(path.join(__dirname, 'en-wiki-formulae.txt'), 'utf8').
