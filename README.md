@@ -17,7 +17,7 @@ The `texvcjs` library was originally written to be used by the
 
 Node version 0.8 and 0.10 are tested to work.
 
-Install the node package depdendencies with:
+Install the node package dependencies with:
 ```
 npm install
 ```
