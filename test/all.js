@@ -190,22 +190,19 @@ describe('Comprehensive test cases', function() {
                 '\\sdot\\sect\\spades\\sub\\sube\\supe\\Tau\\thetasym' +
                 '\\varcoppa\\weierp\\Zeta',
             output:
-                '\\mathbb {C} \\mathbb {H} \\mathbb {N} \\mathbb {Q} ' +
-                '\\mathbb {R} \\mathbb {Z} \\aleph \\aleph \\mathrm {A} ' +
-                '\\land \\angle \\mathrm {B} \\bullet \\mathrm {X} ' +
-                '\\clubsuit \\mathbb {C} \\mathbb {C} \\ddagger ' +
-                '\\diamondsuit \\doteqdot \\Cap \\Cup \\emptyset ' +
-                '\\mathrm {E} \\mathrm {H} \\exists \\geq \\ggg ' +
-                '\\Leftrightarrow \\leftrightarrow \\Leftrightarrow ' +
-                '\\heartsuit \\Im \\infty \\mathrm {I} \\in \\mathrm {K} ' +
-                '\\leftarrow \\Leftarrow \\Leftarrow \\leq ' +
-                '\\leftrightarrow \\Leftrightarrow \\Leftrightarrow ' +
-                '\\mathrm {M} \\mathbb {N} \\neq \\mathrm {N} \\emptyset ' +
-                '\\mathrm {o} \\mathrm {O} \\lor \\partial \\pm ' +
-                '\\rightarrow \\Rightarrow \\Rightarrow \\Re \\mathbb {R} ' +
-                '\\mathbb {R} \\upharpoonright \\mathrm {P} \\cdot ' +
-                '\\S \\spadesuit \\subset \\subseteq \\supseteq ' +
-                '\\mathrm {T} \\vartheta \\mbox{\\coppa} \\wp \\mathrm {Z} '
+                '\\mathbb{C} \\mathbb{H} \\mathbb{N} \\mathbb{Q} \\mathbb{R}' +
+                ' \\mathbb{Z} \\aleph \\aleph \\mathrm{A} \\land \\angle' +
+                ' \\mathrm{B} \\bullet \\mathrm{X} \\clubsuit \\mathbb{C}' +
+                ' \\mathbb{C} \\ddagger \\diamondsuit \\doteqdot \\Cap \\Cup ' +
+                '\\emptyset \\mathrm{E} \\mathrm{H} \\exists \\geq \\ggg ' +
+                '\\Leftrightarrow \\leftrightarrow \\Leftrightarrow \\heartsuit' +
+                ' \\Im \\infty \\mathrm{I} \\in \\mathrm{K} \\leftarrow \\Leftarrow ' +
+                '\\Leftarrow \\leq \\leftrightarrow \\Leftrightarrow \\Leftrightarrow' +
+                ' \\mathrm{M} \\mathbb{N} \\neq \\mathrm{N} \\emptyset \\mathrm{o} ' +
+                '\\mathrm{O} \\lor \\partial \\pm \\rightarrow \\Rightarrow \\Rightarrow' +
+                ' \\Re \\mathbb{R} \\mathbb{R} \\upharpoonright \\mathrm{P} \\cdot \\S ' +
+                '\\spadesuit \\subset \\subseteq \\supseteq \\mathrm{T} \\vartheta \\mbox{\\coppa}' +
+                ' \\wp \\mathrm{Z} '
         },
         'Big': (function() {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
@@ -423,9 +420,10 @@ describe('Comprehensive test cases', function() {
                 // verify that the output doesn't change if we feed it
                 // through again.
                 it('should parse its own output', function() {
-                    var result = texvcjs.check(tc.output, { debug: true });
-                    assert.equal(result.status, '+');
-                    assert.equal(result.output, tc.output);
+                    var result1 = texvcjs.check(tc.output, { debug: true });
+	                var result2 = texvcjs.check(result1.output, { debug: true });
+                    assert.equal(result2.status, '+');
+                    assert.equal(result2.output, result1.output);
                 });
             }
             if (!tc.skipOcaml) {

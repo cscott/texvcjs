@@ -38,7 +38,7 @@ describe('API', function() {
           output: '\\sin \\left({\\frac {1}{2}}x\\right)' },
         // testGetValidTexCornerCases()
         { in: '\\reals',
-          output: '\\mathbb {R} ',
+          output: '\\mathbb{R} ',
           ams_required: true },
         { in: '\\lbrack',
           output: '\\lbrack ' },
