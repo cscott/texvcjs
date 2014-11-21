@@ -264,5 +264,4 @@ describe.skip('All formulae from en-wiki:', function() {
             });
         });
     });
-});git 
-//*/
+});
