@@ -71,6 +71,12 @@ describe('API', function() {
     { in: '\\coppa',
       output: '\\mbox{\\coppa} ',
       teubner_required: true },
+    { in: '\\mathbb {R}',
+      output: '\\mathbb {R} ',
+      ams_required: true },
+    { in: '\\reals',
+      output: '\\mathbb {R} ',
+      ams_required: true },
     ];
     testcases.forEach(function(t) {
         it('should check '+JSON.stringify(t.in), function() {
