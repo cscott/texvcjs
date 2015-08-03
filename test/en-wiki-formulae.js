@@ -32,9 +32,6 @@ var known_bad = Object.create(null);
     // wikitext!
     "</nowiki> tag exists if that was the only help page you read. If you looked at [[Help:Math]] (also known as [[Help:Displaying a formula]], [[Help:Formula]] and a bunch of other names), the first thing it says is \"MediaWiki uses a subset of TeX markup\"; a bit later, under \"[[Help:Math#Syntax|Syntax]]\", it says \"Math markup goes inside <nowiki><math> ... ",
 
-     // colors should be 0-1, not 0-255
-    "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto g\\circ h",
-
     // unicode literal: ≠
     "\\frac{a}{b}, a, b \\in \\mathbb{Z}, b ≠ 0",
 
@@ -49,9 +46,6 @@ var known_bad = Object.create(null);
 
     // unicode literal: −
     "(r−k)!",
-
-    // colors are 0-1
-    "\\definecolor{red}{RGB}{255,0,0}\\pagecolor{red}e^{i \\pi} + 1 = 0\\,\\!",
 
     // anomalous @ (but this is valid in math mode)
     "ckl@ckl",
@@ -76,9 +70,6 @@ var known_bad = Object.create(null);
 
     // Illegal TeX function: \y
     " \\y (s)  ",
-
-     // colors should be 0-1, not 0-255
-    "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}z=re^{i\\phi}=x+iy \\,\\!",
 
     // should be \left\{ not \left{
     "\\delta M_i^{-1} = - \\propto \\sum_{n=1}^N D_i \\left[ n \\right] \\left[ \\sum_{j \\in C \\left{i\\right} } F_{j i} \\left[ n - 1 \\right] + Fext_i \\left[ n^-1 \\right] \\right]",
@@ -119,9 +110,6 @@ var known_bad = Object.create(null);
     // unicode literal: α
     "sin 2α",
 
-     // colors should be 0-1, not 0-255
-    "\\definecolor{orange}{RGB}{255,165,0}\\pagecolor{orange}e^{i \\pi} + 1 = 0\\,\\!",
-
     // unicode literal: ∈
     "\\sum_{v=∈V}^{dv} i",
 
@@ -148,9 +136,6 @@ var known_bad = Object.create(null);
 
     // not enough arguments to \frac
     "K_i = \\gamma^{L} _{i} * P_{i,Sat} \\frac{{P}}",
-
-     // colors should be 0-1, not 0-255
-    "\\definecolor{gray}{RGB}{249,249,249}\\pagecolor{gray} g \\mapsto f\\circ g",
 
     // wikitext
     " it has broken spacing -->&nbsp;meters. LIGO should be able to detect gravitational waves as small as <math>h \\approx 5\\times 10^{-22}",

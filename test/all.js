@@ -390,14 +390,13 @@ describe('Comprehensive test cases', function() {
         'Color (2)': {
             input:
                 '\\color {blue}\\color [named]{blue}\\color [gray]{0.5}' +
-                '\\color [rgb]{0,1,0}\\color [RGB]{0,255,0}' +
-                '\\color [cmyk]{1,0,0,0}'
+                '\\color [rgb]{0,1,0}\\color [cmyk]{1,0,0,0}'
         },
         'Color (3)': {
             input:
                 '\\pagecolor {blue}\\pagecolor [named]{blue}' +
                 '\\pagecolor [gray]{0.5}\\pagecolor [rgb]{0,1,0}' +
-                '\\pagecolor [RGB]{0,255,0}\\pagecolor [cmyk]{1,0,0,0}'
+                '\\pagecolor [cmyk]{1,0,0,0}'
         },
         'Color (4)': {
             input:
@@ -407,9 +406,11 @@ describe('Comprehensive test cases', function() {
         },
         'Color (5)': {
             input:
-                '\\definecolor{mycolor}{RGB}{255,132,5}',
+                '\\definecolor{mycolor}{RGB}{255,102,51}' +
+                '\\pagecolor [RGB]{51,102,255}',
             output:
-                '\\definecolor {mycolor}{RGB}{255,132,5}'
+                '\\definecolor {mycolor}{rgb}{1,0.4,0.2}' +
+                '\\pagecolor [rgb]{0.2,0.4,1}'
         },
         'Unicode': {
             input: '{\\mbox{💩\uD83D\uDCA9}}'
