@@ -77,6 +77,15 @@ describe('API', function() {
     { in: '\\reals',
       output: '\\mathbb {R} ',
       ams_required: true },
+    // color parsing
+    { in: '{\\color [rgb]{1,0,0}{\\mbox{This text is red.}}}',
+      color_required: true },
+    { in: '{\\color[rgb]{1.5,0,0}{\\mbox{This text is bright red.}}}',
+      status: 'S' },
+    { in: '{\\color [RGB]{2,0,0}{\\mbox{This text is dim red.}}}',
+      color_required: true },
+    { in: '{\\color[RGB]{256,0,0}{\\mbox{This text is bright red.}}}',
+      status: 'S' },
     ];
     testcases.forEach(function(t) {
         it('should check '+JSON.stringify(t.in), function() {
