@@ -431,9 +431,10 @@ describe('Comprehensive test cases', function() {
                 // verify that the output doesn't change if we feed it
                 // through again.
                 it('should parse its own output', function() {
-                    var result = texvcjs.check(tc.output, { debug: true });
-                    assert.equal(result.status, '+');
-                    assert.equal(result.output, tc.output);
+                    var result1 = texvcjs.check(tc.output, { debug: true });
+	                var result2 = texvcjs.check(result1.output, { debug: true });
+                    assert.equal(result2.status, '+');
+                    assert.equal(result2.output, result1.output);
                 });
             }
             if (!tc.skipOcaml) {

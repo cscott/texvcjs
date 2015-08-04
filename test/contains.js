@@ -45,7 +45,15 @@ describe('ast.Tex.contains_func', function() {
         { input: '\\definecolor{blue}{cmyk}{1,0,0,0}\\pagecolor{blue}',
           yes: [ '\\definecolor', '\\pagecolor' ],
           no: [ '\\color', 'cmyk', 'blue', '\\blue' ]
-        }
+        },
+	    { input: '\\mathbb{R}',
+		    yes: [ '\\mathbb' ],
+		    no: [ 'R' ]
+	    },
+	    /*{ input: '\\reals',
+		    yes: [ '\\mathbb{R}' ],
+		    no: [ 'R' ]
+	    }*/
     ];
     testcases.forEach(function(tc) {
         tc.no = (tc.no || []).concat(['\\foo', '\\begin{foo}']);
