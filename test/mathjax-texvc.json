@@ -216,13 +216,13 @@
 	},
 	{
 		"id": 44,
-		"input": "\\hAar",
+		"input": "\\hArr",
 		"texvcjs": "\\Leftrightarrow "
 	},
 	{
 		"id": 45,
-		"ignore": true,
-		"input": "\\hArr"
+		"input": "\\harr",
+		"texvcjs": "\\leftrightarrow "
 	},
 	{
 		"id": 46,
