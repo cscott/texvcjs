@@ -38,7 +38,7 @@ describe('API', function() {
           output: '\\sin \\left({\\frac {1}{2}}x\\right)' },
         // testGetValidTexCornerCases()
         { in: '\\reals',
-          output: '\\mathbb{R} ',
+          output: '\\mathbb {R} ',
           ams_required: true },
         { in: '\\lbrack',
           output: '\\lbrack ' },
@@ -71,6 +71,22 @@ describe('API', function() {
     { in: '\\coppa',
       output: '\\mbox{\\coppa} ',
       teubner_required: true },
+    { in: '\\mathbb {R}',
+      output: '\\mathbb {R} ',
+      ams_required: true },
+    { in: '\\reals',
+      output: '\\mathbb {R} ',
+      ams_required: true },
+    // color parsing
+    { in: '{\\color [rgb]{1,0,0}{\\mbox{This text is red.}}}',
+      color_required: true },
+    { in: '{\\color[rgb]{1.5,0,0}{\\mbox{This text is bright red.}}}',
+      status: 'S' },
+    { in: '{\\color [RGB]{51,0,0}{\\mbox{This text is dim red.}}}',
+      output: '{\\color [rgb]{0.2,0,0}{\\mbox{This text is dim red.}}}',
+      color_required: true },
+    { in: '{\\color[RGB]{256,0,0}{\\mbox{This text is bright red.}}}',
+      status: 'S' },
     ];
     testcases.forEach(function(t) {
         it('should check '+JSON.stringify(t.in), function() {

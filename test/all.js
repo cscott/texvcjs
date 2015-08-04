@@ -190,19 +190,22 @@ describe('Comprehensive test cases', function() {
                 '\\sdot\\sect\\spades\\sub\\sube\\supe\\Tau\\thetasym' +
                 '\\varcoppa\\weierp\\Zeta',
             output:
-                '\\mathbb{C} \\mathbb{H} \\mathbb{N} \\mathbb{Q} \\mathbb{R}' +
-                ' \\mathbb{Z} \\aleph \\aleph \\mathrm{A} \\land \\angle' +
-                ' \\mathrm{B} \\bullet \\mathrm{X} \\clubsuit \\mathbb{C}' +
-                ' \\mathbb{C} \\ddagger \\diamondsuit \\doteqdot \\Cap \\Cup ' +
-                '\\emptyset \\mathrm{E} \\mathrm{H} \\exists \\geq \\ggg ' +
-                '\\Leftrightarrow \\leftrightarrow \\Leftrightarrow \\heartsuit' +
-                ' \\Im \\infty \\mathrm{I} \\in \\mathrm{K} \\leftarrow \\Leftarrow ' +
-                '\\Leftarrow \\leq \\leftrightarrow \\Leftrightarrow \\Leftrightarrow' +
-                ' \\mathrm{M} \\mathbb{N} \\neq \\mathrm{N} \\emptyset \\mathrm{o} ' +
-                '\\mathrm{O} \\lor \\partial \\pm \\rightarrow \\Rightarrow \\Rightarrow' +
-                ' \\Re \\mathbb{R} \\mathbb{R} \\upharpoonright \\mathrm{P} \\cdot \\S ' +
-                '\\spadesuit \\subset \\subseteq \\supseteq \\mathrm{T} \\vartheta \\mbox{\\coppa}' +
-                ' \\wp \\mathrm{Z} '
+                '\\mathbb {C} \\mathbb {H} \\mathbb {N} \\mathbb {Q} ' +
+                '\\mathbb {R} \\mathbb {Z} \\aleph \\aleph \\mathrm {A} ' +
+                '\\land \\angle \\mathrm {B} \\bullet \\mathrm {X} ' +
+                '\\clubsuit \\mathbb {C} \\mathbb {C} \\ddagger ' +
+                '\\diamondsuit \\doteqdot \\Cap \\Cup \\emptyset ' +
+                '\\mathrm {E} \\mathrm {H} \\exists \\geq \\ggg ' +
+                '\\Leftrightarrow \\leftrightarrow \\Leftrightarrow ' +
+                '\\heartsuit \\Im \\infty \\mathrm {I} \\in \\mathrm {K} ' +
+                '\\leftarrow \\Leftarrow \\Leftarrow \\leq ' +
+                '\\leftrightarrow \\Leftrightarrow \\Leftrightarrow ' +
+                '\\mathrm {M} \\mathbb {N} \\neq \\mathrm {N} \\emptyset ' +
+                '\\mathrm {o} \\mathrm {O} \\lor \\partial \\pm ' +
+                '\\rightarrow \\Rightarrow \\Rightarrow \\Re \\mathbb {R} ' +
+                '\\mathbb {R} \\upharpoonright \\mathrm {P} \\cdot ' +
+                '\\S \\spadesuit \\subset \\subseteq \\supseteq ' +
+                '\\mathrm {T} \\vartheta \\mbox{\\coppa} \\wp \\mathrm {Z} '
         },
         'Big': (function() {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
@@ -397,9 +400,17 @@ describe('Comprehensive test cases', function() {
         },
         'Color (4)': {
             input:
-                '\\definecolor{mycolor}{RGB}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
+                '\\definecolor{mycolor}{rgb}{0.1,.2,0.}\\color[CMYK]{0,1,0,1}',
             output:
                 '\\definecolor {mycolor}{rgb}{0.1,.2,0.}\\color [cmyk]{0,1,0,1}'
+        },
+        'Color (5)': {
+            input:
+                '\\definecolor{mycolor}{RGB}{255,102,51}' +
+                '\\pagecolor [RGB]{51,102,255}',
+            output:
+                '\\definecolor {mycolor}{rgb}{1,0.4,0.2}' +
+                '\\pagecolor [rgb]{0.2,0.4,1}'
         },
         'Unicode': {
             input: '{\\mbox{💩\uD83D\uDCA9}}'

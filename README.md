@@ -7,7 +7,7 @@ A TeX/LaTeX validator.
 
 `texvcjs` takes user input and validates it while replacing
 MediaWiki-specific functions.  It is a JavaScript port of [texvc],
-which was originally written in ocaml for the [Math extension].
+which was originally written in [OCaml] for the [Math extension].
 
 The `texvcjs` library was originally written to be used by the
 [mw-ocg-latexer] PDF-generation backend of the mediawiki
@@ -65,7 +65,7 @@ is a string.
 
 The fields `ams_required`, `cancel_required`, `color_required`,
 `euro_required`, and `teubner_required` are set to `true` iff the input
-string requires the use of the corresponding LaTeX packages.
+string requires the use of the corresponding [LaTeX packages].
 The `ams_required` field requires the use of the `amsmath` and `amssymb`
 packages.
 
@@ -87,6 +87,8 @@ Licensed under GPLv2.
 [texvc]: https://git.wikimedia.org/blob/mediawiki%2Fextensions%2FMath/REL1_23/texvccheck%2FREADME
 [Math extension]: https://www.mediawiki.org/wiki/Extension:Math
 [Collection extension]: https://www.mediawiki.org/wiki/Extension:Collection
+[OCaml]: https://ocaml.org/
+[LaTeX packages]: http://www.ctan.org/
 
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
