@@ -5,7 +5,7 @@ var Parser = require('../lib/parser');
 
 describe('Parse', function() {
     [ '', 'a', 'a^2', 'a^2+b^{2}', 'l_a^2+l_b^2=l_c^2' ].forEach(function(e) {
-        it('should parse: '+JSON.stringify(e), function() {
+        it('should parse: ' + JSON.stringify(e), function() {
             var p = Parser.parse(e);
             //console.log(JSON.stringify(e), '->', p.toString());
         });

@@ -7,12 +7,12 @@ var path = require('path');
 
 // set this variable to the path to your texvccheck binary for additional
 // sanity-checking against the ocaml texvccheck.
-var TEXVCBINARY=0; // "../../Math/texvccheck/texvccheck";
+var TEXVCBINARY = 0; // "../../Math/texvccheck/texvccheck";
 
 var tryocaml = function(input, output, done, fixDoubleSpacing) {
     if (!TEXVCBINARY) { return done(); }
     var cp = require('child_process');
-    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function(err,stdout,stderr) {
+    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function(err, stdout, stderr) {
         if (err) { return done(err); }
         if (stderr) { return done(stderr); }
         if (fixDoubleSpacing) { stdout = stdout.replace(/  /g, ' '); }
@@ -21,6 +21,7 @@ var tryocaml = function(input, output, done, fixDoubleSpacing) {
     });
 };
 
+/* jscs:disable maximumLineLength */
 var known_bad = Object.create(null);
 [
     // Illegal TeX function: \fint
@@ -164,7 +165,8 @@ describe('All formulae from en-wiki:', function() {
 
     // group them into chunks
     var grouped = (function(arr, n) {
-        var result = [], group = [];
+        var result = [];
+        var group = [];
         var seen = Object.create(null);
         arr.forEach(function(elem) {
             if (seen[elem]) { return; } else { seen[elem] = true; }
@@ -180,7 +182,7 @@ describe('All formulae from en-wiki:', function() {
 
     // create a mocha test case for each chunk
     grouped.forEach(function(group) {
-        it(group[0] + ' ... ' + group[group.length-1], function() {
+        it(group[0] + ' ... ' + group[group.length - 1], function() {
             group.forEach(function(f) {
                 var result = texvcjs.check(f);
                 var good = (result.status === '+');
@@ -189,7 +191,7 @@ describe('All formulae from en-wiki:', function() {
                 } else {
                     assert.ok(good, f);
                     assert.equal(texvcjs.check(result.output).status, '+',
-                                 f+' -> '+result.output);
+                                 f + ' -> ' + result.output);
                 }
             });
         });

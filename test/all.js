@@ -4,12 +4,12 @@ var texvcjs = require('../');
 
 // set this variable to the path to your texvccheck binary for additional
 // sanity-checking against the ocaml texvccheck.
-var TEXVCBINARY=0; // "../../Math/texvccheck/texvccheck";
+var TEXVCBINARY = 0; // "../../Math/texvccheck/texvccheck";
 
 var tryocaml = function(input, output, done, fixDoubleSpacing) {
     if (!TEXVCBINARY) { return done(); }
     var cp = require('child_process');
-    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function(err,stdout,stderr) {
+    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function(err, stdout, stderr) {
         if (err) { return done(err); }
         if (stderr) { return done(stderr); }
         if (fixDoubleSpacing) { stdout = stdout.replace(/  /g, ' '); }
@@ -19,7 +19,7 @@ var tryocaml = function(input, output, done, fixDoubleSpacing) {
 };
 
 var DELIMITERS1 =
-    [ "(",")","[","]","\\{","\\}","|" ];
+    [ "(", ")", "[", "]", "\\{", "\\}", "|" ];
 var DELIMITERS2 =
     ('\\backslash\\downarrow\\Downarrow\\langle\\lbrace\\lceil\\lfloor' +
      '\\llcorner\\lrcorner\\rangle\\rbrace\\rceil\\rfloor\\rightleftharpoons' +
@@ -31,17 +31,18 @@ var DELIMITERS3 =
     split(/\\/).slice(1).map(function(f) { return "\\" + f; });
 
 describe('Comprehensive test cases', function() {
+    /* jscs:disable disallowQuotedKeysInObjects */
     var testcases = {
         'Box functions': {
             input:
-                '\\text {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
-                '\\mbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
-                '\\hbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
+                '\\text {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
+                '\\mbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
+                '\\hbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
                 '\\vbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ',
             output:
-                '{\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
+                '{\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
+                '{\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
+                '{\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
                 '{\\vbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}',
         },
         'Box functions (2)': {
@@ -72,7 +73,7 @@ describe('Comprehensive test cases', function() {
                 '\\bigoplus \\bigotimes \\bigsqcup \\bigstar ' +
                 '\\bigtriangledown \\bigtriangleup \\biguplus \\bigvee ' +
                 '\\bigwedge \\blacklozenge \\blacksquare \\blacktriangle ' +
-                '\\blacktriangledown \\blacktriangleleft \\blacktriangleright '+
+                '\\blacktriangledown \\blacktriangleleft \\blacktriangleright ' +
                 '\\bot \\bowtie \\Box \\boxdot \\boxminus \\boxplus ' +
                 '\\boxtimes \\bullet \\bumpeq \\Bumpeq \\cap \\Cap \\cdot ' +
                 '\\cdots \\centerdot \\checkmark \\chi \\circ \\circeq ' +
@@ -211,7 +212,7 @@ describe('Comprehensive test cases', function() {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
              '\\bigl\\Bigl\\bigr\\Bigr').split(/\\/).slice(1);
             var DELIMITERS = DELIMITERS1.concat(DELIMITERS2).
-                concat(["\\darr","\\uarr"]);
+                concat(["\\darr", "\\uarr"]);
             var input = BIGS.map(function(b) {
                 return DELIMITERS.map(function(d) {
                     return "\\" + b + d;
@@ -221,7 +222,7 @@ describe('Comprehensive test cases', function() {
                 return DELIMITERS.map(function(d) {
                     if (d === "\\darr") { d = "\\downarrow"; }
                     if (d === "\\uarr") { d = "\\uparrow"; }
-                    if (d.charAt(0)==='\\' && d.length > 2) { d = d + " "; }
+                    if (d.charAt(0) === '\\' && d.length > 2) { d = d + " "; }
                     return "{\\" + b + " " + d + "}";
                 }).join('');
             }).join('');
@@ -357,8 +358,9 @@ describe('Comprehensive test cases', function() {
         },
         'Matrices (1)': (function() {
             var ENV =
-                ['matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix',
-                 'array','align','alignat','smallmatrix','cases'];
+                ['matrix', 'pmatrix', 'bmatrix', 'Bmatrix',
+                 'vmatrix', 'Vmatrix', 'array', 'align', 'alignat',
+                 'smallmatrix', 'cases'];
             var arg = function(env) {
                 switch (env) {
                 case 'array': return '{|c||c|}';
@@ -368,12 +370,12 @@ describe('Comprehensive test cases', function() {
             };
             return {
                 input: ENV.map(function(env) {
-                    return '\\begin{'+env+'}'+arg(env)+' a & b \\\\\\hline c & d \\end{'+env+'}';
+                    return '\\begin{' + env + '}' + arg(env) + ' a & b \\\\\\hline c & d \\end{' + env + '}';
                 }).join(''),
                 output: ENV.map(function(env) {
-                    if (env==='align') { env = 'aligned'; }
-                    if (env==='alignat') { env = 'alignedat'; }
-                    return '{\\begin{'+env+'}'+arg(env)+'a&b\\\\\\hline c&d\\end{'+env+'}}';
+                    if (env === 'align') { env = 'aligned'; }
+                    if (env === 'alignat') { env = 'alignedat'; }
+                    return '{\\begin{' + env + '}' + arg(env) + 'a&b\\\\\\hline c&d\\end{' + env + '}}';
                 }).join('')
             };
         })(),

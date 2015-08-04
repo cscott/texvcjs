@@ -89,7 +89,7 @@ describe('API', function() {
       status: 'S' },
     ];
     testcases.forEach(function(t) {
-        it('should check '+JSON.stringify(t.in), function() {
+        it('should check ' + JSON.stringify(t.in), function() {
             var result = texvcjs.check(t.in);
             assert.equal(result.status, t.status || '+');
             if (result.status === '+') {

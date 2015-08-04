@@ -22,10 +22,10 @@ describe('ast.Tex.contains_func', function() {
           yes: ['\\sqrt', '\\backslash', '\\downarrow'],
           no:  ['\\darr'] },
         { input: '\\mbox{abc}',         yes: ['\\mbox'] },
-        { input: 'x_\\aleph^\\sqrt{2}', yes: ['\\aleph','\\sqrt'] },
-        { input: '{abc \\rm def \\it ghi}', yes: ['\\rm','\\it'] },
+        { input: 'x_\\aleph^\\sqrt{2}', yes: ['\\aleph', '\\sqrt'] },
+        { input: '{abc \\rm def \\it ghi}', yes: ['\\rm', '\\it'] },
         { input: '{\\frac{\\sideset{_\\dagger}{^\\bold{x}}\\prod}{\\hat{a}}}',
-          yes: ['\\frac','\\sideset','\\dagger','\\mathbf','\\prod','\\hat'],
+          yes: ['\\frac', '\\sideset', '\\dagger', '\\mathbf', '\\prod', '\\hat'],
           no:  ['\\bold'] },
         { input: '\\begin{array}{l|r}\n' +
                  '\\alpha & \\beta \\\\\n' +
@@ -49,10 +49,10 @@ describe('ast.Tex.contains_func', function() {
     ];
     testcases.forEach(function(tc) {
         tc.no = (tc.no || []).concat(['\\foo', '\\begin{foo}']);
-        [false,true].forEach(function(expected) {
+        [false, true].forEach(function(expected) {
             (expected ? tc.yes : tc.no).forEach(function(target) {
                 it('should ' + (expected ? '' : 'not ') + 'find ' + target +
-                   ' in ' + tc.input.replace(/\n/g,' '), function() {
+                   ' in ' + tc.input.replace(/\n/g, ' '), function() {
                        var p = texvcjs.parse(tc.input, { debug: true });
                        assert.equal(texvcjs.contains_func(p, target),
                                     expected ? target : false);

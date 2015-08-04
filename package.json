@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "scripts": {
         "build": "node -e 'require(\"./lib/build-parser\")'",
-        "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && mocha"
+        "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && jscs . && mocha"
     },
     "repository": {
         "type": "git",
@@ -16,7 +16,7 @@
         "wikitext",
         "mediawiki"
     ],
-    "license": "GPLv2",
+    "license": "GPL-2.0",
     "bugs": {
         "url": "https://github.com/cscott/texvcjs/issues"
     },
@@ -24,7 +24,8 @@
         "commander": "~2.5.0"
     },
     "devDependencies": {
-        "jshint": "~2.5.2",
+        "jscs": "~1.13.0",
+        "jshint": "~2.7.0",
         "mocha": "~2.0.1",
         "pegjs": "~0.8.0"
     },

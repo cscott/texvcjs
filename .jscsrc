@@ -1,0 +1,18 @@
+{
+  "preset": "node-style-guide",
+  // allow some slop to account for legacy code
+  "maximumLineLength": 120,
+  "validateIndentation": 4,
+  "validateQuoteMarks": null, // { "mark": "'", "escape": true },
+  "requireTrailingComma": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": null,
+  "requireSpaceAfterLineComment": null,
+  "requireCapitalizedComments": null, // { "allExcept": ["jshint"] },
+  "requireCurlyBraces": [ "if", "else", "for", "while", "do", "try", "catch" ],
+
+  "excludeFiles": [
+    "lib/parser.js",
+    "node_modules/**",
+    "clean/**"
+  ]
+}
