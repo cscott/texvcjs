@@ -15,4 +15,11 @@ describe('Parse', function() {
         var p = Parser.parse(e);
         //console.log(JSON.stringify(e), '->', p.toString());
     });
+	it('should parse texvc specific functions', function() {
+		var r = '\\reals',
+			s = '\\mathbb{R}';
+		var p = Parser.parse(r),
+			q = Parser.parse(s);
+		assert.equal(p.toString(), q.toString());
+	});
 });
