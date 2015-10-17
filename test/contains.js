@@ -16,7 +16,7 @@ describe('ast.Tex.contains_func', function() {
           yes: ['\\operatorname', '\\atop', '\\aleph'],
           no:  ['\\arccot'] },
         { input: '\\acute{\\euro\\alef}',
-          yes: ['\\acute', '\\euro', '\\aleph', '\\mathrm' ],
+          yes: ['\\acute', '\\euro', '\\aleph', '\\mbox' ],
           no:  ['\\alef'] },
         { input: '\\sqrt[\\backslash]{\\darr}',
           yes: ['\\sqrt', '\\backslash', '\\downarrow'],

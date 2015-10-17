@@ -158,24 +158,52 @@ describe('Comprehensive test cases', function() {
                 '\\geneurowide\\Koppa\\koppa\\officialeuro\\Sampi\\sampi' +
                 '\\Stigma\\stigma\\textvisiblespace\\varstigma',
             output:
-                '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
-                '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
-                '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
-                '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
-                '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
-                '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
-                '\\mathrm {\\varstigma} '
+                '\\mbox{\\AA} \\mbox{\\Coppa} \\mbox{\\coppa} ' +
+                '\\mbox{\\Digamma} \\mbox{\\euro} \\mbox{\\geneuro} ' +
+                '\\mbox{\\geneuronarrow} \\mbox{\\geneurowide} ' +
+                '\\mbox{\\Koppa} \\mbox{\\koppa} \\mbox{\\officialeuro} ' +
+                '\\mbox{\\Sampi} \\mbox{\\sampi} \\mbox{\\Stigma} ' +
+                '\\mbox{\\stigma} \\mbox{\\textvisiblespace} ' +
+                '\\mbox{\\varstigma} '
         },
         'Literals (2\')': {
             /* We can parse what we emit (but the ocaml version can't) */
             input:
-                '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
-                '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
-                '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
-                '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
-                '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
-                '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
-                '\\mathrm {\\varstigma} ',
+                '\\mbox{\\AA} \\mbox{\\Coppa} \\mbox{\\coppa} ' +
+                '\\mbox{\\Digamma} \\mbox{\\euro} \\mbox{\\geneuro} ' +
+                '\\mbox{\\geneuronarrow} \\mbox{\\geneurowide} ' +
+                '\\mbox{\\Koppa} \\mbox{\\koppa} \\mbox{\\officialeuro} ' +
+                '\\mbox{\\Sampi} \\mbox{\\sampi} \\mbox{\\Stigma} ' +
+                '\\mbox{\\stigma} \\mbox{\\textvisiblespace} ' +
+                '\\mbox{\\varstigma} ',
+            skipOcaml: true
+        },
+        'Literals (2) MJ': {
+            mathjax: true,
+            input:
+            '\\AA\\Coppa\\coppa\\Digamma\\euro\\geneuro\\geneuronarrow' +
+            '\\geneurowide\\Koppa\\koppa\\officialeuro\\Sampi\\sampi' +
+            '\\Stigma\\stigma\\textvisiblespace\\varstigma',
+            output:
+            '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
+            '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
+            '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
+            '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
+            '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
+            '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
+            '\\mathrm {\\varstigma} '
+        },
+        'Literals (2\') MJ': {
+            mathjax:true,
+            /* We can parse what we emit (but the ocaml version can't) */
+            input:
+            '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
+            '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
+            '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
+            '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
+            '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
+            '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
+            '\\mathrm {\\varstigma} ',
             skipOcaml: true
         },
         'Literals (3)': {
@@ -205,7 +233,7 @@ describe('Comprehensive test cases', function() {
                 '\\rightarrow \\Rightarrow \\Rightarrow \\Re \\mathbb {R} ' +
                 '\\mathbb {R} \\upharpoonright \\mathrm {P} \\cdot ' +
                 '\\S \\spadesuit \\subset \\subseteq \\supseteq ' +
-                '\\mathrm {T} \\vartheta \\mathrm {\\coppa} \\wp \\mathrm {Z} '
+                '\\mathrm {T} \\vartheta \\mbox{\\coppa} \\wp \\mathrm {Z} '
         },
         'Big': (function() {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
@@ -422,7 +450,7 @@ describe('Comprehensive test cases', function() {
             tc.output = tc.output || tc.input;
             if (!tc.skipJs) {
                 it('output should be correct', function() {
-                    var result = texvcjs.check(tc.input, { debug: true });
+                    var result = texvcjs.check(tc.input, { debug: true, mathjax:tc.mathjax});
                     assert.equal(result.status, '+');
                     assert.equal(result.output, tc.output);
                 });

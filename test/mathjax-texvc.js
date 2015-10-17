@@ -14,7 +14,7 @@ describe('Run test for all mathjax-texvc commands:', function () {
     formulae.forEach(function (testcase) {
         if(testcase.ignore !== true ) {
             it(testcase.id+"$"+testcase.input+"$", function () {
-                var result = texvcjs.check(testcase.input);
+                var result = texvcjs.check(testcase.input,{mathjax:true});
                 assert.equal(result.output, testcase.texvcjs,
                     JSON.stringify({
                         id: testcase.id,
