@@ -179,7 +179,7 @@ describe('Comprehensive test cases', function() {
             skipOcaml: true
         },
         'Literals (2) MJ': {
-            mathjax: true,
+            usemathrm: true,
             input:
             '\\AA\\Coppa\\coppa\\Digamma\\euro\\geneuro\\geneuronarrow' +
             '\\geneurowide\\Koppa\\koppa\\officialeuro\\Sampi\\sampi' +
@@ -194,7 +194,7 @@ describe('Comprehensive test cases', function() {
             '\\mathrm {\\varstigma} '
         },
         'Literals (2\') MJ': {
-            mathjax:true,
+            usemathrm:true,
             /* We can parse what we emit (but the ocaml version can't) */
             input:
             '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
@@ -450,7 +450,7 @@ describe('Comprehensive test cases', function() {
             tc.output = tc.output || tc.input;
             if (!tc.skipJs) {
                 it('output should be correct', function() {
-                    var result = texvcjs.check(tc.input, { debug: true, mathjax:tc.mathjax});
+                    var result = texvcjs.check(tc.input, { debug: true, usemathrm:tc.usemathrm});
                     assert.equal(result.status, '+');
                     assert.equal(result.output, tc.output);
                 });
