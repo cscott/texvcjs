@@ -12,7 +12,7 @@ program
     .usage('[options] <tex input>')
     .option('--rebuild', 'Rebuild PEGjs grammar before parsing')
     .option('-v, --verbose', 'Show verbose error information')
-    .option('--usemathrm ', 'Use \\mathrm instead of \\mbox to escape some text literals')
+    .option('--usemathrm', 'Use \\mathrm instead of \\mbox to escape some text literals')
     .option('-D, --debug', 'Show stack trace on failure');
 
 PACKAGES.forEach(function(pkg) {
