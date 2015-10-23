@@ -12,6 +12,7 @@ program
     .usage('[options] <tex input>')
     .option('--rebuild', 'Rebuild PEGjs grammar before parsing')
     .option('-v, --verbose', 'Show verbose error information')
+    .option('--usemathrm', 'Use \\mathrm instead of \\mbox to escape some text literals')
     .option('-D, --debug', 'Show stack trace on failure');
 
 PACKAGES.forEach(function(pkg) {
@@ -33,7 +34,7 @@ if (program.rebuild) {
 }
 
 var texvcjs = require('../');
-var result = texvcjs.check(input, { debug: program.debug });
+var result = texvcjs.check(input, { debug: program.debug, usemathrm:program.usemathrm });
 
 // check required packages
 PACKAGES.forEach(function(pkg) {

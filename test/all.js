@@ -178,6 +178,34 @@ describe('Comprehensive test cases', function() {
                 '\\mbox{\\varstigma} ',
             skipOcaml: true
         },
+        'Literals (2) MJ': {
+            usemathrm: true,
+            input:
+            '\\AA\\Coppa\\coppa\\Digamma\\euro\\geneuro\\geneuronarrow' +
+            '\\geneurowide\\Koppa\\koppa\\officialeuro\\Sampi\\sampi' +
+            '\\Stigma\\stigma\\textvisiblespace\\varstigma',
+            output:
+            '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
+            '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
+            '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
+            '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
+            '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
+            '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
+            '\\mathrm {\\varstigma} '
+        },
+        'Literals (2\') MJ': {
+            usemathrm:true,
+            /* We can parse what we emit (but the ocaml version can't) */
+            input:
+            '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
+            '\\mathrm {\\Digamma} \\mathrm {\\euro} \\mathrm {\\geneuro} ' +
+            '\\mathrm {\\geneuronarrow} \\mathrm {\\geneurowide} ' +
+            '\\mathrm {\\Koppa} \\mathrm {\\koppa} \\mathrm {\\officialeuro} ' +
+            '\\mathrm {\\Sampi} \\mathrm {\\sampi} \\mathrm {\\Stigma} ' +
+            '\\mathrm {\\stigma} \\mathrm {\\textvisiblespace} ' +
+            '\\mathrm {\\varstigma} ',
+            skipOcaml: true
+        },
         'Literals (3)': {
             input:
                 '\\C\\H\\N\\Q\\R\\Z\\alef\\alefsym\\Alpha\\and\\ang\\Beta' +
@@ -422,7 +450,7 @@ describe('Comprehensive test cases', function() {
             tc.output = tc.output || tc.input;
             if (!tc.skipJs) {
                 it('output should be correct', function() {
-                    var result = texvcjs.check(tc.input, { debug: true });
+                    var result = texvcjs.check(tc.input, { debug: true, usemathrm:tc.usemathrm});
                     assert.equal(result.status, '+');
                     assert.equal(result.output, tc.output);
                 });
