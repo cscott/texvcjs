@@ -91,8 +91,8 @@ describe('API', function() {
       output: '{\\ce {H2O}}',
       mhchem_required: true,
       status: 'C' },
-    { in: '\\cf{[Zn(OH)4]^2-}',
-      output: '{\\cf {[Zn(OH)4]^{2}-}}',
+    { in: '\\ce{[Zn(OH)4]^2-}',
+      output: '{\\ce {[Zn(OH)4]^{2}-}}',
       mhchem_required: true,
       status: 'C' }
     ];
