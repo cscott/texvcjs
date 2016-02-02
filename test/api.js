@@ -87,6 +87,14 @@ describe('API', function() {
       color_required: true },
     { in: '{\\color[RGB]{256,0,0}{\\mbox{This text is bright red.}}}',
       status: 'S' },
+    { in: '\\ce{ H2O }',
+      output: '{\\ce {H2O}}',
+      mhchem_required: true,
+      status: 'C' },
+    { in: '\\ce{[Zn(OH)4]^2-}',
+      output: '{\\ce {[Zn(OH)4]^{2}-}}',
+      mhchem_required: true,
+      status: 'C' }
     ];
     testcases.forEach(function(t) {
         it('should check '+JSON.stringify(t.in), function() {
