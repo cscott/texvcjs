@@ -211,7 +211,7 @@ describe('Comprehensive test cases', function() {
                 '\\C\\H\\N\\Q\\R\\Z\\alef\\alefsym\\Alpha\\and\\ang\\Beta' +
                 '\\bull\\Chi\\clubs\\cnums\\Complex\\Dagger\\diamonds\\Doteq' +
                 '\\doublecap\\doublecup\\empty\\Epsilon\\Eta\\exist\\ge' +
-                '\\gggtr\\hAar\\harr\\Harr\\hearts\\image\\infin\\Iota\\isin' +
+                '\\gggtr\\hArr\\harr\\Harr\\hearts\\image\\infin\\Iota\\isin' +
                 '\\Kappa\\larr\\Larr\\lArr\\le\\lrarr\\Lrarr\\lrArr\\Mu' +
                 '\\natnums\\ne\\Nu\\O\\omicron\\Omicron\\or\\part\\plusmn' +
                 '\\rarr\\Rarr\\rArr\\real\\reals\\Reals\\restriction\\Rho' +
