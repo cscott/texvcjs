@@ -117,7 +117,7 @@ describe('Comprehensive test cases', function() {
                 '\\nsim \\nsubseteq \\nsubseteqq \\nsucc \\nsucceq ' +
                 '\\nsupseteq \\nsupseteqq \\ntriangleleft \\ntrianglelefteq ' +
                 '\\ntriangleright \\ntrianglerighteq \\nu \\nvdash \\nVdash ' +
-                '\\nvDash \\nVDash \\nwarrow \\odot \\oint \\oiint \\oiiint \\ointctrclockwise \\omega \\Omega ' +
+                '\\nvDash \\nVDash \\nwarrow \\odot \\oint \\omega \\Omega ' +
                 '\\ominus \\oplus \\oslash \\otimes ' +
                 '\\P \\parallel \\partial ' +
                 '\\perp \\phi \\Phi \\pi \\Pi \\pitchfork \\pm \\prec ' +
@@ -144,7 +144,7 @@ describe('Comprehensive test cases', function() {
                 '\\triangleright \\trianglerighteq ' +
                 '\\upharpoonleft \\upharpoonright \\uplus \\upsilon ' +
                 '\\Upsilon \\upuparrows \\varepsilon \\varinjlim ' +
-                '\\varkappa \\varliminf \\varlimsup \\varnothing \\varointclockwise \\varphi ' +
+                '\\varkappa \\varliminf \\varlimsup \\varnothing \\varphi ' +
                 '\\varpi \\varprojlim \\varpropto \\varrho \\varsigma ' +
                 '\\varsubsetneq \\varsubsetneqq \\varsupsetneq ' +
                 '\\varsupsetneqq \\vartheta \\vartriangle \\vartriangleleft ' +
