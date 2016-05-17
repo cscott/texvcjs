@@ -1,6 +1,6 @@
 {
-    "name": "texvcjs",
-    "version": "0.3.1-git",
+    "name": "mathoid-texvcjs",
+    "version": "0.3.2",
     "description": "A TeX/LaTeX validator for mediawiki.",
     "main": "lib/index.js",
     "scripts": {
@@ -9,16 +9,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/cscott/texvcjs"
+        "url": "git://github.com/wikimedia/texvcjs"
     },
     "keywords": [
         "tex",
         "wikitext",
-        "mediawiki"
+        "mediawiki",
+        "mathoid",
+        "texvc"
     ],
-    "license": "GPLv2",
+    "license": "GPL-2.0",
     "bugs": {
-        "url": "https://github.com/cscott/texvcjs/issues"
+        "url": "https://phabricator.wikimedia.org/project/profile/1771/"
     },
     "dependencies": {
         "commander": "~2.9.0"
