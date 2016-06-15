@@ -287,14 +287,12 @@
 	{
 		"id": 58,
 		"input": "\\oiint",
-		"ignore":true,
-		"comment": "Not allowed in PNG mode. So it was never visible to anonymous users."
+		"texvcjs": "\\oiint "
 	},
 	{
 		"id": 59,
 		"input": "\\oiiint",
-		"ignore":true,
-		"comment": "Not allowed in PNG mode. So it was never visible to anonymous users."
+		"texvcjs": "\\oiiint "
 	},
 	{
 		"id": 60,
@@ -462,6 +460,16 @@
 		"id": 92,
 		"input": "\\image",
 		"texvcjs": "\\Im "
+	},
+	{
+		"id": 93,
+		"input": "\\ointctrclockwise",
+		"texvcjs": "\\ointctrclockwise "
+	},
+	{
+		"id": 94,
+		"input": "\\varointclockwise",
+		"texvcjs": "\\varointclockwise "
 	},
 	{
 		"id": 95,

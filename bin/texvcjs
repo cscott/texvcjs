@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner'];
+var PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner', 'mathoid'];
 
 var program = require('commander');
 var util = require('util');
