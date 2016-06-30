@@ -84,7 +84,7 @@ Copyright (c) 2014 C. Scott Ananian
 Licensed under GPLv2.
 
 [mw-ocg-latexer]: https://github.com/wikimedia/mediawiki-extensions-Collection-OfflineContentGenerator-latex_renderer
-[texvc]: https://git.wikimedia.org/blob/mediawiki%2Fextensions%2FMath/REL1_23/texvccheck%2FREADME
+[texvc]: https://phabricator.wikimedia.org/diffusion/EMAT/browse/REL1_23/texvccheck/README
 [Math extension]: https://www.mediawiki.org/wiki/Extension:Math
 [Collection extension]: https://www.mediawiki.org/wiki/Extension:Collection
 [OCaml]: https://ocaml.org/
