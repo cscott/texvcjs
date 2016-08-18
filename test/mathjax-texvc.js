@@ -12,7 +12,7 @@ describe('Run test for all mathjax-texvc commands:', function () {
     var formulae = require('./mathjax-texvc.json');
     // create a mocha test case for each chunk
     formulae.forEach(function (testcase) {
-        if(testcase.ignore !== true ) {
+        if (testcase.ignore !== true) {
             it(testcase.id+"$"+testcase.input+"$", function () {
                 var result = texvcjs.check(testcase.input,{usemathrm:true});
                 assert.equal(result.output, testcase.texvcjs,
