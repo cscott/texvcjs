@@ -303,7 +303,7 @@ describe('Comprehensive test cases', function() {
                 '{\\ddot {A}}{\\dot {A}}{\\emph {A}}{\\grave {A}}{\\hat {A}}' +
                 '\\mathbb {A} \\mathbf {A} {\\mathbin {A}}{\\mathcal {A}}' +
                 '{\\mathclose {A}}{\\mathfrak {A}}{\\mathit {A}}' +
-                '{\\mathop {A}}{\\mathopen {A}}{\\mathord {A}}' +
+                '\\mathop {A} {\\mathopen {A}}{\\mathord {A}}' +
                 '{\\mathpunct {A}}{\\mathrel {A}}\\mathrm {A} {\\mathsf {A}}' +
                 '{\\mathtt {A}}\\operatorname {A} {\\overleftarrow {A}}' +
                 '{\\overleftrightarrow {A}}{\\overline {A}}' +
