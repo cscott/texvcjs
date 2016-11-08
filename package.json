@@ -27,7 +27,7 @@
         "jscs": "~1.13.0",
         "jshint": "~2.9.1",
         "mocha": "~3.1.2",
-        "pegjs": "~0.8.0"
+        "pegjs": "~0.10.0"
     },
     "bin": {
         "texvcjs": "./bin/texvcjs"
