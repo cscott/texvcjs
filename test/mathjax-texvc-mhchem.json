@@ -494,7 +494,7 @@
 	{
 		"id": 99,
 		"input": "\\ce{H_2HHHHH\\bond{...}H}",
-		"texvcjs": "{\\ce {H_2HHHHH\\bond{...}H}}"
+		"texvcjs": "{\\ce {H_2HHHHH\\bond {...}H}}"
 	},
 	{
 		"id": 100,
@@ -507,13 +507,18 @@
 		"texvcjs": "{\\ce {CO2 + C -> 2 CO}}"
 	},
 	{
-		"id": 101,
+		"id": 102,
 		"input": "\\ce{CO_2 + C -> 2 CO}",
 		"texvcjs": "{\\ce {CO_2 + C -> 2 CO}}"
 	},
 	{
-		"id": 102,
+		"id": 103,
 		"input": "\\ce{\\underbrace{O2}_{oxygen molecule} -> 2O}",
-		"texvcjs": "{\\ce {\\underbrace{O2}_{oxygen molecule} -> 2O}}"
+		"texvcjs": "{\\ce {{\\underbrace {O2}_{oxygen molecule}}-> 2O}}"
+	},
+	{
+		"id": 104,
+		"input": "\\ce{^{227}_{90}Th+}",
+		"texvcjs": "{\\ce {^{227}_{90}Th+}}"
 	}
 ]
