@@ -520,5 +520,419 @@
 		"id": 104,
 		"input": "\\ce{^{227}_{90}Th+}",
 		"texvcjs": "{\\ce {^{227}_{90}Th+}}"
+	},
+	{
+		"id": 105,
+		"input": "\\ce{CO2 + C -> 2 CO}",
+		"texvcjs": "{\\ce {CO2 + C -> 2 CO}}"
+	},
+	{
+		"id": 106,
+		"input": "\\ce{Hg^2+ ->[I-] HgI2}",
+		"texvcjs": "{\\ce {Hg^2+ ->[I-] HgI2}}"
+	},
+	{
+		"id": 107,
+		"input": "\\ce{H2O}",
+		"texvcjs": "{\\ce {H2O}}"
+	},
+	{
+		"id": 108,
+		"input": "\\ce{Sb2O3}",
+		"texvcjs": "{\\ce {Sb2O3}}"
+	},
+	{
+		"id": 109,
+		"input": "\\ce{N2}",
+		"texvcjs": "{\\ce {N2}}"
+	},
+	{
+		"id": 110,
+		"input": "\\ce{O2}",
+		"texvcjs": "{\\ce {O2}}"
+	},
+	{
+		"id": 111,
+		"input": "\\ce{CO2}",
+		"texvcjs": "{\\ce {CO2}}"
+	},
+	{
+		"id": 112,
+		"input": "\\ce{A <--> B}",
+		"texvcjs": "{\\ce {A <--> B}}"
+	},
+	{
+		"id": 117,
+		"input": "\\ce{CrO4^2-}",
+		"texvcjs": "{\\ce {CrO4^2-}}"
+	},
+	{
+		"id": 119,
+		"input": "\\ce{H+}",
+		"texvcjs": "{\\ce {H+}}"
+	},
+	{
+		"id": 121,
+		"input": "\\ce{[AgCl2]-}",
+		"texvcjs": "{\\ce {[AgCl2]-}}"
+	},
+	{
+		"id": 122,
+		"input": "\\ce{Y^99+}",
+		"texvcjs": "{\\ce {Y^99+}}"
+	},
+	{
+		"id": 123,
+		"input": "\\ce{Y^{99+}}",
+		"texvcjs": "{\\ce {Y^{99+}}}"
+	},
+	{
+		"id": 124,
+		"input": "\\ce{Fe^{II}Fe^{III}2O4}",
+		"texvcjs": "{\\ce {Fe^{II}Fe^{III}2O4}}"
+	},
+	{
+		"id": 125,
+		"input": "\\ce{2H2O}",
+		"texvcjs": "{\\ce {2H2O}}"
+	},
+	{
+		"id": 126,
+		"input": "\\ce{2 H2O}",
+		"texvcjs": "{\\ce {2 H2O}}"
+	},
+	{
+		"id": 127,
+		"input": "\\ce{0.5H2O}",
+		"texvcjs": "{\\ce {0.5H2O}}"
+	},
+	{
+		"id": 128,
+		"input": "\\ce{1/2H2O}",
+		"texvcjs": "{\\ce {1/2H2O}}"
+	},
+	{
+		"id": 129,
+		"input": "\\ce{(1/2)H2O}",
+		"texvcjs": "{\\ce {(1/2)H2O}}"
+	},
+	{
+		"id": 130,
+		"input": "\\ce{$n$H2O}",
+		"texvcjs": "{\\ce {$n$H2O}}"
+	},
+	{
+		"id": 131,
+		"input": "\\ce{^{227}_{90}Th+}",
+		"texvcjs": "{\\ce {^{227}_{90}Th+}}"
+	},
+	{
+		"id": 132,
+		"input": "\\ce{^227_90Th+}",
+		"texvcjs": "{\\ce {^227_90Th+}}"
+	},
+	{
+		"id": 133,
+		"input": "\\ce{^{0}_{-1}n^{-}}",
+		"texvcjs": "{\\ce {^{0}_{-1}n^{-}}}"
+	},
+	{
+		"id": 134,
+		"input": "\\ce{^0_-1n-}",
+		"texvcjs": "{\\ce {^0_-1n-}}"
+	},
+	{
+		"id": 135,
+		"input": "\\ce{H{}^3HO}",
+		"texvcjs": "{\\ce {H{}^3HO}}"
+	},
+	{
+		"id": 136,
+		"input": "\\ce{H^3HO}",
+		"texvcjs": "{\\ce {H^3HO}}"
+	},
+	{
+		"id": 137,
+		"input": "\\ce{(NH4)2S}",
+		"texvcjs": "{\\ce {(NH4)2S}}"
+	},
+	{
+		"id": 138,
+		"input": "\\ce{[\\{(X2)3\\}2]^3+}",
+		"texvcjs": "{\\ce {[\\{(X2)3\\}2]^3+}}"
+	},
+	{
+		"id": 139,
+		"input": "\\ce{H2(aq)}",
+		"texvcjs": "{\\ce {H2(aq)}}"
+	},
+	{
+		"id": 140,
+		"input": "\\ce{CO3^2-{}_{(aq)}}",
+		"texvcjs": "{\\ce {CO3^2-{}_{(aq)}}}"
+	},
+	{
+		"id": 141,
+		"input": "\\ce{NaOH(aq,$\\infty$)}",
+		"texvcjs": "{\\ce {NaOH(aq,$\\infty$)}}"
+	},
+	{
+		"id": 142,
+		"input": "\\ce{OCO^{.-}}",
+		"texvcjs": "{\\ce {OCO^{.-}}}"
+	},
+	{
+		"id": 143,
+		"input": "\\ce{NO^{(2.)-}}",
+		"texvcjs": "{\\ce {NO^{(2.)-}}}"
+	},
+	{
+		"id": 144,
+		"input": "\\ce{\\mu-Cl}",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 145,
+		"input": "\\ce{[Pt(\\eta^2-C2H4)Cl3]-}",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 146,
+		"input": "\\ce{NaOH(aq,$\\infty$)}",
+		"texvcjs": "{\\ce {NaOH(aq,$\\infty$)}}"
+	},
+	{
+		"id": 147,
+		"input": "\\ce{Fe(CN)_{$\\frac{6}{2}$}}",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 148,
+		"input": "\\ce{$cis${-}[PtCl2(NH3)2]}",
+		"texvcjs": "{\\ce {$cis${-}[PtCl2(NH3)2]}}"
+	},
+	{
+		"id": 149,
+		"input": "\\ce{{(+)}_589{-}[Co(en)3]Cl3}",
+		"texvcjs": "{\\ce {{(+)}_589{-}[Co(en)3]Cl3}}"
+	},
+	{
+		"id": 150,
+		"input": "\\ce{{(+)}_589{-}[Co(en)3]Cl3}",
+		"texvcjs": "{\\ce {{(+)}_589{-}[Co(en)3]Cl3}}"
+	},
+	{
+		"id": 151,
+		"input": "\\ce{KCr(SO4)2*12H2O}",
+		"texvcjs": "{\\ce {KCr(SO4)2*12H2O}}"
+	},
+	{
+		"id": 152,
+		"input": "\\ce{KCr(SO4)2.12H2O}",
+		"texvcjs": "{\\ce {KCr(SO4)2.12H2O}}"
+	},
+	{
+		"id": 153,
+		"input": "\\ce{KCr(SO4)2 * 12 H2O}",
+		"texvcjs": "{\\ce {KCr(SO4)2 * 12 H2O}}"
+	},
+	{
+		"id": 154,
+		"input": "\\ce{C6H5-CHO}",
+		"texvcjs": "{\\ce {C6H5-CHO}}"
+	},
+	{
+		"id": 155,
+		"input": "\\ce{A-B=C#D}",
+		"texvcjs": "{\\ce {A-B=C#D}}"
+	},
+	{
+		"id": 156,
+		"input": "\\ce{A-B=C#D}",
+		"texvcjs": "{\\ce {A-B=C#D}}"
+	},
+	{
+		"id": 157,
+		"input": "\\ce{A\\bond{-}B\\bond{=}C\\bond{#}D}",
+		"texvcjs": "{\\ce {A\\bond {-}B\\bond {=}C\\bond {#}D}}"
+	},
+	{
+		"id": 158,
+		"input": "\\ce{A\\bond{1}B\\bond{2}C\\bond{3}D}",
+		"texvcjs": "{\\ce {A\\bond {1}B\\bond {2}C\\bond {3}D}}"
+	},
+	{
+		"id": 159,
+		"input": "\\ce{A\\bond{~}B\\bond{~-}C}",
+		"texvcjs": "{\\ce {A\\bond {~}B\\bond {~-}C}}"
+	},
+	{
+		"id": 160,
+		"input": "\\ce{A\\bond{~--}B\\bond{~=}C\\bond{-~-}D}",
+		"texvcjs": "{\\ce {A\\bond {~--}B\\bond {~=}C\\bond {-~-}D}}"
+	},
+	{
+		"id": 161,
+		"input": "\\ce{A\\bond{...}B\\bond{....}C}",
+		"texvcjs": "{\\ce {A\\bond {...}B\\bond {....}C}}"
+	},
+	{
+		"id": 162,
+		"input": "\\ce{A\\bond{->}B\\bond{<-}C}",
+		"texvcjs": "{\\ce {A\\bond {->}B\\bond {<-}C}}"
+	},
+	{
+		"id": 163,
+		"input": "$\\underset{\\mathrm{red}}{\\ce{[Hg^{II}I4]^2-}}$",
+		"texvcjs": "\\${\\underset {\\mathrm {red} }{{\\ce {[Hg^{II}I4]^2-}}}}\\$"
+	},
+	{
+		"id": 164,
+		"input": "\\ce{Hg^2+ ->[I-] $\\underset{\\mathrm{red}}{\\ce{HgI2}}$} ",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 169,
+		"input": "\\ce{A ->[H2O] B}",
+		"texvcjs": "{\\ce {A ->[H2O] B}}"
+	},
+	{
+		"id": 170,
+		"input": "\\ce{A ->[H2O] B}",
+		"texvcjs": "{\\ce {A ->[H2O] B}}"
+	},
+	{
+		"id": 171,
+		"input": "\\ce{A ->[{text above}][{text below}] B}",
+		"texvcjs": "{\\ce {A ->[{text above}][{text below}] B}}"
+	},
+	{
+		"id": 172,
+		"input": "\\ce{A ->[{text above}][{text below}] B}",
+		"texvcjs": "{\\ce {A ->[{text above}][{text below}] B}}"
+	},
+	{
+		"id": 173,
+		"input": "\\ce{A ->[$x$][$x_i$] B}",
+		"texvcjs": "{\\ce {A ->[$x$][$x_i$] B}}"
+	},
+	{
+		"id": 175,
+		"input": "\\ce{A ->[${x}$] B}",
+		"texvcjs": "{\\ce {A ->[${,x},$] B}}"
+	},
+	{
+		"id": 177,
+		"input": "\\ce{A + B}",
+		"texvcjs": "{\\ce {A + B}}"
+	},
+	{
+		"id": 178,
+		"input": "\\ce{A - B}",
+		"texvcjs": "{\\ce {A - B}}"
+	},
+	{
+		"id": 179,
+		"input": "\\ce{A = B}",
+		"texvcjs": "{\\ce {A = B}}"
+	},
+	{
+		"id": 180,
+		"input": "\\ce{A \\pm B}",
+		"texvcjs": "{\\ce {A \\pm B}}"
+	},
+	{
+		"id": 181,
+		"input": "\\ce{SO4^2- + Ba^2+ -> BaSO4 v}",
+		"texvcjs": "{\\ce {SO4^2- + Ba^2+ -> BaSO4 v}}"
+	},
+	{
+		"id": 182,
+		"input": "\\ce{A v B (v) -> B ^ B (^)}",
+		"texvcjs": "{\\ce {A v B (v) -> B ^ B (^)}}"
+	},
+	{
+		"id": 183,
+		"input": "\\ce{Zn^2+}",
+		"texvcjs": "{\\ce {Zn^2+}}"
+	},
+	{
+		"id": 184,
+		"input": "\\ce{RNO2 &<=>[+e] RNO2^{-.}}",
+		"texvcjs": "{\\ce {RNO2 &<=>[+e] RNO2^{-.}}}"
+	},
+	{
+		"id": 185,
+		"input": "$\\ce{NaOH(aq,$\\infty$)}$",
+		"texvcjs": "\\${\\ce {NaOH(aq,$\\infty$)}}\\$"
+	},
+	{
+		"id": 186,
+		"input": "$\\ce{H2O}$",
+		"texvcjs": "\\${\\ce {H2O}}\\$"
+	},
+	{
+		"id": 187,
+		"input": "$\\ce{Fe(CN)_{$\\frac{6}{2}$}}$",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 188,
+		"input": "$\\ce{NO_x}$ \\bf \\ce{NO_x}",
+		"texvcjs": "\\${\\ce {NO_x}}\\${\\bf {{\\ce {NO_x}}}}"
+	},
+	{
+		"id": 189,
+		"input": "$\\ce{Fe^n+}$ \\bf \\ce{Fe^n+}",
+		"texvcjs": "\\${\\ce {Fe^n+}}\\${\\bf {{\\ce {Fe^n+}}}}"
+
+	},
+	{
+		"id": 190,
+		"input": "$\\ce{x Na(NH4)HPO4 ->[\\Delta] (NaPO3)_x + x NH3 ^ + x H2O}$",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 191,
+		"input": "$\\ce{NO_$x$}$ \\sffamily\\bfseries \\ce{NO_$x$}",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 192,
+		"input": "$\\ce{NO_${x}$}$ \\bf \\ce{NO_${x}$}",
+		"texvcjs": "",
+		"ignore": true
+	},
+	{
+		"id": 193,
+		"input": "$\\ce{$cis${-}[PtCl2(NH3)2]}$",
+		"texvcjs": "\\${\\ce {$cis${-}[PtCl2(NH3)2]}}\\$"
+	},
+	{
+		"id": 194,
+		"input": "$\\underset{\\text{amphoteres Hydroxid}}{\\ce{Zn(OH)2 v}}$",
+		"texvcjs": "\\${\\underset {\\text{amphoteres Hydroxid}}{{\\ce {Zn(OH)2 v}}}}\\$"
+	},
+	{
+		"id": 195,
+		"input": "$\\underset{\\text{Hydroxozikat}}{\\ce{[Zn(OH)4]^2-}}$",
+		"texvcjs": "\\${\\underset {\\text{Hydroxozikat}}{{\\ce {[Zn(OH)4]^2-}}}}\\$"
+	},
+	{
+		"id": 196,
+		"input": "$K = \\frac{[\\ce{Hg^2+}][\\ce{Hg}]}{[\\ce{Hg2^2+}]}$",
+		"texvcjs": "\\$K={\\frac {[{\\ce {Hg^2+}}][{\\ce {Hg}}]}{[{\\ce {Hg2^2+}}]}}\\$"
+	},
+	{
+		"id": 197,
+		"input": "$K = \\ce{\\frac{[Hg^2+][Hg]}{[Hg2^2+]}}$",
+		"texvcjs": "\\$K={\\ce {{\\frac {[Hg^2+][Hg]}{[Hg2^2+]}}}}\\$"
 	}
 ]
