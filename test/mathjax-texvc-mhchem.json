@@ -618,7 +618,7 @@
 	},
 	{
 		"id": 130,
-		"input": "\\ce{$n$H2O}",
+		"input": "\\ce{§n§H2O}",
 		"texvcjs": "{\\ce {$n$H2O}}"
 	},
 	{
@@ -673,8 +673,8 @@
 	},
 	{
 		"id": 141,
-		"input": "\\ce{NaOH(aq,$\\infty$)}",
-		"texvcjs": "{\\ce {NaOH(aq,$\\infty$)}}"
+		"input": "\\ce{NaOH(aq,§\\infty§)}",
+		"texvcjs": "{\\ce {NaOH(aq,$\\infty $)}}"
 	},
 	{
 		"id": 142,
@@ -700,14 +700,13 @@
 	},
 	{
 		"id": 146,
-		"input": "\\ce{NaOH(aq,$\\infty$)}",
-		"texvcjs": "{\\ce {NaOH(aq,$\\infty$)}}"
+		"input": "\\ce{NaOH(aq,§\\infty§)}",
+		"texvcjs": "{\\ce {NaOH(aq,$\\infty $)}}"
 	},
 	{
 		"id": 147,
-		"input": "\\ce{Fe(CN)_{$\\frac{6}{2}$}}",
-		"texvcjs": "",
-		"ignore": true
+		"input": "\\ce{Fe(CN)_{§\\frac{6}{2}§}}",
+		"texvcjs": "{\\ce {Fe(CN)_{${\\frac {6}{2}}$}}}"
 	},
 	{
 		"id": 148,
@@ -791,9 +790,8 @@
 	},
 	{
 		"id": 164,
-		"input": "\\ce{Hg^2+ ->[I-] $\\underset{\\mathrm{red}}{\\ce{HgI2}}$} ",
-		"texvcjs": "",
-		"ignore": true
+		"input": "\\ce{Hg^2+ ->[I-] §\\underset{\\mathrm{red}}{\\ce{HgI2}}§} ",
+		"texvcjs": "{\\ce {Hg^2+ ->[I-] ${\\underset {\\mathrm {red} }{{\\ce {HgI2}}}}$}}"
 	},
 	{
 		"id": 169,
@@ -817,13 +815,13 @@
 	},
 	{
 		"id": 173,
-		"input": "\\ce{A ->[$x$][$x_i$] B}",
-		"texvcjs": "{\\ce {A ->[$x$][$x_i$] B}}"
+		"input": "\\ce{A ->[§x§][§x_i§] B}",
+		"texvcjs": "{\\ce {A ->[$x$][$x_{i}$] B}}"
 	},
 	{
 		"id": 175,
-		"input": "\\ce{A ->[${x}$] B}",
-		"texvcjs": "{\\ce {A ->[${,x},$] B}}"
+		"input": "\\ce{A ->[§{x}§] B}",
+		"texvcjs": "{\\ce {A ->[${x}$] B}}"
 	},
 	{
 		"id": 177,
@@ -867,8 +865,8 @@
 	},
 	{
 		"id": 185,
-		"input": "$\\ce{NaOH(aq,$\\infty$)}$",
-		"texvcjs": "\\${\\ce {NaOH(aq,$\\infty$)}}\\$"
+		"input": "$\\ce{NaOH(aq,§\\infty§)}$",
+		"texvcjs": "\\${\\ce {NaOH(aq,$\\infty $)}}\\$"
 	},
 	{
 		"id": 186,
@@ -877,9 +875,8 @@
 	},
 	{
 		"id": 187,
-		"input": "$\\ce{Fe(CN)_{$\\frac{6}{2}$}}$",
-		"texvcjs": "",
-		"ignore": true
+		"input": "$\\ce{Fe(CN)_{§\\frac{6}{2}$}}§",
+		"texvcjs": ""
 	},
 	{
 		"id": 188,
@@ -894,21 +891,18 @@
 	},
 	{
 		"id": 190,
-		"input": "$\\ce{x Na(NH4)HPO4 ->[\\Delta] (NaPO3)_x + x NH3 ^ + x H2O}$",
-		"texvcjs": "",
-		"ignore": true
+		"input": "§\\ce{x Na(NH4)HPO4 ->[\\Delta] (NaPO3)_x + x NH3 ^ + x H2O}§",
+		"texvcjs": ""
 	},
 	{
 		"id": 191,
-		"input": "$\\ce{NO_$x$}$ \\sffamily\\bfseries \\ce{NO_$x$}",
-		"texvcjs": "",
-		"ignore": true
+		"input": "§\\ce{NO_$x$}§ \\bf\\ce{NO_$x$}",
+		"texvcjs": ""
 	},
 	{
 		"id": 192,
-		"input": "$\\ce{NO_${x}$}$ \\bf \\ce{NO_${x}$}",
-		"texvcjs": "",
-		"ignore": true
+		"input": "§\\ce{NO_§{x}§}§ \\bf \\ce{NO_§{x}§}",
+		"texvcjs": ""
 	},
 	{
 		"id": 193,
