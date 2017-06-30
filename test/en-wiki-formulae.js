@@ -7,7 +7,7 @@ var path = require('path');
 
 // set this variable to the path to your texvccheck binary for additional
 // sanity-checking against the ocaml texvccheck.
-var TEXVCBINARY = 0; // "../mediawiki/extensions/Math/texvccheck/texvccheck";
+var TEXVCBINARY = "../../texvc/texvc"; // "../mediawiki/extensions/Math/texvccheck/texvccheck";
 
 var getocaml = function(input, fixDoubleSpacing, done) {
     if (!TEXVCBINARY) { done( '-no texvcbinary') ; }
@@ -170,7 +170,7 @@ var normalize = function(s) {
 // run them in chunks in order to speed up reporting.
 var CHUNKSIZE = 1000;
 
-describe.skip('All formulae from en-wiki:', function() {
+describe('All formulae from en-wiki:', function() {
     this.timeout(0);
 
     // read test cases
