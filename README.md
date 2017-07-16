@@ -15,7 +15,7 @@ The `texvcjs` library was originally written to be used by the
 
 ## Installation
 
-Node version 0.8 and 0.10 are tested to work.
+Node version 4, 5, 6, 7, and 8 are tested to work.
 
 Install the node package dependencies with:
 ```
