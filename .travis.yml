@@ -6,3 +6,6 @@ node_js:
     - "6"
 before_install:
   - npm install npm -g
+after_success:
+  - npm run cover
+  - npm run report-coverage
