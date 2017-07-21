@@ -93,11 +93,11 @@ Licensed under GPLv2.
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
 
-[1]: https://travis-ci.org/manfredschaefer/texvcjs.svg
-[2]: https://travis-ci.org/manfredschaefer/texvcjs
-[3]: https://david-dm.org/manfredschaefer/texvcjs.svg
-[4]: https://david-dm.org/manfredschaefer/texvcjs
-[5]: https://david-dm.org/manfredschaefer/texvcjs/dev-status.svg
-[6]: https://david-dm.org/manfredschaefer/texvcjs#info=devDependencies
+[1]: https://travis-ci.org/wikimedia/texvcjs.svg
+[2]: https://travis-ci.org/wikimedia/texvcjs
+[3]: https://david-dm.org/wikimedia/texvcjs.svg
+[4]: https://david-dm.org/wikimedia/texvcjs
+[5]: https://david-dm.org/wikimedia/texvcjs/dev-status.svg
+[6]: https://david-dm.org/wikimedia/texvcjs#info=devDependencies
 [7]: https://coveralls.io/repos/github/manfredschaefer/texvcjs/badge.svg?branch=master
 [8]: https://coveralls.io/github/manfredschaefer/texvcjs?branch=master
