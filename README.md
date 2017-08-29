@@ -77,6 +77,34 @@ queries on the input source.  An example can be found in `lib/astutil.js`
 which defines a visitor function to test for the presence of specific
 TeX functions in the input.
 
+## mhchem
+
+To use the `\ce` tags from the mhchem package the parser needs to be called
+with the mhchem option. During the parsing if a `\ce` tag is encountered
+its contens is treated according to the [mhchem grammar]. The parsing in
+general and the building up of the AST is done in a similar fashion to the
+math mode but preserves the whitespaces when needed.
+
+As the design of the parser does not allow the usage of the dollar sign in
+the math mode the tags `\begin{math}` and `\end{math}` were introduced to 
+provide the ability to switch to math mode within a chemical formula. The
+undocumented `\color` tag of mhchem is only supported for named colors. 
+The full documentation of the mhchem package can be found on the 
+[mhchem website].
+
+### Examples:
+This example would be typeset wrongly without the extended parser as some
+charges would be typeset as bonds and some addition signs would end up as 
+charges. Running:
+```sh
+bin/texvcjs  --usemhchem \ce{2Na + 2H2O -> 2Na+ + 2OH- + H-H}
+```
+emits:
+```
++{\ce {2Na + 2H2O -> 2Na+ + 2OH- + H-H}}
+```
+More examples can be found on the [mhchem website].
+
 ## License
 
 Copyright (c) 2014 C. Scott Ananian
@@ -89,6 +117,9 @@ Licensed under GPLv2.
 [Collection extension]: https://www.mediawiki.org/wiki/Extension:Collection
 [OCaml]: https://ocaml.org/
 [LaTeX packages]: http://www.ctan.org/
+
+[mhchem grammar]: https://raw.githubusercontent.com/mhchem/MathJax-mhchem-validity-syntax/master/mhchem-strict-simplified.grm
+[mhchem website]: https://mhchem.github.io/MathJax-mhchem/
 
 [NPM1]: https://nodei.co/npm/texvcjs.svg
 [NPM2]: https://nodei.co/npm/texvcjs/
