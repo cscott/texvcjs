@@ -1660,5 +1660,21 @@
       "usemathrm": true,
       "usemhchem": true
     }
+  },
+  {
+    "id": 203,
+    "input": "\\strokeint",
+    "texvcjs": "\\strokeint ",
+    "options": {
+      "usemathrm": true
+    }
+  },
+  {
+    "id": 204,
+    "input": "\\intbar",
+    "texvcjs": "\\intbar ",
+    "options": {
+      "usemathrm": true
+    }
   }
 ]
