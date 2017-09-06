@@ -36,6 +36,13 @@ describe('API', function() {
         );
     });
 
+    it('should accept parsed input', function() {
+        var parsed = texvcjs.parse('y=x+2');
+        var result = texvcjs.check(parsed);
+        assert.equal(result.status, '+');
+        assert.equal(result.output, 'y=x+2');
+    });
+
     var testcases = [
         // From MathInputCheckTexvcTest:
         // testGetValidTex()

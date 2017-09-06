@@ -5,4 +5,3 @@
 * Verify UTF-8 handling
   - does CLI handle utf-8 correctly?
 * Add test cases from [[mw:MathTest]]
-* Improve coverage tests for lib/index.js:37 there is no known input that returns status -
