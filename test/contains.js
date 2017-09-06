@@ -50,6 +50,10 @@ describe('ast.Tex.contains_func', function() {
 		    yes: [ '\\mathbb' ],
 		    no: [ 'R' ]
 	    },
+        { input: '\\ce{\\underbrace{a}_{b}}',
+            yes: [ '\\underbrace' ],
+            no: [ 'a','b' ]
+        },
 	    /*{ input: '\\reals',
 		    yes: [ '\\mathbb{R}' ],
 		    no: [ 'R' ]
@@ -61,7 +65,7 @@ describe('ast.Tex.contains_func', function() {
             (expected ? tc.yes : tc.no).forEach(function(target) {
                 it('should ' + (expected ? '' : 'not ') + 'find ' + target +
                    ' in ' + tc.input.replace(/\n/g,' '), function() {
-                       var p = texvcjs.parse(tc.input, { debug: true });
+                       var p = texvcjs.parse(tc.input, { debug: true, usemhchem:true });
                        assert.equal(texvcjs.contains_func(p, target),
                                     expected ? target : false);
                    });
