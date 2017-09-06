@@ -54,10 +54,10 @@ describe('ast.Tex.contains_func', function() {
             yes: [ '\\underbrace' ],
             no: [ 'a','b' ]
         },
-	    /*{ input: '\\reals',
-		    yes: [ '\\mathbb{R}' ],
-		    no: [ 'R' ]
-	    }*/
+	    { input: '\\AA',
+		    yes: [ '\\mbox' ],
+		    no: [ 'A' ]
+	    }
     ];
     testcases.forEach(function(tc) {
         tc.no = (tc.no || []).concat(['\\foo', '\\begin{foo}']);
@@ -75,5 +75,10 @@ describe('ast.Tex.contains_func', function() {
 
     it('should process string input', function() {
         assert.equal(texvcjs.contains_func("\\mathbb{R}", "\\mathbb"), "\\mathbb");
+    });
+
+    it('should process mathrm', function() {
+        var p = texvcjs.parse( "\\AA", { debug: true, usemathrm:true });
+        assert.equal(texvcjs.contains_func(p, "\\mathrm"), "\\mathrm");
     });
 });
