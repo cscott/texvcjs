@@ -81,4 +81,12 @@ describe('ast.Tex.contains_func', function() {
         var p = texvcjs.parse( "\\AA", { debug: true, usemathrm:true });
         assert.equal(texvcjs.contains_func(p, "\\mathrm"), "\\mathrm");
     });
+
+    it('should process partial trees', function() {
+        var p = texvcjs.parse( "a" );
+        assert.equal(texvcjs.contains_func(p[0], "\\test"), false);
+    });
+    it('should process parsed search input', function() {
+        assert.equal(texvcjs.contains_func('\\left(abc\\right)', ['\\left', '\\right']), '\\left');
+    });
 });
