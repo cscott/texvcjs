@@ -130,5 +130,5 @@ Licensed under GPLv2.
 [4]: https://david-dm.org/wikimedia/texvcjs
 [5]: https://david-dm.org/wikimedia/texvcjs/dev-status.svg
 [6]: https://david-dm.org/wikimedia/texvcjs#info=devDependencies
-[7]: https://coveralls.io/repos/github/manfredschaefer/texvcjs/badge.svg?branch=master
-[8]: https://coveralls.io/github/manfredschaefer/texvcjs?branch=master
+[7]: https://coveralls.io/repos/github/wikimedia/texvcjs/badge.svg?branch=master
+[8]: https://coveralls.io/github/wikimedia/texvcjs?branch=master
