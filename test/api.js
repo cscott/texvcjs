@@ -29,6 +29,13 @@ describe('API', function() {
         assert.equal(result.status, 'S');
     });
 
+    it('should throw an exception in debug mode', function () {
+        assert.throws(function () {
+                texvcjs.check('^', {debug: true});
+            }, /SyntaxError/
+        );
+    });
+
     var testcases = [
         // From MathInputCheckTexvcTest:
         // testGetValidTex()
