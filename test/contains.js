@@ -68,4 +68,8 @@ describe('ast.Tex.contains_func', function() {
             });
         });
     });
+
+    it('should process string input', function() {
+        assert.equal(texvcjs.contains_func("\\mathbb{R}", "\\mathbb"), "\\mathbb");
+    });
 });
