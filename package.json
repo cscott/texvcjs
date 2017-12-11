@@ -1,41 +1,41 @@
 {
-    "name": "mathoid-texvcjs",
-    "version": "0.3.3",
-    "description": "A TeX/LaTeX validator for mediawiki.",
-    "main": "lib/index.js",
-    "scripts": {
-        "build": "node -e 'require(\"./lib/build-parser\")'",
-        "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && mocha",
-        "cover": "istanbul cover _mocha",
-        "report-coverage": "cat ./coverage/lcov.info | coveralls"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/wikimedia/texvcjs"
-    },
-    "keywords": [
-        "tex",
-        "wikitext",
-        "mediawiki",
-        "mathoid",
-        "texvc"
-    ],
-    "license": "GPL-2.0",
-    "bugs": {
-        "url": "https://phabricator.wikimedia.org/project/profile/1771/"
-    },
-    "dependencies": {
-        "commander": "~2.11.0"
-    },
-    "devDependencies": {
-        "coveralls": "^2.7.1",
-        "istanbul": "^0.4.5",
-        "jshint": "~2.9.1",
-        "mocha": "~3.5.0",
-        "mocha-lcov-reporter": "^1.3.0",
-        "pegjs": "~0.10.0"
-    },
-    "bin": {
-        "texvcjs": "./bin/texvcjs"
-    }
+  "name": "mathoid-texvcjs",
+  "version": "0.3.3",
+  "description": "A TeX/LaTeX validator for mediawiki.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "node -e 'require(\"./lib/build-parser\")'",
+    "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && mocha",
+    "cover": "istanbul cover _mocha",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wikimedia/texvcjs"
+  },
+  "keywords": [
+    "tex",
+    "wikitext",
+    "mediawiki",
+    "mathoid",
+    "texvc"
+  ],
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://phabricator.wikimedia.org/project/profile/1771/"
+  },
+  "dependencies": {
+    "commander": "~2.12.2"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "jshint": "~2.9.1",
+    "mocha": "~4.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "pegjs": "~0.10.0"
+  },
+  "bin": {
+    "texvcjs": "./bin/texvcjs"
+  }
 }

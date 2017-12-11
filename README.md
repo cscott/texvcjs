@@ -1,4 +1,5 @@
 # texvcjs
+
 [![NPM][NPM1]][NPM2]
 
 [![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6] [![Coverage Status][7]][8]
@@ -121,8 +122,8 @@ Licensed under GPLv2.
 [mhchem grammar]: https://raw.githubusercontent.com/mhchem/MathJax-mhchem-validity-syntax/master/mhchem-strict-simplified.grm
 [mhchem website]: https://mhchem.github.io/MathJax-mhchem/
 
-[NPM1]: https://nodei.co/npm/texvcjs.svg
-[NPM2]: https://nodei.co/npm/texvcjs/
+[NPM1]: https://nodei.co/npm/mathoid-texvcjs.png
+[NPM2]: https://nodei.co/npm/mathoid-texvcjs/
 
 [1]: https://travis-ci.org/wikimedia/texvcjs.svg
 [2]: https://travis-ci.org/wikimedia/texvcjs
