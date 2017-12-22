@@ -1,6 +1,6 @@
 {
   "name": "mathoid-texvcjs",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A TeX/LaTeX validator for mediawiki.",
   "main": "lib/index.js",
   "scripts": {
