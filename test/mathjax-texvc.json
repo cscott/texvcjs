@@ -1676,5 +1676,24 @@
     "options": {
       "usemathrm": true
     }
+  },
+  {
+    "id": 205,
+    "input": "\\ ",
+    "texvcjs": "\\ ",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    }
+  },
+  {
+    "id": 206,
+    "input": "\\ce {\\ }",
+    "texvcjs": "{\\ce {\\ }}",
+    "comment": "Bug T183557",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    }
   }
 ]
