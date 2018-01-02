@@ -120,11 +120,25 @@ describe('API', function() {
             if (/_required$/.test(f)) {
                 assert.equal(!!result[f], !!t[f], f);
             }
+            assert.equal(result.warnings.length, 0, "No warnings expected here.");
         });
             }
             if (result.status === 'F') {
                 assert.equal(result.details, t.details);
+                assert.equal(result.warnings.length, 0, "No warnings expected here.");
             }
         });
     });
+
+  it('should retry parsing if oldmhchem is not set', function() {
+    var result = texvcjs.check('\\ce {A\\;+\\;B\\;->\\;C}',{usemhchem:true});
+    assert.equal(result.status, '+');
+    assert.equal(result.warnings[0].type, 'mhchem-deprecation');
+    assert.equal(result.warnings[0].details.status, 'S');
+  });
+
+  it('should not retry parsing if oldmhchem is set', function() {
+    var result = texvcjs.check('\\ce {A\\;+\\;B\\;->\\notvalidcommand}',{usemhchem:true,oldmhchem:true});
+    assert.equal(result.status, 'F');
+  });
 });

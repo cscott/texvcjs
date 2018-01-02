@@ -21,6 +21,8 @@ describe('Run test for all mathjax-texvc commands:', function () {
                         output: result.output,
                         expected: testcase.texvcjs
                     }, null, 2));
+                assert.equal(result.status,'+');
+                assert.equal(result.warnings.length, testcase.warnCount||0);
             });
         }
     });

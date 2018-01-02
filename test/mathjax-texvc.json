@@ -1695,5 +1695,48 @@
       "usemathrm": true,
       "usemhchem": true
     }
+  },
+  {
+    "id": 207,
+    "input": "\\ce {A\\;+\\;B\\;->\\;C}",
+    "texvcjs": "{\\ce {A\\;+\\;B\\;->\\;C}}",
+    "comment": "Bug T183557",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    },
+    "warnCount": 1
+  },
+  {
+    "id": 208,
+    "input": "\\ce {pH=-\\log _{10}[H+]}",
+    "texvcjs": "{\\ce {pH=-\\log _{10}[H+]}}",
+    "comment": "Bug T183557",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    },
+    "warnCount": 1
+  },
+  {
+    "id": 209,
+    "input": "\\ce {pH = -\\begin{math}\\log_10\\end{math}[H+]}",
+    "texvcjs": "{\\ce {pH = -$\\log _{1}0$[H+]}}",
+    "comment": "Bug T183557",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    }
+  },
+  {
+    "id": 210,
+    "input": "\\ce {pH = -$\\log_10$[H+]}",
+    "texvcjs": "{\\ce {pH=-\\$\\log _{1}0\\$[H+]}}",
+    "comment": "TODO: Consider allowing dollar inside math mode, or add math commands as chem symbols",
+    "options": {
+      "usemathrm": true,
+      "usemhchem": true
+    },
+    "warnCount": 1
   }
 ]
