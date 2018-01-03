@@ -6,7 +6,7 @@ var texvcjs = require('../');
 // run them in chunks in order to speed up reporting.
 var CHUNKSIZE = 1000;
 
-describe.skip('All formulae from chem regression dataset:', function() {
+describe('All formulae from chem regression dataset:', function() {
     this.timeout(0);
 
     // read test cases
