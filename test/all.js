@@ -143,12 +143,14 @@ describe('Comprehensive test cases', function() {
                 '\\triangledown \\triangleleft \\trianglelefteq \\triangleq ' +
                 '\\triangleright \\trianglerighteq ' +
                 '\\upharpoonleft \\upharpoonright \\uplus \\upsilon ' +
-                '\\Upsilon \\upuparrows \\varepsilon \\varinjlim ' +
-                '\\varkappa \\varliminf \\varlimsup \\varnothing \\varphi ' +
-                '\\varpi \\varprojlim \\varpropto \\varrho \\varsigma ' +
+                '\\Upsilon \\upuparrows \\varDelta \\varepsilon \\varGamma ' +
+                '\\varinjlim \\varkappa \\varLambda \\varliminf \\varlimsup ' +
+                '\\varnothing \\varOmega \\varphi \\varPhi \\varpi \\varPhi ' +
+                '\\varprojlim \\varpropto \\varrho \\varsigma \\varSigma ' +
                 '\\varsubsetneq \\varsubsetneqq \\varsupsetneq ' +
-                '\\varsupsetneqq \\vartheta \\vartriangle \\vartriangleleft ' +
-                '\\vartriangleright \\vdash \\Vdash \\vDash \\vdots \\vee ' +
+                '\\varsupsetneqq \\vartheta \\varTheta \\vartriangle ' +
+                '\\vartriangleleft \\vartriangleright \\varUpsilon \\varXi '+
+                '\\vdash \\Vdash \\vDash \\vdots \\vee ' +
                 '\\veebar \\vline \\Vvdash \\wedge ' +
                 '\\wp \\wr \\xi \\Xi \\zeta '
         },
