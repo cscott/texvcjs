@@ -209,6 +209,7 @@ describe('Comprehensive test cases', function() {
             skipOcaml: true
         },
         'Literals (3)': {
+            oldtexvc: true,
             input:
                 '\\C\\H\\N\\Q\\R\\Z\\alef\\alefsym\\Alpha\\and\\ang\\Beta' +
                 '\\bull\\Chi\\clubs\\cnums\\Complex\\Dagger\\diamonds\\Doteq' +
@@ -317,6 +318,7 @@ describe('Comprehensive test cases', function() {
             skipOcaml: 'double spacing and extra braces'
         },
         'FUN_AR1 (2)': {
+            oldtexvc: true,
             input: '\\Bbb{foo}\\bold{bar}',
             output: '{\\mathbb {foo}}{\\mathbf {bar}}',
             skipOcaml: 'double spacing',
@@ -452,7 +454,7 @@ describe('Comprehensive test cases', function() {
             tc.output = tc.output || tc.input;
             if (!tc.skipJs) {
                 it('output should be correct', function() {
-                    var result = texvcjs.check(tc.input, { debug: true, usemathrm:tc.usemathrm});
+                    var result = texvcjs.check(tc.input, { debug: true, usemathrm:tc.usemathrm, oldtexvc: tc.oldtexvc});
                     assert.equal(result.status, '+');
                     assert.equal(result.output, tc.output);
                 });
