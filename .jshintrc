@@ -9,7 +9,7 @@
         "Promise",
         "Set"
     ],
-
+    "esversion": 6,
     "bitwise": true,
     "curly": true,
     "eqeqeq": true,
