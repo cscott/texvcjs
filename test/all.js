@@ -1,48 +1,48 @@
-"use strict";
+'use strict';
 var assert = require('assert');
 var texvcjs = require('../');
 
 // set this variable to the path to your texvccheck binary for additional
 // sanity-checking against the ocaml texvccheck.
-var TEXVCBINARY=0; // "../../Math/texvccheck/texvccheck";
+var TEXVCBINARY = 0; // "../../Math/texvccheck/texvccheck";
 
-var tryocaml = function(input, output, done, fixDoubleSpacing) {
+var tryocaml = function (input, output, done, fixDoubleSpacing) {
     if (!TEXVCBINARY) { return done(); }
     var cp = require('child_process');
-    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function(err,stdout,stderr) {
+    cp.execFile(TEXVCBINARY, [input], { encoding: 'utf8' }, function (err, stdout, stderr) {
         if (err) { return done(err); }
         if (stderr) { return done(stderr); }
-        if (fixDoubleSpacing) { stdout = stdout.replace(/  /g, ' '); }
+        if (fixDoubleSpacing) { stdout = stdout.replace(/ {2}/g, ' '); }
         assert.equal(stdout, '+' + output);
         done();
     });
 };
 
 var DELIMITERS1 =
-    [ "(",")","[","]","\\{","\\}","|" ];
+    [ '(', ')', '[', ']', '\\{', '\\}', '|' ];
 var DELIMITERS2 =
     ('\\backslash\\downarrow\\Downarrow\\langle\\lbrace\\lceil\\lfloor' +
      '\\llcorner\\lrcorner\\rangle\\rbrace\\rceil\\rfloor\\rightleftharpoons' +
      '\\twoheadleftarrow\\twoheadrightarrow\\ulcorner\\uparrow\\Uparrow' +
-     '\\updownarrow\\Updownarrow\\urcorner\\Vert\\vert\\lbrack\\rbrack').
-    split(/\\/).slice(1).map(function(f) { return "\\" + f; });
+     '\\updownarrow\\Updownarrow\\urcorner\\Vert\\vert\\lbrack\\rbrack')
+    .split(/\\/).slice(1).map(function (f) { return '\\' + f; });
 var DELIMITERS3 =
-    ('\\darr\\dArr\\Darr\\lang\\rang\\uarr\\uArr\\Uarr').
-    split(/\\/).slice(1).map(function(f) { return "\\" + f; });
+    ('\\darr\\dArr\\Darr\\lang\\rang\\uarr\\uArr\\Uarr')
+    .split(/\\/).slice(1).map(function (f) { return '\\' + f; });
 
-describe('Comprehensive test cases', function() {
+describe('Comprehensive test cases', function () {
     var testcases = {
         'Box functions': {
             input:
-                '\\text {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
-                '\\mbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
-                '\\hbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} '+
+                '\\text {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
+                '\\mbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
+                '\\hbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ' +
                 '\\vbox {-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF} ',
             output:
-                '{\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'+
-                '{\\vbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}',
+                '{\\text{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
+                '{\\mbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
+                '{\\hbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}' +
+                '{\\vbox{-0-9a-zA-Z+*,=():/;?.!\'` \x80-\xFF}}'
         },
         'Box functions (2)': {
             input: '{\\text{ABC}}{\\mbox{ABC}}{\\hbox{ABC}}{\\vbox{ABC}}',
@@ -72,7 +72,7 @@ describe('Comprehensive test cases', function() {
                 '\\bigoplus \\bigotimes \\bigsqcup \\bigstar ' +
                 '\\bigtriangledown \\bigtriangleup \\biguplus \\bigvee ' +
                 '\\bigwedge \\blacklozenge \\blacksquare \\blacktriangle ' +
-                '\\blacktriangledown \\blacktriangleleft \\blacktriangleright '+
+                '\\blacktriangledown \\blacktriangleleft \\blacktriangleright ' +
                 '\\bot \\bowtie \\Box \\boxdot \\boxminus \\boxplus ' +
                 '\\boxtimes \\bullet \\bumpeq \\Bumpeq \\cap \\Cap \\cdot ' +
                 '\\cdots \\centerdot \\checkmark \\chi \\circ \\circeq ' +
@@ -149,7 +149,7 @@ describe('Comprehensive test cases', function() {
                 '\\varprojlim \\varpropto \\varrho \\varsigma \\varSigma ' +
                 '\\varsubsetneq \\varsubsetneqq \\varsupsetneq ' +
                 '\\varsupsetneqq \\vartheta \\varTheta \\vartriangle ' +
-                '\\vartriangleleft \\vartriangleright \\varUpsilon \\varXi '+
+                '\\vartriangleleft \\vartriangleright \\varUpsilon \\varXi ' +
                 '\\vdash \\Vdash \\vDash \\vdots \\vee ' +
                 '\\veebar \\vline \\Vvdash \\wedge ' +
                 '\\wp \\wr \\xi \\Xi \\zeta '
@@ -196,7 +196,7 @@ describe('Comprehensive test cases', function() {
             '\\mathrm {\\varstigma} '
         },
         'Literals (2\') MJ': {
-            usemathrm:true,
+            usemathrm: true,
             /* We can parse what we emit (but the ocaml version can't) */
             input:
             '\\mathrm {\\AA} \\mathrm {\\Coppa} \\mathrm {\\coppa} ' +
@@ -238,26 +238,26 @@ describe('Comprehensive test cases', function() {
                 '\\S \\spadesuit \\subset \\subseteq \\supseteq ' +
                 '\\mathrm {T} \\vartheta \\mbox{\\coppa} \\wp \\mathrm {Z} '
         },
-        'Big': (function() {
+        Big: (function () {
             var BIGS = ('\\big\\Big\\bigg\\Bigg\\biggl\\Biggl\\biggr\\Biggr' +
              '\\bigl\\Bigl\\bigr\\Bigr').split(/\\/).slice(1);
-            var DELIMITERS = DELIMITERS1.concat(DELIMITERS2).
-                concat(["\\darr","\\uarr"]);
-            var input = BIGS.map(function(b) {
-                return DELIMITERS.map(function(d) {
-                    return "\\" + b + d;
+            var DELIMITERS = DELIMITERS1.concat(DELIMITERS2)
+                .concat(['\\darr', '\\uarr']);
+            var input = BIGS.map(function (b) {
+                return DELIMITERS.map(function (d) {
+                    return '\\' + b + d;
                 }).join('');
             }).join('');
-            var output = BIGS.map(function(b) {
-                return DELIMITERS.map(function(d) {
-                    if (d === "\\darr") { d = "\\downarrow"; }
-                    if (d === "\\uarr") { d = "\\uparrow"; }
-                    if (d.charAt(0)==='\\' && d.length > 2) { d = d + " "; }
-                    return "{\\" + b + " " + d + "}";
+            var output = BIGS.map(function (b) {
+                return DELIMITERS.map(function (d) {
+                    if (d === '\\darr') { d = '\\downarrow'; }
+                    if (d === '\\uarr') { d = '\\uparrow'; }
+                    if (d.charAt(0) === '\\' && d.length > 2) { d = d + ' '; }
+                    return '{\\' + b + ' ' + d + '}';
                 }).join('');
             }).join('');
             return { input: input, output: output };
-        })(),
+        }()),
         'Delimiters (1)': {
             input: DELIMITERS1.join('') + DELIMITERS2.join(' ') + ' '
         },
@@ -287,7 +287,7 @@ describe('Comprehensive test cases', function() {
                 '\\left\\langle \\right\\rangle ' +
                 '\\right\\uparrow \\right\\Uparrow \\right\\Uparrow '
         },
-        'FUN_AR1': {
+        FUN_AR1: {
             input:
                 '\\acute{A}\\bar{A}\\bcancel{A}\\bmod{A}\\boldsymbol{A}' +
                 '\\breve{A}\\cancel{A}\\check{A}\\ddot{A}\\dot{A}\\emph{A}' +
@@ -336,7 +336,7 @@ describe('Comprehensive test cases', function() {
             input: '\\overbrace {A} _{b}^{c}\\underbrace {C} _{d}^{e}',
             skipOcaml: 'ocaml bug'
         },
-        'FUN_AR1OPT': {
+        FUN_AR1OPT: {
             input:
                 '\\sqrt{2}\\sqrt[3]{2}' +
                 '\\xleftarrow{above}\\xleftarrow[below]{above}' +
@@ -347,7 +347,7 @@ describe('Comprehensive test cases', function() {
                 '{\\xrightarrow {above}}{\\xrightarrow[{below}]{above}}',
             skipOcaml: 'spacing'
         },
-        'FUN_AR2': {
+        FUN_AR2: {
             input:
                 '\\binom{A}{B}\\cancelto{A}{B}\\cfrac{A}{B}\\dbinom{A}{B}' +
                 '\\dfrac{A}{B}\\frac{A}{B}\\overset{A}{B}\\stackrel{A}{B}' +
@@ -359,7 +359,7 @@ describe('Comprehensive test cases', function() {
                 '{\\tfrac {A}{B}}{\\underset {A}{B}}',
             skipOcaml: 'double spacing'
         },
-        'FUN_AR2nb': {
+        FUN_AR2nb: {
             input: '\\sideset{_\\dagger^*}{_\\dagger^*}\\prod',
             output: '\\sideset {_{\\dagger }^{*}}{_{\\dagger }^{*}}\\prod '
         },
@@ -379,36 +379,36 @@ describe('Comprehensive test cases', function() {
             input: 'a\\over b',
             output: '{a \\over b}'
         },
-        'DECLh': {
+        DECLh: {
             input: '{abc \\rm def \\it ghi \\cal jkl \\bf mno}',
             output: '{abc{\\rm {def{\\it {ghi{\\cal {jkl{\\bf {mno}}}}}}}}}'
         },
-        'litsq_zq': {
+        litsq_zq: {
             input: ']^2',
             output: ']^{2}'
         },
-        'Matrices (1)': (function() {
+        'Matrices (1)': (function () {
             var ENV =
-                ['matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix',
-                 'array','align','alignat','smallmatrix','cases'];
-            var arg = function(env) {
+                ['matrix', 'pmatrix', 'bmatrix', 'Bmatrix', 'vmatrix', 'Vmatrix',
+                    'array', 'align', 'alignat', 'smallmatrix', 'cases'];
+            var arg = function (env) {
                 switch (env) {
-                case 'array': return '{|c||c|}';
-                case 'alignedat': case 'alignat': return '{3}';
-                default: return '';
+                    case 'array': return '{|c||c|}';
+                    case 'alignedat': case 'alignat': return '{3}';
+                    default: return '';
                 }
             };
             return {
-                input: ENV.map(function(env) {
-                    return '\\begin{'+env+'}'+arg(env)+' a & b \\\\\\hline c & d \\end{'+env+'}';
+                input: ENV.map(function (env) {
+                    return '\\begin{' + env + '}' + arg(env) + ' a & b \\\\\\hline c & d \\end{' + env + '}';
                 }).join(''),
-                output: ENV.map(function(env) {
-                    if (env==='align') { env = 'aligned'; }
-                    if (env==='alignat') { env = 'alignedat'; }
-                    return '{\\begin{'+env+'}'+arg(env)+'a&b\\\\\\hline c&d\\end{'+env+'}}';
+                output: ENV.map(function (env) {
+                    if (env === 'align') { env = 'aligned'; }
+                    if (env === 'alignat') { env = 'alignedat'; }
+                    return '{\\begin{' + env + '}' + arg(env) + 'a&b\\\\\\hline c&d\\end{' + env + '}}';
                 }).join('')
             };
-        })(),
+        }()),
         'Matrices (2)': {
             input: '{\\begin{array}{|c|}\\hline {\\!n\\!}\\\\\\hline \\end{array}}'
         },
@@ -444,17 +444,17 @@ describe('Comprehensive test cases', function() {
                 '\\definecolor {mycolor}{rgb}{1,0.4,0.2}' +
                 '\\pagecolor [rgb]{0.2,0.4,1}'
         },
-        'Unicode': {
+        Unicode: {
             input: '{\\mbox{💩\uD83D\uDCA9}}'
         }
     };
-    Object.keys(testcases).forEach(function(title) {
-        describe(title, function() {
+    Object.keys(testcases).forEach(function (title) {
+        describe(title, function () {
             var tc = testcases[title];
             tc.output = tc.output || tc.input;
             if (!tc.skipJs) {
-                it('output should be correct', function() {
-                    var result = texvcjs.check(tc.input, { debug: true, usemathrm:tc.usemathrm, oldtexvc: tc.oldtexvc});
+                it('output should be correct', function () {
+                    var result = texvcjs.check(tc.input, { debug: true, usemathrm: tc.usemathrm, oldtexvc: tc.oldtexvc });
                     assert.equal(result.status, '+');
                     assert.equal(result.output, tc.output);
                 });
@@ -462,7 +462,7 @@ describe('Comprehensive test cases', function() {
             if (!tc.skipReparse) {
                 // verify that the output doesn't change if we feed it
                 // through again.
-                it('should parse its own output', function() {
+                it('should parse its own output', function () {
                     var result1 = texvcjs.check(tc.output, { debug: true });
 	                var result2 = texvcjs.check(result1.output, { debug: true });
                     assert.equal(result2.status, '+');
@@ -470,12 +470,12 @@ describe('Comprehensive test cases', function() {
                 });
             }
             if (!tc.skipOcaml) {
-                it('should match ocaml output', function(done) {
+                it('should match ocaml output', function (done) {
                     tryocaml(tc.input, tc.output, done);
                 });
             }
             if (tc.skipOcaml === 'double spacing') {
-                it('should match ocaml output (except for spacing)', function(done) {
+                it('should match ocaml output (except for spacing)', function (done) {
                     tryocaml(tc.input, tc.output, done, true);
                 });
             }
