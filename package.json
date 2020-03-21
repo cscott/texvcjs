@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node -e 'require(\"./lib/build-parser\")'",
     "test": "node -e 'require(\"./lib/build-parser\")' && jshint . && mocha",
-    "cover": "istanbul cover _mocha",
+    "cover": "nyc --reporter=lcov _mocha",
     "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
@@ -28,8 +28,8 @@
     "commander": "~4.1.1"
   },
   "devDependencies": {
-    "coveralls": "^3.0.9",
-    "istanbul": "^0.4.5",
+    "coveralls": "^3.0.11",
+    "nyc": "^15.0.0",
     "jshint": "~2.11.0",
     "mocha": "~7.0.1",
     "mocha-lcov-reporter": "^1.3.0",
