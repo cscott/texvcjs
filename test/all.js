@@ -299,7 +299,7 @@ describe('Comprehensive test cases', function () {
                 '\\overline{A}\\overrightarrow{A}\\pmod{A}\\sqrt{A}' +
                 '\\textbf{A}\\textit{A}\\textrm{A}\\textsf{A}\\texttt{A}' +
                 '\\tilde{A}\\underline{A}\\vec{A}\\widehat{A}\\widetilde{A}' +
-                '\\xcancel{A}\\xleftarrow{A}\\xrightarrow{A}',
+                '\\xcancel{A}',
             output:
                 '{\\acute {A}}{\\bar {A}}{\\bcancel {A}}{\\bmod {A}}' +
                 '{\\boldsymbol {A}}{\\breve {A}}{\\cancel {A}}{\\check {A}}' +
@@ -313,8 +313,7 @@ describe('Comprehensive test cases', function () {
                 '{\\overrightarrow {A}}{\\pmod {A}}{\\sqrt {A}}' +
                 '{\\textbf {A}}{\\textit {A}}{\\textrm {A}}{\\textsf {A}}' +
                 '{\\texttt {A}}{\\tilde {A}}{\\underline {A}}{\\vec {A}}' +
-                '{\\widehat {A}}{\\widetilde {A}}{\\xcancel {A}}' +
-                '{\\xleftarrow {A}}{\\xrightarrow {A}}',
+                '{\\widehat {A}}{\\widetilde {A}}{\\xcancel {A}}',
             skipOcaml: 'double spacing and extra braces'
         },
         'FUN_AR1 (2)': {
@@ -336,6 +335,10 @@ describe('Comprehensive test cases', function () {
             input: '\\overbrace {A} _{b}^{c}\\underbrace {C} _{d}^{e}',
             skipOcaml: 'ocaml bug'
         },
+        'FUN_AR1NB (4)': {
+            input: '\\xleftarrow{A}\\xrightarrow{A}',
+            output: '\\xleftarrow {A} \\xrightarrow {A} '
+        },
         FUN_AR1OPT: {
             input:
                 '\\sqrt{2}\\sqrt[3]{2}' +
@@ -343,8 +346,8 @@ describe('Comprehensive test cases', function () {
                 '\\xrightarrow{above}\\xrightarrow[below]{above}',
             output:
                 '{\\sqrt {2}}{\\sqrt[{3}]{2}}' +
-                '{\\xleftarrow {above}}{\\xleftarrow[{below}]{above}}' +
-                '{\\xrightarrow {above}}{\\xrightarrow[{below}]{above}}',
+                '\\xleftarrow {above} {\\xleftarrow[{below}]{above}}' +
+                '\\xrightarrow {above} {\\xrightarrow[{below}]{above}}',
             skipOcaml: 'spacing'
         },
         FUN_AR2: {
