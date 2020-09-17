@@ -2,8 +2,6 @@
 
 [![NPM][NPM1]][NPM2]
 
-[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6] [![Coverage Status][7]][8]
-
 A TeX/LaTeX validator.
 
 `texvcjs` takes user input and validates it while replacing
@@ -124,12 +122,3 @@ Licensed under GPLv2.
 
 [NPM1]: https://nodei.co/npm/mathoid-texvcjs.png
 [NPM2]: https://nodei.co/npm/mathoid-texvcjs/
-
-[1]: https://travis-ci.org/wikimedia/texvcjs.svg
-[2]: https://travis-ci.org/wikimedia/texvcjs
-[3]: https://david-dm.org/wikimedia/texvcjs.svg
-[4]: https://david-dm.org/wikimedia/texvcjs
-[5]: https://david-dm.org/wikimedia/texvcjs/dev-status.svg
-[6]: https://david-dm.org/wikimedia/texvcjs#info=devDependencies
-[7]: https://coveralls.io/repos/github/wikimedia/texvcjs/badge.svg?branch=master
-[8]: https://coveralls.io/github/wikimedia/texvcjs?branch=master
