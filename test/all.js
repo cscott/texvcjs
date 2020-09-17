@@ -291,10 +291,10 @@ describe('Comprehensive test cases', function () {
             input:
                 '\\acute{A}\\bar{A}\\bcancel{A}\\bmod{A}\\boldsymbol{A}' +
                 '\\breve{A}\\cancel{A}\\check{A}\\ddot{A}\\dot{A}\\emph{A}' +
-                '\\grave{A}\\hat{A}\\mathbb{A}\\mathbf{A}\\mathbin{A}' +
+                '\\grave{A}\\hat{A}\\mathbb{A}\\mathbf{A}' +
                 '\\mathcal{A}\\mathclose{A}\\mathfrak{A}\\mathit{A}' +
                 '\\mathop{A}\\mathopen{A}\\mathord{A}\\mathpunct{A}' +
-                '\\mathrel{A}\\mathrm{A}\\mathsf{A}\\mathtt{A}' +
+                '\\mathrm{A}\\mathsf{A}\\mathtt{A}' +
                 '\\operatorname{A}\\overleftarrow{A}\\overleftrightarrow{A}' +
                 '\\overline{A}\\overrightarrow{A}\\pmod{A}\\sqrt{A}' +
                 '\\textbf{A}\\textit{A}\\textrm{A}\\textsf{A}\\texttt{A}' +
@@ -304,10 +304,10 @@ describe('Comprehensive test cases', function () {
                 '{\\acute {A}}{\\bar {A}}{\\bcancel {A}}{\\bmod {A}}' +
                 '{\\boldsymbol {A}}{\\breve {A}}{\\cancel {A}}{\\check {A}}' +
                 '{\\ddot {A}}{\\dot {A}}{\\emph {A}}{\\grave {A}}{\\hat {A}}' +
-                '\\mathbb {A} \\mathbf {A} {\\mathbin {A}}{\\mathcal {A}}' +
+                '\\mathbb {A} \\mathbf {A} {\\mathcal {A}}' +
                 '{\\mathclose {A}}{\\mathfrak {A}}{\\mathit {A}}' +
                 '\\mathop {A} {\\mathopen {A}}{\\mathord {A}}' +
-                '{\\mathpunct {A}}{\\mathrel {A}}\\mathrm {A} {\\mathsf {A}}' +
+                '{\\mathpunct {A}}\\mathrm {A} {\\mathsf {A}}' +
                 '{\\mathtt {A}}\\operatorname {A} {\\overleftarrow {A}}' +
                 '{\\overleftrightarrow {A}}{\\overline {A}}' +
                 '{\\overrightarrow {A}}{\\pmod {A}}{\\sqrt {A}}' +
@@ -338,6 +338,10 @@ describe('Comprehensive test cases', function () {
         'FUN_AR1NB (4)': {
             input: '\\xleftarrow{A}\\xrightarrow{A}',
             output: '\\xleftarrow {A} \\xrightarrow {A} '
+        },
+        'FUN_AR1NB (5)': {
+            input: '\\mathrel{A}\\mathbin{A}',
+            output: '\\mathrel {A} \\mathbin {A} '
         },
         FUN_AR1OPT: {
             input:
