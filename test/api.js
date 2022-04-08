@@ -137,6 +137,19 @@ describe('API', function () {
         assert.equal(result.warnings[0].details.status, 'S');
     });
 
+    it('should show a deprecation warning for \\and ', function () {
+        var result = texvcjs.check('\\and' );
+        assert.equal(result.status, '+');
+        assert.equal(result.warnings[0].type, 'texvc-deprecation');
+        assert.equal(result.warnings[0].details.status, 'S');
+    });
+
+    it('should not show a deprecation warning for \\land ', function () {
+        var result = texvcjs.check('\\land' );
+        assert.equal(result.status, '+');
+        assert.equal(result.warnings.length, 0);
+    });
+
     it('should not retry parsing if oldmhchem is set', function () {
         var result = texvcjs.check('\\ce {A\\;+\\;B\\;->\\notvalidcommand}', { usemhchem: true, oldmhchem: true });
         assert.equal(result.status, 'F');
