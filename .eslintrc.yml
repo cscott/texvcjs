@@ -1,5 +1,5 @@
 extends:
-  - 'wikimedia/server'
+  - wikimedia/server
 
 rules:
   array-bracket-spacing:
@@ -14,7 +14,7 @@ rules:
     - error
     - 4
     - SwitchCase: 1
-      MemberExpression: 'off'
+      MemberExpression: off
   no-multi-spaces:
     - off
   # defined in eslint-config-wikimedia to avoid breaking IE. Not needed here
