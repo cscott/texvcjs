@@ -1081,6 +1081,10 @@
   "\\hookrightarrow": {
     "nullary_macro": true
   },
+  "\\hphantom": {
+    "fun_ar1": true,
+    "ignore_identifier": true
+  },
   "\\hslash": {
     "ams_required": true,
     "nullary_macro": true
@@ -1686,7 +1690,8 @@
   },
   "\\operatorname": {
     "ams_required": true,
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "ignore_identifier": true
   },
   "\\oplus": {
     "nullary_macro": true
@@ -1739,6 +1744,10 @@
   },
   "\\perp": {
     "nullary_macro": true
+  },
+  "\\phantom": {
+    "fun_ar1": true,
+    "ignore_identifier": true
   },
   "\\phi": {
     "mhchem_single_macro": true,
@@ -2425,6 +2434,10 @@
   },
   "\\vline": {
     "nullary_macro": true
+  },
+  "\\vphantom": {
+    "fun_ar1": true,
+    "ignore_identifier": true
   },
   "\\wedge": {
     "nullary_macro": true

@@ -291,29 +291,29 @@ describe('Comprehensive test cases', function () {
             input:
                 '\\acute{A}\\bar{A}\\bcancel{A}\\bmod{A}\\boldsymbol{A}' +
                 '\\breve{A}\\cancel{A}\\check{A}\\ddot{A}\\dot{A}\\emph{A}' +
-                '\\grave{A}\\hat{A}\\mathbb{A}\\mathbf{A}' +
+                '\\grave{A}\\hat{A}\\hphantom{A}\\mathbb{A}\\mathbf{A}' +
                 '\\mathcal{A}\\mathclose{A}\\mathfrak{A}\\mathit{A}' +
                 '\\mathop{A}\\mathopen{A}\\mathord{A}\\mathpunct{A}' +
                 '\\mathrm{A}\\mathsf{A}\\mathtt{A}' +
                 '\\operatorname{A}\\overleftarrow{A}\\overleftrightarrow{A}' +
-                '\\overline{A}\\overrightarrow{A}\\pmod{A}\\sqrt{A}' +
+                '\\overline{A}\\overrightarrow{A}\\phantom{A}\\pmod{A}\\sqrt{A}' +
                 '\\textbf{A}\\textit{A}\\textrm{A}\\textsf{A}\\texttt{A}' +
-                '\\tilde{A}\\underline{A}\\vec{A}\\widehat{A}\\widetilde{A}' +
-                '\\xcancel{A}',
+                '\\tilde{A}\\underline{A}\\vec{A}\\vphantom{A}\\widehat{A}' +
+                '\\widetilde{A}\\xcancel{A}',
             output:
                 '{\\acute {A}}{\\bar {A}}{\\bcancel {A}}{\\bmod {A}}' +
                 '{\\boldsymbol {A}}{\\breve {A}}{\\cancel {A}}{\\check {A}}' +
                 '{\\ddot {A}}{\\dot {A}}{\\emph {A}}{\\grave {A}}{\\hat {A}}' +
-                '\\mathbb {A} \\mathbf {A} {\\mathcal {A}}' +
+                '{\\hphantom {A}}\\mathbb {A} \\mathbf {A} {\\mathcal {A}}' +
                 '{\\mathclose {A}}{\\mathfrak {A}}{\\mathit {A}}' +
                 '\\mathop {A} {\\mathopen {A}}{\\mathord {A}}' +
                 '{\\mathpunct {A}}\\mathrm {A} {\\mathsf {A}}' +
                 '{\\mathtt {A}}\\operatorname {A} {\\overleftarrow {A}}' +
                 '{\\overleftrightarrow {A}}{\\overline {A}}' +
-                '{\\overrightarrow {A}}{\\pmod {A}}{\\sqrt {A}}' +
+                '{\\overrightarrow {A}}{\\phantom {A}}{\\pmod {A}}{\\sqrt {A}}' +
                 '{\\textbf {A}}{\\textit {A}}{\\textrm {A}}{\\textsf {A}}' +
                 '{\\texttt {A}}{\\tilde {A}}{\\underline {A}}{\\vec {A}}' +
-                '{\\widehat {A}}{\\widetilde {A}}{\\xcancel {A}}',
+                '{\\vphantom {A}}{\\widehat {A}}{\\widetilde {A}}{\\xcancel {A}}',
             skipOcaml: 'double spacing and extra braces'
         },
         'FUN_AR1 (2)': {
