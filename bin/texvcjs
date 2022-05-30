@@ -26,19 +26,22 @@ PACKAGES.forEach(function (pkg) {
 });
 
 program.parse(process.argv);
+const options = program.opts();
 
 const input = program.args.join(' ');
 
-if (program.rebuild) {
+if (options.rebuild) {
     require('../lib/build-parser');
 }
 
 const texvcjs = require('../');
-const result = texvcjs.check(input, {debug: program.debug, usemathrm: program.usemathrm, usemhchem: program.usemhchem});
+const result = texvcjs.check(input, {debug: options.debug,
+    usemathrm: options.usemathrm,
+    usemhchem: options.usemhchem});
 
 // check required packages
 PACKAGES.forEach(function (pkg) {
-    if (result[pkg + '_required'] && !program[pkg]) {
+    if (result[pkg + '_required'] && !options[pkg]) {
         result.status = 'F';
         result.details = result[pkg + '_required'];
     }
@@ -47,7 +50,7 @@ PACKAGES.forEach(function (pkg) {
 // output result
 if (result.status === '+') {
     console.log(result.status + (result.output || ''));
-} else if (result.status === 'F' || program.verbose) {
+} else if (result.status === 'F' || options.verbose) {
     console.log(result.status + (result.details || ''));
 } else {
     console.log(result.status);
