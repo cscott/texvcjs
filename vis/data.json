@@ -1,0 +1,50 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "FUN2",
+      "children": [
+        {
+          "name": "\\frac"
+        },
+        {
+          "name": "LITERAL->TEX_ONLY->1"
+        },
+        {
+          "name": "LITERAL->TEX_ONLY->2"
+        }
+      ]
+    },
+    {
+      "name": "LITERAL->TEX_ONLY->-"
+    },
+    {
+      "name": "LITERAL->TEX_ONLY->\\cos "
+    },
+    {
+      "name": "FUN1nb",
+      "children": [
+        {
+          "name": "\\mathbb"
+        },
+        {
+          "name": "LITERAL->TEX_ONLY->r"
+        }
+      ]
+    },
+    {
+      "name": "FUN2",
+      "children": [
+        {
+          "name": "\\frac"
+        },
+        {
+          "name": "LITERAL->TEX_ONLY->1"
+        },
+        {
+          "name": "LITERAL->TEX_ONLY->2"
+        }
+      ]
+    }
+  ]
+}

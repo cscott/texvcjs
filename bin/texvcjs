@@ -13,7 +13,19 @@ program
     .option('-v, --verbose', 'Show verbose error information')
     .option('--usemathrm', 'Use \\mathrm instead of \\mbox to escape some text literals')
     .option('--usemhchem', 'Allow commands from the mhchem package')
-    .option('-D, --debug', 'Show stack trace on failure');
+    .option('-D, --debug', 'Show stack trace on failure')
+    .option('--info', 'use the info functionalities whih print the identified texvc ' +
+        'tokens identified by and further info')
+    .option('-c, --compact', 'info: Do not pretty print output.')
+    .option('-f, --flat', 'info: Flattens the tree for elements with only one child')
+    .option('-o, --output [format]', 'info: Output the info in a specific format. Available options are:\n' +
+        '"list": prints all tokens as list\n' +
+        '"tree": prints the texvc AST\n' +
+        '"json": a json object that can be visualized using d3\n' +
+        '"identifier": prints TeX code for all identifiers\n' +
+        '"all": is a combination of list, tree and identifier \n' +
+        '"feedback": returns data to generate user feedback in a ui', 'list');
+
 
 PACKAGES.forEach(function (pkg) {
     let msg = 'Fail validation if input requires the ';
@@ -27,16 +39,38 @@ PACKAGES.forEach(function (pkg) {
 
 program.parse(process.argv);
 const options = program.opts();
-
 const input = program.args.join(' ');
+const texvcjs = require('../');
 
 if (options.rebuild) {
     require('../lib/build-parser');
 }
 
-const texvcjs = require('../');
-const result = texvcjs.check(input, {debug: options.debug,
-    usemathrm: options.usemathrm,
+if(options.info){
+    var result;
+    if (program.output === 'feedback') {
+        result = texvcjs.feedback(input);
+    } else {
+        result = texvcjs.texvcinfo(input,
+            {debug: program.debug, format: program.output, flatTree: program.flat, compact: program.compact});
+    }
+
+    // output result
+    if (result.status === undefined) {
+        if (program.compact) {
+            console.log(JSON.stringify(result));
+        } else {
+            console.log(JSON.stringify(result, null, 2));
+        }
+    } else if (result.status === 'F' || program.verbose) {
+        console.log(result.status + (result.details || ''));
+    } else {
+        console.log(result.status + (result.details || ''));
+    }
+    process.exit(result.status === undefined ? 0 : 1);
+}
+
+const result = texvcjs.check(input, {debug: options.debug, usemathrm: options.usemathrm,
     usemhchem: options.usemhchem});
 
 // check required packages
@@ -56,3 +90,5 @@ if (result.status === '+') {
     console.log(result.status);
 }
 process.exit(result.status === '+' ? 0 : 1);
+
+

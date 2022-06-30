@@ -2,7 +2,7 @@
 
 [![NPM][NPM1]][NPM2]
 
-A TeX/LaTeX validator.
+A TeX/LaTeX validator. 
 
 `texvcjs` takes user input and validates it while replacing
 MediaWiki-specific functions.  It is a JavaScript port of [texvc],
@@ -12,9 +12,14 @@ The `texvcjs` library was originally written to be used by the
 [mw-ocg-latexer] PDF-generation backend of the mediawiki
 [Collection extension].
 
+`texvcjs` also makes it possible to print the identified texvc tokens.
+Moreover, it provides additional information on the input such as
+* listing the identifiers;
+* discovering if the expressions ends with a dot.
+
 ## Installation
 
-Node version 4, 5, 6, 7, and 8 are tested to work.
+Node version 10, 12 and 15 are tested to work.
 
 Install the node package dependencies with:
 ```
@@ -35,6 +40,12 @@ which should emit:
 ```
 +\sin(x)+{}{}\cos(x)^{2}newcommand
 ```
+
+To test the info functionalities, run texvcjs with the info flag:
+```
+./bin/texvcjs --info \\frac12 > ./vis/data.json
+```
+
 
 ## API
 
@@ -96,7 +107,7 @@ This example would be typeset wrongly without the extended parser as some
 charges would be typeset as bonds and some addition signs would end up as 
 charges. Running:
 ```sh
-bin/texvcjs  --usemhchem \ce{2Na + 2H2O -> 2Na+ + 2OH- + H-H}
+bin/texvcjs  --usemhchem '\ce{2Na + 2H2O -> 2Na+ + 2OH- + H-H}'
 ```
 emits:
 ```
