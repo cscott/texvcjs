@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "node -e 'require(\"./lib/build-parser\")'",
 		"cover": "nyc --reporter=lcov --exclude lib/parser.js_mocha ",
-		"lint": "eslint --max-warnings 0 --ext .js .",
+		"lint": "eslint --max-warnings 0 --ext .js . bin/texvcjs",
 		"test": "node -e 'require(\"./lib/build-parser\")' && npm run lint && mocha",
 		"report-coverage": "cat ./coverage/lcov.info | coveralls"
 	},

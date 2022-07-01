@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-"use strict";
+'use strict';
 const PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner', 'mathoid'];
 
 const program = require('commander');
@@ -26,7 +26,6 @@ program
         '"all": is a combination of list, tree and identifier \n' +
         '"feedback": returns data to generate user feedback in a ui', 'list');
 
-
 PACKAGES.forEach(function (pkg) {
     let msg = 'Fail validation if input requires the ';
     if (pkg === 'ams') {
@@ -46,13 +45,17 @@ if (options.rebuild) {
     require('../lib/build-parser');
 }
 
-if(options.info){
-    var result;
+let result;
+if (options.info) {
     if (program.output === 'feedback') {
         result = texvcjs.feedback(input);
     } else {
-        result = texvcjs.texvcinfo(input,
-            {debug: program.debug, format: program.output, flatTree: program.flat, compact: program.compact});
+        result = texvcjs.texvcinfo(input, {
+            debug: program.debug,
+            format: program.output,
+            // eslint-disable-next-line no-restricted-properties
+            flatTree: program.flat,
+            compact: program.compact });
     }
 
     // output result
@@ -67,11 +70,14 @@ if(options.info){
     } else {
         console.log(result.status + (result.details || ''));
     }
+    // eslint-disable-next-line no-process-exit
     process.exit(result.status === undefined ? 0 : 1);
 }
 
-const result = texvcjs.check(input, {debug: options.debug, usemathrm: options.usemathrm,
-    usemhchem: options.usemhchem});
+result = texvcjs.check(input, {
+    debug: options.debug,
+    usemathrm: options.usemathrm,
+    usemhchem: options.usemhchem });
 
 // check required packages
 PACKAGES.forEach(function (pkg) {
@@ -89,6 +95,5 @@ if (result.status === '+') {
 } else {
     console.log(result.status);
 }
+// eslint-disable-next-line no-process-exit
 process.exit(result.status === '+' ? 0 : 1);
-
-
