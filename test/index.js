@@ -21,13 +21,13 @@ var testcases = [
         input: '\\mathbb{x}',
         options: {format: "json"},
         out: {
-            "name": "root",
+            "name": "ARRAY",
             "children": [{
                 "name": "FUN1nb",
                 "children": [{"name": "\\mathbb"}, {
                     "name": "CURLY",
                     "children": [{
-                        "name": "root",
+                        "name": "ARRAY",
                         "children": [{
                             "name": "LITERAL",
                             "children": [{"name": "TEX_ONLY", "children": [{"name": "x"}]}]

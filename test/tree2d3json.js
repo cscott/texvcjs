@@ -3,27 +3,27 @@ var assert = require('assert');
 var texvc = require('../');
 var lister = require('../lib/d3json');
 var testcases = [
-    {in: '', out: {name: "root", children: []}},
+    {in: '', out: {name: "ARRAY", children: []}},
     {
         in: 'a',
         out: {
-            name: "root",
+            name: "ARRAY",
             children: [{"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{name: "a"}]}]}]
         }
     },
     {
         in: 'a^2', out: {
-        name: "root", children: [{
-            "name": "UQ", "children": [{
-                "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]
-            }, {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]}]
-        }]
-    }
+            name: "ARRAY", children: [{
+                "name": "UQ", "children": [{
+                    "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]
+                }, {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]}]
+            }]
+        }
     },
     {
         in: 'a^2+b^2',
         out: {
-            name: "root", children: [{
+            name: "ARRAY", children: [{
                 "name": "UQ",
                 "children": [{"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]},
                     {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]}]
@@ -43,12 +43,12 @@ var testcases = [
     {
         in: 'a^{2}+b^{2}',
         out: {
-            "name": "root", "children": [{
+            "name": "ARRAY", "children": [{
                 "name": "UQ", "children": [{
                     "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]
                 }, {
                     "name": "CURLY", "children": [{
-                        "name": "root", "children": [{
+                        "name": "ARRAY", "children": [{
                             "name": "LITERAL", "children": [{
                                 "name": "TEX_ONLY", "children": [{"name": "2"}]
                             }]
@@ -66,7 +66,7 @@ var testcases = [
                     }]
                 }, {
                     "name": "CURLY", "children": [{
-                        "name": "root", "children": [{
+                        "name": "ARRAY", "children": [{
                             "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]
                         }]
                     }]
@@ -77,7 +77,7 @@ var testcases = [
     {
         in: '\\frac2b',
         out: {
-            name: "root", children: [{
+            name: "ARRAY", children: [{
                 "name": "FUN2", "children": [{"name": "\\frac"}, {
                     "name": "LITERAL",
                     "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]
@@ -90,7 +90,7 @@ var testcases = [
         in: 'b^2',
         flat: true,
         out: {
-            "children": [
+            "children":
                 {
                     "children": [
                         {
@@ -101,9 +101,8 @@ var testcases = [
                         }
                     ],
                     "name": "UQ"
-                }
-            ],
-            "name": "root"
+                },
+            "name": "ARRAY"
         }
     }
 ];
