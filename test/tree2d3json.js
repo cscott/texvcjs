@@ -8,15 +8,15 @@ var testcases = [
         in: 'a',
         out: {
             name: "ARRAY",
-            children: [{"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{name: "a"}]}]}]
+            children: [{"name": "LITERAL", "children": [{"name": "a"}]}]
         }
     },
     {
         in: 'a^2', out: {
             name: "ARRAY", children: [{
                 "name": "UQ", "children": [{
-                    "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]
-                }, {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]}]
+                    "name": "LITERAL", "children": [{"name": "a"}]
+                }, {"name": "LITERAL", "children": [{"name": "2"}]}]
             }]
         }
     },
@@ -25,17 +25,17 @@ var testcases = [
         out: {
             name: "ARRAY", children: [{
                 "name": "UQ",
-                "children": [{"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]},
-                    {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]}]
+                "children": [{"name": "LITERAL", "children": [{"name": "a"}]},
+                    {"name": "LITERAL", "children": [{"name": "2"}]}]
             }, {
                 "name": "LITERAL",
-                "children": [{"name": "TEX_ONLY", "children": [{"name": "+"}]}]
+                "children": [{"name": "+"}]
             }, {
                 "name": "UQ", "children": [{
                     "name": "LITERAL",
-                    "children": [{"name": "TEX_ONLY", "children": [{"name": "b"}]}]
+                    "children": [{"name": "b"}]
                 }, {
-                    "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]
+                    "name": "LITERAL", "children": [{"name": "2"}]
                 }]
             }]
         }
@@ -45,29 +45,29 @@ var testcases = [
         out: {
             "name": "ARRAY", "children": [{
                 "name": "UQ", "children": [{
-                    "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "a"}]}]
+                    "name": "LITERAL", "children": [{"name": "a"}]
                 }, {
                     "name": "CURLY", "children": [{
                         "name": "ARRAY", "children": [{
                             "name": "LITERAL", "children": [{
-                                "name": "TEX_ONLY", "children": [{"name": "2"}]
+                                "name": "2"
                             }]
                         }]
                     }]
                 }]
             }, {
                 "name": "LITERAL", "children": [{
-                    "name": "TEX_ONLY", "children": [{"name": "+"}]
+                    "name": "+"
                 }]
             }, {
                 "name": "UQ", "children": [{
                     "name": "LITERAL", "children": [{
-                        "name": "TEX_ONLY", "children": [{"name": "b"}]
+                        "name": "b"
                     }]
                 }, {
                     "name": "CURLY", "children": [{
                         "name": "ARRAY", "children": [{
-                            "name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]
+                            "name": "LITERAL", "children": [{"name": "2"}]
                         }]
                     }]
                 }]
@@ -80,9 +80,9 @@ var testcases = [
             name: "ARRAY", children: [{
                 "name": "FUN2", "children": [{"name": "\\frac"}, {
                     "name": "LITERAL",
-                    "children": [{"name": "TEX_ONLY", "children": [{"name": "2"}]}]
+                    "children": [{"name": "2"}]
                 },
-                    {"name": "LITERAL", "children": [{"name": "TEX_ONLY", "children": [{"name": "b"}]}]}]
+                    {"name": "LITERAL", "children": [{"name": "b"}]}]
             }]
         }
     },
@@ -94,10 +94,10 @@ var testcases = [
                 {
                     "children": [
                         {
-                            "name": "LITERAL->TEX_ONLY->b"
+                            "name": "LITERAL->b"
                         },
                         {
-                            "name": "LITERAL->TEX_ONLY->2"
+                            "name": "LITERAL->2"
                         }
                     ],
                     "name": "UQ"

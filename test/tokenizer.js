@@ -4,23 +4,23 @@ var texvc = require('../');
 var lister = require('../lib/flatList');
 var testcases = [
     {in: '', out: []},
-    {in: 'a', out: [['LITERAL', ''], ['TEX_ONLY', 'a']]},
-    {in: 'a^2', out: [['UQ', ''], ['LITERAL', ''], ['TEX_ONLY', 'a'], ['LITERAL', ''], ['TEX_ONLY', '2']]},
+    {in: 'a', out: [['LITERAL', 'a']]},
+    {in: 'a^2', out: [['UQ', ''], ['LITERAL', 'a'], ['LITERAL', '2']]},
     {
         in: 'a^2+b^2',
-        out: [['UQ', ''], ['LITERAL', ''], ['TEX_ONLY', 'a'], ['LITERAL', ''], ['TEX_ONLY', '2'],
-            ["LITERAL", ""], ["TEX_ONLY", "+"],
-            ['UQ', ''], ['LITERAL', ''], ['TEX_ONLY', 'b'], ['LITERAL', ''], ['TEX_ONLY', '2']]
+        out: [['UQ', ''], ['LITERAL',  'a'], ['LITERAL',  '2'],
+            ["LITERAL",  "+"],
+            ['UQ', ''], ['LITERAL', 'b'], ['LITERAL', '2']]
     },
     {
         in: 'a^{2}+b^{2}',
-        out: [['UQ', ''], ['LITERAL', ''], ['TEX_ONLY', 'a'], ['CURLY', ''], ['LITERAL', ''], ['TEX_ONLY', '2'],
-            ["LITERAL", ""], ["TEX_ONLY", "+"],
-            ['UQ', ''], ['LITERAL', ''], ['TEX_ONLY', 'b'], ['CURLY', ''], ['LITERAL', ''], ['TEX_ONLY', '2']]
+        out: [['UQ', ''], ['LITERAL', 'a'], ['CURLY', ''], ['LITERAL',  '2'],
+            ["LITERAL",  "+"],
+            ['UQ', ''], ['LITERAL', 'b'], ['CURLY', ''], ['LITERAL',  '2']]
     },
     {
         in: '\\frac2b',
-        out: [['FUN2', '\\frac'], ['LITERAL', ''], ['TEX_ONLY', '2'], ['LITERAL', ''], ['TEX_ONLY', 'b']]
+        out: [['FUN2', '\\frac'], ['LITERAL',  '2'], ['LITERAL',  'b']]
     }
 ];
 

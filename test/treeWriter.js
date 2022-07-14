@@ -6,11 +6,11 @@ var testcases = [
     {in: '', out: []},
     {
         in: '3+\\frac1{7+\\frac1{15+\\dots}}',
-        out: [["LITERAL", ["TEX_ONLY", ["3"]]], ["LITERAL", ["TEX_ONLY", ["+"]]], ["FUN2", ["\\frac"], ["LITERAL", ["TEX_ONLY", ["1"]]], ["CURLY", [["LITERAL", ["TEX_ONLY", ["7"]]], ["LITERAL", ["TEX_ONLY", ["+"]]], ["FUN2", ["\\frac"], ["LITERAL", ["TEX_ONLY", ["1"]]], ["CURLY", [["LITERAL", ["TEX_ONLY", ["1"]]], ["LITERAL", ["TEX_ONLY", ["5"]]], ["LITERAL", ["TEX_ONLY", ["+"]]], ["LITERAL", ["TEX_ONLY", ["\\dots "]]]]]]]]]]
+        out: [["LITERAL", ["3"]], ["LITERAL", ["+"]], ["FUN2", ["\\frac"], ["LITERAL",  ["1"]], ["CURLY", [["LITERAL",  ["7"]], ["LITERAL",  ["+"]], ["FUN2", ["\\frac"], ["LITERAL", ["1"]], ["CURLY", [["LITERAL",  ["1"]], ["LITERAL",  ["5"]], ["LITERAL",  ["+"]], ["LITERAL",  ["\\dots "]]]]]]]]]
     },
     {
         in: '\\ce{H2O}',
-        out: [["MHCHEM", ["\\ce"], ["CURLY", [["CHEM_WORD", ["LITERAL", ["TEX_ONLY", ["H"]]], ["CHEM_WORD", ["LITERAL", ["TEX_ONLY", ["2"]]], ["CHEM_WORD", ["LITERAL", ["TEX_ONLY", ["O"]]], ["LITERAL", ["TEX_ONLY", [""]]]]]]]]]]
+        out: [["MHCHEM", ["\\ce"], ["CURLY", [["CHEM_WORD", ["LITERAL", ["H"]], ["CHEM_WORD", ["LITERAL", ["2"]], ["CHEM_WORD", ["LITERAL", ["O"]], ["LITERAL",  [""]]]]]]]]]
     },
 ];
 

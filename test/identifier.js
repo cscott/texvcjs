@@ -171,7 +171,4 @@ describe('Identifiers', function () {
             assert.deepEqual(lister(texvc.parse(input)), output);
         });
     });
-    it('texonly should not cause an error', function () {
-        assert.deepEqual(lister(ast.RenderT.TEX_ONLY('a')), []);
-    });
 });

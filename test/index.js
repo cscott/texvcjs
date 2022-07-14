@@ -6,7 +6,7 @@ var testcases = [
     {
         input: '\\mathbb{x}',
         options: {format: "tree"},
-        out: [["FUN1nb", ["\\mathbb"], ["CURLY", [["LITERAL", ["TEX_ONLY", ["x"]]]]]]]
+        out: [["FUN1nb", ["\\mathbb"], ["CURLY", [["LITERAL", ["x"]]]]]]
     },
     {
         input: '\\mathbb{x}',
@@ -16,7 +16,7 @@ var testcases = [
     {
         input: '\\mathbb{x}',
         options: {format: "list"},
-        out: [["FUN1nb", "\\mathbb"], ["CURLY", ""], ["LITERAL", ""], ["TEX_ONLY", "x"]]
+        out: [["FUN1nb", "\\mathbb"], ["CURLY", ""], ["LITERAL", "x"]]
     }, {
         input: '\\mathbb{x}',
         options: {format: "json"},
@@ -30,7 +30,7 @@ var testcases = [
                         "name": "ARRAY",
                         "children": [{
                             "name": "LITERAL",
-                            "children": [{"name": "TEX_ONLY", "children": [{"name": "x"}]}]
+                            "children":  [{"name": "x"}]
                         }]
                     }]
                 }]
@@ -42,8 +42,8 @@ var testcases = [
         options: {format: "all"},
         out: {
             identifier: ['\\mathbb{x}'],
-            tree: [["FUN1nb", ["\\mathbb"], ["CURLY", [["LITERAL", ["TEX_ONLY", ["x"]]]]]]],
-            list: [["FUN1nb", "\\mathbb"], ["CURLY", ""], ["LITERAL", ""], ["TEX_ONLY", "x"]]
+            tree: [["FUN1nb", ["\\mathbb"], ["CURLY", [["LITERAL", ["x"]]]]]],
+            list: [["FUN1nb", "\\mathbb"], ["CURLY", ""], ["LITERAL", "x"]]
         }
     }, {
         input: '\\invalid',
