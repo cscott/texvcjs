@@ -7,7 +7,7 @@ describe('Baseclass Node test', function () {
     it('Should not create an empty literal', function () {
         assert.throws(()=> new Literal())
     });
-    it('Should not create an literal with more than one argument', function () {
+    it('Should not create a literal with more than one argument', function () {
         assert.throws(()=> new Literal('a','b'))
     });
     it('Should not create a literal with incorrect type', function () {
