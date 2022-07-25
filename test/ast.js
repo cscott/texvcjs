@@ -7,9 +7,9 @@ var ast = require('../lib/ast');
 describe('AST', function () {
     it('should construct and stringify', function () {
         var x = ast.Tex.LITERAL('a');
-        var y = ast.Tex.UQN(x);
+        var y = ast.Tex.UQ(ast.Tex.ARRAY(),x);
         var z = ast.Tex.CURLY([x, y]);
 
-        assert.equal(z.toString(), 'CURLY([LITERAL("a"),UQN(LITERAL("a"))])');
+        assert.equal(z.toString(), 'CURLY([LITERAL("a"),UQ(ARRAY(),LITERAL("a"))])');
     });
 });
