@@ -5,7 +5,7 @@
 	"main": "lib/index.js",
 	"scripts": {
 		"build": "node -e 'require(\"./lib/build-parser\")'",
-		"cover": "nyc --reporter=lcov _mocha",
+		"cover": "nyc --reporter=lcov _mocha --recursive",
 		"lint": "eslint --max-warnings 0 --ext .js . bin/texvcjs",
 		"lint:fix": "eslint --fix --ext .js . bin/texvcjs",
 		"test": "npm run build && npm run lint && npm run cover && npm run check-coverage",
