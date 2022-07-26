@@ -18,13 +18,13 @@ describe('Lr Node test', function () {
         assert.throws(()=> new Lr('(',')', new Literal('a')))
     });
 
-    it('Should create an basic function', function () {
+    it('Should create a basic function', function () {
         const f =  new Lr( '(',')', new TexArray( new Literal('a')) );
         assert.strictEqual('\\left(a\\right)',
             f.render())
     });
 
-    it('Should create exactly on set of curlies', function () {
+    it('Should create exactly one set of curlies', function () {
         const f =  new Lr( '(',')', new TexArray( new Literal('a'), new Literal('b') ) );
         assert.strictEqual('{\\left(ab\\right)}',
             f.inCurlies())
