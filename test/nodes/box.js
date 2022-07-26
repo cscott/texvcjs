@@ -18,13 +18,13 @@ describe('Box Node test', function () {
 
     it('Should create an basic function', function () {
         const f =  new Box( '\\hbox', 'a' );
-        assert.strictEqual('{\\hbox {a}}',
+        assert.strictEqual('{\\hbox{a}}',
             f.render())
     });
 
     it('Should create exactly on set of curlies', function () {
         const f =  new Box( '\\hbox', 'a' );
-        assert.strictEqual('{\\hbox {a}}',
+        assert.strictEqual('{\\hbox{a}}',
             f.inCurlies())
     });
 });

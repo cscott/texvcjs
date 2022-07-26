@@ -26,12 +26,6 @@ describe('Baseclass Node test', function () {
         const n = new TexNode('a');
         assert.strictEqual('{a}',n.inCurlies());
     });
-    it('Should not render curlies for multiple arguments', function () {
-        assert.throws( () => (new TexNode('a','b')).inCurlies())
-    });
-    it('Should not render curlies for zero arguments', function () {
-        assert.throws( () => (new TexNode().inCurlies()));
-    });
     it('Should not nest curlies', function () {
         const n = new TexNode(new TexNode('a'));
         assert.strictEqual('{a}',n.inCurlies());
