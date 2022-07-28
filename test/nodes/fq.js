@@ -20,4 +20,11 @@ describe('Fq Node test', function () {
         assert.strictEqual('a_{b}^{c}',
             fq.render())
     });
+    it('Should apply contains_func on children', function () {
+        const fq =  new Fq(
+            new Literal('a'),
+            new Literal('\\foo'),
+            new Literal('c'));
+        assert.ok(fq.contains_func('\\foo'))
+    });
 });

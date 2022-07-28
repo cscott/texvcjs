@@ -1,0 +1,87 @@
+'use strict';
+const assert = require('assert');
+const Nodeutil = require('../../lib/nodes/nodeutil');
+require("../../lib");
+const Parser = require('../../lib/parser');
+
+
+// This tests the `contains_func` visitor function, which tests for a
+// specific TeX function in the input string.
+describe('Test contains_func', function () {
+
+    const testcases = [
+        { input: '\\left(abc\\right)',  yes: ['\\left', '\\right'] },
+        { input: '\\sin(x)+\\cos(x)^2', yes: ['\\sin', '\\cos'] },
+        { input: '\\big\\langle',       yes: ['\\big', '\\langle'] },
+        { input: '\\arccot(x) \\atop \\aleph',
+            yes: ['\\operatorname', '\\atop', '\\aleph'],
+            no: ['\\arccot'] },
+        { input: '\\acute{\\euro\\alef}',
+            yes: ['\\acute', '\\euro', '\\aleph', '\\mbox' ],
+            no: ['\\alef'] },
+        { input: '\\sqrt[\\backslash]{\\darr}',
+            yes: ['\\sqrt', '\\backslash', '\\downarrow'],
+            no: ['\\darr'] },
+        { input: '\\mbox{abc}',         yes: ['\\mbox'] },
+        { input: 'x_\\aleph^\\sqrt{2}', yes: ['\\aleph', '\\sqrt'] },
+        { input: '{abc \\rm def \\it ghi}', yes: ['\\rm', '\\it'] },
+        { input: '{\\frac{\\sideset{_\\dagger}{^\\bold{x}}\\prod}{\\hat{a}}}',
+            yes: ['\\frac', '\\sideset', '\\dagger', '\\mathbf', '\\prod', '\\hat'],
+            no: ['\\bold'] },
+        { input: '\\begin{array}{l|r}\n' +
+                 '\\alpha & \\beta \\\\\n' +
+                 '\\gamma & \\delta\n' +
+                 '\\end{array}',
+        yes: [ '\\begin{array}', '\\end{array}', '\\alpha', '\\beta',
+            '\\gamma', '\\delta' ],
+        no: [ '\\begin', '\\end', '\\hline' ]
+        },
+        { input: '\\begin{array}{l|r}\\hline a & b\\end{array}',
+            yes: [ '\\begin{array}', '\\end{array}', '\\hline' ]
+        },
+        { input: '\\color[rgb]{0,1,.2}',
+            yes: [ '\\color' ],
+            no: [ '\\c', 'rgb', '\\pagecolor', '\\definecolor' ]
+        },
+        { input: '\\definecolor{blue}{cmyk}{1,0,0,0}\\pagecolor{blue}',
+            yes: [ '\\definecolor', '\\pagecolor' ],
+            no: [ '\\color', 'cmyk', 'blue', '\\blue' ]
+        },
+	    { input: '\\mathbb{R}',
+		    yes: [ '\\mathbb' ],
+		    no: [ 'R' ]
+	    },
+        { input: '\\ce{\\underbrace{a}_{b}}',
+            yes: [ '\\underbrace' ],
+            no: [ 'a', 'b' ]
+        },
+	    { input: '\\AA',
+		    yes: [ '\\mbox' ],
+		    no: [ 'A' ]
+	    }
+    ];
+    testcases.forEach(function (tc) {
+        tc.no = (tc.no || []).concat(['\\foo', '\\begin{foo}']);
+        [false, true].forEach(function (expected) {
+            (expected ? tc.yes : tc.no).forEach(function (target) {
+                it('should ' + (expected ? '' : 'not ') + 'find ' + target +
+                   ' in ' + tc.input.replace(/\n/g, ' '), function () {
+                    const p = Parser.parse(
+                        tc.input,
+                        { debug: true, usemhchem: true, oldtexvc: true });
+                    const node = Nodeutil.toNode(p);
+                    assert.equal(
+                        node.contains_func(target),
+                        expected ? target : false);
+                });
+            });
+        });
+    });
+
+    it('should process mathrm', function () {
+        const p = Parser.parse('\\AA', { debug: true, usemathrm: true });
+        const node = Nodeutil.toNode(p);
+        assert.ok(node.contains_func('\\mathrm'));
+    });
+
+});
