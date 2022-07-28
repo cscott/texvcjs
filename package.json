@@ -9,7 +9,7 @@
 		"lint": "eslint --max-warnings 0 --ext .js . bin/texvcjs",
 		"lint:fix": "eslint --fix --ext .js . bin/texvcjs",
 		"test": "npm run build && npm run lint && npm run cover && npm run check-coverage",
-		"check-coverage": "nyc check-coverage --lines 99"
+		"check-coverage": "nyc check-coverage --lines 100"
 	},
 	"repository": {
 		"type": "git",

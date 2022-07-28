@@ -28,6 +28,19 @@ describe('Parse and render with new classes', function () {
             node.render();
         });
     });
+    [
+        '\\ce{CO2 + C -> 2 CO}',
+        '\\ce{CO2 + \\underbrace{a}_{b} -> 2 CO}',
+        '\\ce{\\begin{math}n\\end{math}H2O}',
+    ].forEach(function (e) {
+        it('should parse chem: ' + JSON.stringify(e), function () {
+            e = Parser.parse(e,{usemhchem: true})
+            const node = Nodeutil.toNode(e);
+            assert.strictEqual('TexArray',
+                node.__proto__.constructor.name);
+            node.render();
+        });
+    });
     goldData.goldData.forEach(function (tc) {
         const input = tc.math_inputtex;
         it('in qID' + tc.qID + ' should be discovered ' + JSON.stringify(input), function () {
