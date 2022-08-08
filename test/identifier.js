@@ -2,7 +2,6 @@
 var assert = require('assert');
 var ast = require('../').ast;
 var texvc = require('../');
-var lister = require('../lib/identifier').render;
 var testcases = [
     {in: '', out: []},
     {in: '.', out: []},
@@ -174,14 +173,7 @@ describe('Identifiers', function () {
         var input = tc.in;
         var output = tc.out || [tc.in];
         it('should be discovered ' + JSON.stringify(input), function () {
-            assert.deepEqual(lister(texvc.parse(input)), output);
+            assert.deepEqual(texvc.parse(input).extractIdentifiers(), output);
         });
-    });
-    it('should ignore unknown objects', function () {
-        assert.deepStrictEqual(lister({}),[])
-    });
-    it('extract_identifiers visitor should handle ARRAY ignore unknown objects', function () {
-        const expr = new ast.Tex.ARRAY([ new ast.Tex.LITERAL('a')])
-        assert.deepStrictEqual(expr.extractIdentifiers(),['a'])
     });
 });

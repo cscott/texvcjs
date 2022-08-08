@@ -170,7 +170,7 @@ describe('Identifiers', function () {
         const input = tc.in;
         const output = tc.out || [tc.in];
         it('should be discovered ' + JSON.stringify(input), function () {
-            const node = new TexArray( Nodeutil.toNode(Parser.parse(tc.in)));
+            const node = Parser.parse(tc.in);
             assert.deepEqual(node.extractIdentifiers(), output);
         });
     });

@@ -5,7 +5,7 @@ const Parser = require('../lib/parser');
 describe('Parse', function () {
     [ '', 'a', 'a^2', 'a^2+b^{2}', 'l_a^2+l_b^2=l_c^2' ].forEach(function (e) {
         it('should parse: ' + JSON.stringify(e), function () {
-            Parser.parse(e);
+            Parser.parse(e,{debug:true});
         });
     });
     it('should parse texvc example', function () {

@@ -67,7 +67,7 @@ var testcases = [
         input: {length: 1}, // Artificial object to create an error
         options: {format: "json", flatTree: true},
         out: {
-            "details": "TypeError: Cannot read property 'length' of undefined",
+            "details": "TypeError: Cannot read property '0' of undefined",
             "status": "-"
         }
     }

@@ -69,9 +69,8 @@ describe('Test contains_func', function () {
                     const p = Parser.parse(
                         tc.input,
                         { debug: true, usemhchem: true, oldtexvc: true });
-                    const node = Nodeutil.toNode(p);
                     assert.equal(
-                        node.contains_func(target),
+                        p.contains_func(target),
                         expected ? target : false);
                 });
             });
@@ -80,8 +79,7 @@ describe('Test contains_func', function () {
 
     it('should process mathrm', function () {
         const p = Parser.parse('\\AA', { debug: true, usemathrm: true });
-        const node = Nodeutil.toNode(p);
-        assert.ok(node.contains_func('\\mathrm'));
+        assert.ok(p.contains_func('\\mathrm'));
     });
 
 });

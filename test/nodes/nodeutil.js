@@ -35,10 +35,9 @@ describe('Parse and render with new classes', function () {
     ].forEach(function (e) {
         it('should parse chem: ' + JSON.stringify(e), function () {
             e = Parser.parse(e,{usemhchem: true})
-            const node = Nodeutil.toNode(e);
             assert.strictEqual('TexArray',
-                node.__proto__.constructor.name);
-            node.render();
+                e.__proto__.constructor.name);
+            e.render();
         });
     });
     goldData.goldData.forEach(function (tc) {
@@ -46,7 +45,7 @@ describe('Parse and render with new classes', function () {
         it('in qID' + tc.qID + ' should be discovered ' + JSON.stringify(input), function () {
             const ast = Parser.parse(input);
             const node = Nodeutil.toNode(ast);
-            assert.strictEqual(node.render(), ast.render_tex());
+            assert.strictEqual(node.render(), ast.render());
         });
     });
 });
