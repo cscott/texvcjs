@@ -34,4 +34,16 @@ describe('Baseclass Node test', function () {
         const n = new TexNode('');
         assert.strictEqual('{}',n.inCurlies());
     });
+    it('Should extract identifiers', function () {
+        const n = new TexNode(new TexNode('a'));
+        assert.deepEqual(['a'],n.extractIdentifiers());
+    });
+    it('Should contain a method stub for extracting identifier modifications', function () {
+        const n = new TexNode('');
+        assert.deepEqual([],n.getModIdent());
+    });
+    it('Should contain a method stub for extracting subscripts', function () {
+        const n = new TexNode('');
+        assert.deepEqual([],n.extractSubscripts());
+    });
 });
