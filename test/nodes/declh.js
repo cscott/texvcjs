@@ -2,7 +2,6 @@ const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Declh = require('../../lib/nodes/declh');
 const TexArray = require('../../lib/nodes/texArray');
-const TexNode = require("../../lib/nodes/texnode");
 
 describe('Declh Node test', function () {
 
@@ -40,8 +39,20 @@ describe('Declh Node test', function () {
     });
 
     it('Should extract identifiers', function () {
-        const n = new Declh('\\rm',
-            new TexArray(new Literal('a')));
+        const n = new Declh('\\rm', new TexArray(new Literal('a')));
         assert.deepEqual(['a'],n.extractIdentifiers());
     });
+
+    ['rm','it','cal','bf'].forEach( (mod) => {
+        it(`Should extract subscripts for ${mod} font modification`, function () {
+            const n = new Declh(`\\${mod}`, new TexArray(new Literal('a')));
+            assert.deepEqual([`\\math${mod}{a}`],n.extractSubscripts());
+        });
+    });
+
+    it('Should not extract empty font modifier subscripts', function () {
+        const n = new Declh('\\bf', new TexArray(new Literal('')));
+        assert.deepEqual([],n.extractSubscripts());
+    });
+
 });
