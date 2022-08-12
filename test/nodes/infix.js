@@ -2,6 +2,7 @@ const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Infix = require('../../lib/nodes/infix');
 const TexArray = require('../../lib/nodes/texArray');
+const TexNode = require("../../lib/nodes/texnode");
 
 
 describe('Infix Node test', function () {
@@ -34,5 +35,13 @@ describe('Infix Node test', function () {
             new TexArray(new Literal('b')));
         assert.strictEqual('{a \\atop b}',
             f.inCurlies())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Infix(
+            '\\atop',
+            new TexArray(new Literal('a')),
+            new TexArray(new Literal('b')));
+        assert.deepEqual(['a', 'b'],n.extractIdentifiers());
     });
 });

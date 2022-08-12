@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Box = require('../../lib/nodes/box');
+const TexNode = require("../../lib/nodes/texnode");
 
 describe('Box Node test', function () {
 
@@ -23,8 +24,13 @@ describe('Box Node test', function () {
     });
 
     it('Should create exactly on set of curlies', function () {
-        const f =  new Box( '\\hbox', 'a' );
+        const f = new Box( '\\hbox', 'a' );
         assert.strictEqual('{\\hbox{a}}',
             f.inCurlies())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Box( '\\hbox', 'a' );
+        assert.deepEqual([],n.extractIdentifiers());
     });
 });

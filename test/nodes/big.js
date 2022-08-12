@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Big = require('../../lib/nodes/big');
+const TexNode = require("../../lib/nodes/texnode");
 
 describe('Big Node test', function () {
 
@@ -17,9 +18,14 @@ describe('Big Node test', function () {
     });
 
     it('Should create an basic function', function () {
-        const f =  new Big( '\\big', 'a' );
+        const f = new Big( '\\big', 'a' );
         assert.strictEqual('{\\big a}',
             f.render())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Big( '\\big', 'a' );
+        assert.deepEqual([],n.extractIdentifiers());
     });
 
     it('Should create exactly on set of curlies', function () {

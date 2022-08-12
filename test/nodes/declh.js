@@ -2,6 +2,7 @@ const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Declh = require('../../lib/nodes/declh');
 const TexArray = require('../../lib/nodes/texArray');
+const TexNode = require("../../lib/nodes/texnode");
 
 describe('Declh Node test', function () {
 
@@ -36,5 +37,11 @@ describe('Declh Node test', function () {
             new TexArray(new Literal('a')));
         assert.strictEqual('{\\f {a}}',
             f.inCurlies())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Declh('\\rm',
+            new TexArray(new Literal('a')));
+        assert.deepEqual(['a'],n.extractIdentifiers());
     });
 });
