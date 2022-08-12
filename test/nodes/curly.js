@@ -5,6 +5,7 @@ const Node = require('../../lib/nodes/texnode');
 const Literal = require('../../lib/nodes/literal');
 const TexArray = require('../../lib/nodes/texArray');
 const Dq = require("../../lib/nodes/dq");
+const TexNode = require("../../lib/nodes/texnode");
 
 
 describe('Curly node test', function () {
@@ -44,4 +45,13 @@ describe('Curly node test', function () {
         assert.strictEqual('{a}', c.inCurlies())
     });
 
+    it('Should extract identifier modifications', function () {
+        const n = new Curly( new TexArray( new Literal('b')));
+        assert.deepEqual(['b'],n.getModIdent());
+    });
+
+    it('Should extract subscripts', function () {
+        const n =  new Curly( new TexArray( new Literal('b')));
+        assert.deepEqual(['b'],n.extractSubscripts());
+    });
 });
