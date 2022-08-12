@@ -21,5 +21,8 @@ describe('ChemFun2u Node test', function () {
         const fun2u =  new ChemFun2u('a', new Literal('b'), new Literal('c'));
         assert.strictEqual('a{b}_{c}', fun2u.render())
     });
-
+    it('Should extract identifiers', function () {
+        const n = new ChemFun2u('a', new Literal('b'), new Literal('c'));
+        assert.deepEqual([],n.extractIdentifiers());
+    });
 });

@@ -1,6 +1,8 @@
 const assert = require('assert');
 const Literal = require('../../lib/nodes/literal');
 const Mhchem = require('../../lib/nodes/mhchem');
+const Dollar = require("../../lib/nodes/dollar");
+const TexArray = require("../../lib/nodes/texArray");
 
 describe('Mhchem Node test', function () {
 
@@ -26,5 +28,10 @@ describe('Mhchem Node test', function () {
         const f =  new Mhchem( '\\f', new Literal('a') );
         assert.strictEqual('{\\f {a}}',
             f.inCurlies())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Mhchem( '\\f', new Literal('a') );
+        assert.deepEqual([],n.extractIdentifiers());
     });
 });

@@ -5,6 +5,7 @@ const Node = require('../../lib/nodes/texnode');
 const Literal = require('../../lib/nodes/literal');
 const TexArray = require('../../lib/nodes/texArray');
 const TexNode = require("../../lib/nodes/texnode");
+const ChemFun2u = require("../../lib/nodes/chemFun2u");
 
 
 describe('Dollar node test', function () {
@@ -31,5 +32,13 @@ describe('Dollar node test', function () {
             new Literal(' '),
             new Literal( 'world')));
         assert.strictEqual('$hello world$', l.render())
+    });
+
+    it('Should extract identifiers', function () {
+        const n = new Dollar( new TexArray(
+            new Literal('a'),
+            new Literal('b'),
+            new Literal( 'c')));
+        assert.deepEqual([],n.extractIdentifiers());
     });
 });
