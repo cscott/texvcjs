@@ -47,11 +47,11 @@ describe('Curly node test', function () {
 
     it('Should extract identifier modifications', function () {
         const n = new Curly( new TexArray( new Literal('b')));
-        assert.deepEqual(['b'],n.getModIdent());
+        assert.deepEqual('b',n.getModIdent());
     });
 
     it('Should extract subscripts', function () {
         const n =  new Curly( new TexArray( new Literal('b')));
-        assert.deepEqual(['b'],n.extractSubscripts());
+        assert.deepEqual('b',n.extractSubscripts());
     });
 });
