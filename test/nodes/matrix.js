@@ -37,4 +37,8 @@ describe('Matrix Node test', function () {
             '{\\begin{align}a\\end{align}}',
             sampleMatrix.inCurlies());
     });
+
+    it('Should extract identifiers', function () {
+        assert.deepEqual(['a'],sampleMatrix.extractIdentifiers());
+    });
 });
