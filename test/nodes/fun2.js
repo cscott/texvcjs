@@ -27,4 +27,9 @@ describe('Fun2 Node test', function () {
         assert.strictEqual('{\\f {a}{b}}',
             f.inCurlies())
     });
+
+    it('Should extract identifiers', function () {
+        const f =  new Fun2( '\\f', new Literal('a'), new Literal('b') );
+        assert.deepEqual(['a','b'], f.extractIdentifiers());
+    });
 });
