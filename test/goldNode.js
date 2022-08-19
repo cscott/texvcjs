@@ -20,10 +20,6 @@ describe('Gold Identifiers (Node test)', function () {
             }
         });
         it('in qID' + testcase.qID + ' should be discovered ' + JSON.stringify(input), function () {
-            if(testcase.qID==='86'){
-                // will be fixed in a follow-up commit
-                this.skip();
-            }
             const extracted = NodeUtil.toNode(texvc.parse(input)).extractIdentifiers().filter(onlyUnique);
             testcase.fp.forEach(function (falsePositive) {
                 const index = extracted.indexOf(falsePositive);

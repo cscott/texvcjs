@@ -160,7 +160,9 @@ const testcases = [
     {in: "\\hphantom{a}", out:[]},
     {in: "\\vphantom{a}", out:[]},
     {in: "{{ab}}", out:['a','b']},
-    {in: "\\rm sgn", out:['sgn']}
+    {in: "\\rm sgn", out:['sgn']},
+    {in: "\\dot{q_{i}}"}
+
 
 ];
 describe('Identifiers', function () {
