@@ -43,6 +43,12 @@ describe('Declh Node test', function () {
         assert.deepEqual(['a'],n.extractIdentifiers());
     });
 
+    it('Should extract multiple identifiers', function () {
+        const n = new Declh('\\rm',
+            new TexArray(new Literal('a'), new Literal('b')));
+        assert.deepEqual(['ab'],n.extractIdentifiers());
+    });
+
     ['rm','it','cal','bf'].forEach( (mod) => {
         it(`Should extract subscripts for ${mod} font modification`, function () {
             const n = new Declh(`\\${mod}`, new TexArray(new Literal('a')));

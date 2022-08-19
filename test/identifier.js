@@ -158,7 +158,11 @@ var testcases = [
     {in: "\\phantom{a}", out:[]},
     {in: "\\hphantom{a}", out:[]},
     {in: "\\vphantom{a}", out:[]},
-    {in: "{{ab}}", out:['a','b']}
+    {in: "{{ab}}", out:['a','b']},
+    {in: "{{ab}}", out:['a','b']},
+    {in: "\\rm sgn", out:['sgn']}
+
+
 
     //{in: "\\reals", out:["\\reals"]},
     //{in: "\\mathrm {MTF}_{display}(\\xi,\\eta)", out: ["\\mathrm{MTF}_{display}", "\\xi", "\\eta"]}
