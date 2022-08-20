@@ -24,9 +24,9 @@ describe('Mhchem Node test', function () {
             f.render())
     });
 
-    it('Should create exactly one set of curlies', function () {
+    it('Should create curlies', function () {
         const f =  new Mhchem( '\\f', new Literal('a') );
-        assert.strictEqual('{\\f {a}}',
+        assert.strictEqual('{{\\f {a}}}',
             f.inCurlies())
     });
 
