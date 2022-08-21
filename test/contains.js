@@ -66,27 +66,23 @@ describe('ast.Tex.contains_func', function () {
                 it('should ' + (expected ? '' : 'not ') + 'find ' + target +
                    ' in ' + tc.input.replace(/\n/g, ' '), function () {
                     var p = texvcjs.parse(tc.input, { debug: true, usemhchem: true, oldtexvc: true });
-                    assert.equal(texvcjs.contains_func(p, target),
+                    assert.equal(p.contains_func(target),
                         expected ? target : false);
                 });
             });
         });
     });
 
-    it('should process string input', function () {
-        assert.equal(texvcjs.contains_func('\\mathbb{R}', '\\mathbb'), '\\mathbb');
-    });
-
     it('should process mathrm', function () {
         var p = texvcjs.parse('\\AA', { debug: true, usemathrm: true });
-        assert.equal(texvcjs.contains_func(p, '\\mathrm'), '\\mathrm');
+        assert.equal(p.contains_func( '\\mathrm'), '\\mathrm');
     });
 
     it('should process partial trees', function () {
         var p = texvcjs.parse('a');
-        assert.equal(texvcjs.contains_func(p.first(), '\\test'), false);
+        assert.equal(p.first().contains_func( '\\test'), false);
     });
     it('should process parsed search input', function () {
-        assert.equal(texvcjs.contains_func('\\left(abc\\right)', ['\\left', '\\right']), '\\left');
+        assert.equal(texvcjs.parse('\\left(abc\\right)').contains_func( ['\\left', '\\right']), '\\left');
     });
 });
