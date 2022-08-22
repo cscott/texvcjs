@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-const fs = require('fs'),
-    letterMods = require('../lib/letterMods.json'),
-    literals = require('../lib/literals.json');
+const fs = require('fs');
+const tu = require('../lib/texutil');
+const letterMods = Object.keys(tu.is_letter_mod);
+const literals = Object.keys(tu.is_literal);
 
 const printMod = function (x) {
     const textString = x.replace('\\', '\\textbackslash ');

@@ -11,10 +11,12 @@
     "nullary_macro": true
   },
   "\\Bbb": {
+    "is_letter_mod": true,
     "other_fun_ar1": "\\mathbb"
   },
   "\\Bbbk": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Beta": {
@@ -76,6 +78,7 @@
     "other_delimiters2": "\\Downarrow"
   },
   "\\Delta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -103,13 +106,16 @@
   },
   "\\Finv": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Game": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Gamma": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -135,6 +141,7 @@
     "teubner_required": true
   },
   "\\Lambda": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -182,6 +189,7 @@
     "nullary_macro_aliase": "\\emptyset"
   },
   "\\Omega": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -190,13 +198,16 @@
     "nullary_macro_aliase": "O"
   },
   "\\P": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Phi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\Pi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -204,6 +215,7 @@
     "latex_function_names": true
   },
   "\\Psi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -238,6 +250,7 @@
     "nullary_macro": true
   },
   "\\S": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Sampi": {
@@ -245,6 +258,7 @@
     "teubner_required": true
   },
   "\\Sigma": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -265,6 +279,7 @@
     "nullary_macro_aliase": "\\mathrm{T}"
   },
   "\\Theta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -293,6 +308,7 @@
     "nullary_macro": true
   },
   "\\Xi": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\Z": {
@@ -303,7 +319,8 @@
     "nullary_macro_aliase": "\\mathrm{Z}"
   },
   "\\acute": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\alef": {
     "nullary_macro_aliase": "\\aleph"
@@ -312,13 +329,16 @@
     "nullary_macro_aliase": "\\aleph"
   },
   "\\aleph": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\alpha": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\amalg": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\and": {
@@ -370,6 +390,7 @@
   },
   "\\backepsilon": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\backprime": {
@@ -388,7 +409,8 @@
     "other_delimiters1": true
   },
   "\\bar": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\barwedge": {
     "ams_required": true,
@@ -396,7 +418,8 @@
   },
   "\\bcancel": {
     "cancel_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\because": {
     "ams_required": true,
@@ -433,11 +456,13 @@
     "ams_required": true
   },
   "\\beta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\beth": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\between": {
@@ -534,14 +559,17 @@
     "nullary_macro": true
   },
   "\\bmod": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\bold": {
+    "is_letter_mod": true,
     "other_fun_ar1": "\\mathbf"
   },
   "\\boldsymbol": {
     "ams_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\bond": {
     "mhchem_bond": true
@@ -569,7 +597,8 @@
     "nullary_macro": true
   },
   "\\breve": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\bull": {
     "nullary_macro_aliase": "\\bullet"
@@ -589,7 +618,8 @@
   },
   "\\cancel": {
     "cancel_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\cancelto": {
     "cancel_required": true,
@@ -618,13 +648,15 @@
     "fun_ar2": true
   },
   "\\check": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\checkmark": {
     "ams_required": true,
     "nullary_macro": true
   },
   "\\chi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -681,6 +713,7 @@
   },
   "\\complement": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\cong": {
@@ -743,6 +776,7 @@
   },
   "\\daleth": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\darr": {
@@ -759,7 +793,8 @@
     "nullary_macro": true
   },
   "\\ddot": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\ddots": {
     "nullary_macro": true
@@ -772,6 +807,7 @@
     "latex_function_names": true
   },
   "\\delta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -801,6 +837,7 @@
   },
   "\\digamma": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\dim": {
@@ -817,7 +854,8 @@
     "nullary_macro": true
   },
   "\\dot": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\doteq": {
     "nullary_macro": true
@@ -879,10 +917,12 @@
     "nullary_macro": true
   },
   "\\ell": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\emph": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\empty": {
     "nullary_macro_aliase": "\\emptyset"
@@ -891,6 +931,7 @@
     "nullary_macro": true
   },
   "\\epsilon": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -914,11 +955,13 @@
     "nullary_macro": true
   },
   "\\eta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\eth": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\euro": {
@@ -939,6 +982,7 @@
     "nullary_macro": true
   },
   "\\flat": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\forall": {
@@ -952,6 +996,7 @@
     "nullary_macro": true
   },
   "\\gamma": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -999,6 +1044,7 @@
   },
   "\\gimel": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\gnapprox": {
@@ -1018,7 +1064,8 @@
     "nullary_macro": true
   },
   "\\grave": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\gtrapprox": {
     "ams_required": true,
@@ -1055,7 +1102,8 @@
     "nullary_macro_aliase": "\\leftrightarrow"
   },
   "\\hat": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\hbar": {
     "nullary_macro": true
@@ -1087,6 +1135,7 @@
   },
   "\\hslash": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\iff": {
@@ -1108,6 +1157,7 @@
     "nullary_macro_aliase": "\\Im"
   },
   "\\imath": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\implies": {
@@ -1138,9 +1188,11 @@
   },
   "\\intercal": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\iota": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1151,9 +1203,11 @@
     "declh_function": true
   },
   "\\jmath": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\kappa": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1172,6 +1226,7 @@
     "nullary_macro": true
   },
   "\\lambda": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1380,54 +1435,69 @@
   },
   "\\mathbb": {
     "ams_required": true,
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "is_letter_mod": true
   },
   "\\mathbb{R}": {
     "ams_required": true
   },
   "\\mathbf": {
     "fun_ar1nb": true,
+    "is_letter_mod": true,
     "mhchem_macro_1p": true
   },
   "\\mathbin": {
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "is_letter_mod": true
   },
   "\\mathcal": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathclose": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathfrak": {
     "ams_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathit": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathop": {
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "is_letter_mod": true
   },
   "\\mathopen": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathord": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathpunct": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathrel": {
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "is_letter_mod": true
   },
   "\\mathrm": {
-    "fun_ar1nb": true
+    "fun_ar1nb": true,
+    "is_letter_mod": true
   },
   "\\mathsf": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\mathtt": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\max": {
     "latex_function_names": true
@@ -1441,6 +1511,7 @@
   },
   "\\mho": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\mid": {
@@ -1460,6 +1531,7 @@
     "nullary_macro": true
   },
   "\\mu": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1494,6 +1566,7 @@
     "nullary_macro_aliase": "\\mathbb{N}"
   },
   "\\natural": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\ncong": {
@@ -1641,6 +1714,7 @@
     "nullary_macro": true
   },
   "\\nu": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1678,6 +1752,7 @@
     "nullary_macro": true
   },
   "\\omega": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1712,17 +1787,21 @@
     "fun_ar1nb": true
   },
   "\\overleftarrow": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\overleftrightarrow": {
     "ams_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\overline": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\overrightarrow": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\overset": {
     "ams_required": true,
@@ -1750,15 +1829,18 @@
     "ignore_identifier": true
   },
   "\\phi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\pi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\pitchfork": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\plusmn": {
@@ -1815,6 +1897,7 @@
     "nullary_macro": true
   },
   "\\psi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1862,6 +1945,7 @@
     "other_delimiters1": true
   },
   "\\rho": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -1958,6 +2042,7 @@
     "fun_ar2nb": true
   },
   "\\sigma": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2133,6 +2218,7 @@
     "latex_function_names": true
   },
   "\\tau": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2145,22 +2231,27 @@
     "box_functions": true
   },
   "\\textbf": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\textit": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\textrm": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\textsf": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\textstyle": {
     "nullary_macro": true
   },
   "\\texttt": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\textvisiblespace": {
     "nullary_macro_in_mbox": true
@@ -2174,6 +2265,7 @@
     "nullary_macro": true
   },
   "\\theta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2189,7 +2281,8 @@
     "nullary_macro": true
   },
   "\\tilde": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\times": {
     "nullary_macro": true
@@ -2198,6 +2291,7 @@
     "nullary_macro": true
   },
   "\\top": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\triangle": {
@@ -2248,7 +2342,8 @@
     "mhchem_macro_2pu": true
   },
   "\\underline": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\underset": {
     "ams_required": true,
@@ -2322,6 +2417,7 @@
     "nullary_macro_aliase": "\\mbox{\\coppa}"
   },
   "\\varepsilon": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2331,6 +2427,7 @@
   },
   "\\varkappa": {
     "ams_required": true,
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2344,6 +2441,7 @@
   },
   "\\varnothing": {
     "ams_required": true,
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\varointclockwise": {
@@ -2351,10 +2449,12 @@
     "nullary_macro": true
   },
   "\\varphi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\varpi": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2367,10 +2467,12 @@
     "nullary_macro": true
   },
   "\\varrho": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
   "\\varsigma": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2395,6 +2497,7 @@
     "nullary_macro": true
   },
   "\\vartheta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   },
@@ -2420,7 +2523,8 @@
     "nullary_macro": true
   },
   "\\vec": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\vee": {
     "nullary_macro": true
@@ -2446,12 +2550,15 @@
     "nullary_macro_aliase": "\\wp"
   },
   "\\widehat": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\widetilde": {
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\wp": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\wr": {
@@ -2459,22 +2566,27 @@
   },
   "\\xcancel": {
     "cancel_required": true,
-    "fun_ar1": true
+    "fun_ar1": true,
+    "is_letter_mod": true
   },
   "\\xi": {
+    "is_literal": true,
     "nullary_macro": true
   },
   "\\xleftarrow": {
     "ams_required": true,
     "fun_ar1nb": true,
-    "fun_ar1opt": true
+    "fun_ar1opt": true,
+    "is_letter_mod": true
   },
   "\\xrightarrow": {
     "ams_required": true,
     "fun_ar1nb": true,
-    "fun_ar1opt": true
+    "fun_ar1opt": true,
+    "is_letter_mod": true
   },
   "\\zeta": {
+    "is_literal": true,
     "mhchem_single_macro": true,
     "nullary_macro": true
   }
