@@ -43,7 +43,7 @@ which should emit:
 
 To test the info functionalities, run texvcjs with the info flag:
 ```
-./bin/texvcjs --info \\frac12 > ./vis/data.json
+./bin/texvcjs --info -o json \\frac12 > ./vis/data.json
 ```
 
 
@@ -79,14 +79,6 @@ string requires the use of the corresponding [LaTeX packages].
 The `ams_required` field requires the use of the `amsmath` and `amssymb`
 packages.
 
-### Low-level API
-
-The low level parser, abstract syntax tree (AST), and renderer are also
-exported from the module.  This allows you to define more interesting
-queries on the input source.  An example can be found in `lib/astutil.js`
-which defines a visitor function to test for the presence of specific
-TeX functions in the input.
-
 ## mhchem
 
 To use the `\ce` tags from the mhchem package the parser needs to be called
@@ -117,7 +109,7 @@ More examples can be found on the [mhchem website].
 
 ## License
 
-Copyright (c) 2014 C. Scott Ananian
+Copyright (c) 2014-2022 C. Scott Ananian, Moritz Schubotz, Johannes Stegmüller
 
 Licensed under GPLv2.
 

@@ -47,25 +47,25 @@ if (options.rebuild) {
 
 let result;
 if (options.info) {
-    if (program.output === 'feedback') {
+    if (options.output === 'feedback') {
         result = texvcjs.feedback(input);
     } else {
         result = texvcjs.texvcinfo(input, {
-            debug: program.debug,
-            format: program.output,
-            // eslint-disable-next-line no-restricted-properties
-            flatTree: program.flat,
-            compact: program.compact });
+            debug: options.debug,
+            format: options.output,
+            // eslint-disable-next-line es-x/no-array-prototype-flat
+            flatTree: options.flat,
+            compact: options.compact });
     }
 
     // output result
     if (result.status === undefined) {
-        if (program.compact) {
+        if (options.compact) {
             console.log(JSON.stringify(result));
         } else {
             console.log(JSON.stringify(result, null, 2));
         }
-    } else if (result.status === 'F' || program.verbose) {
+    } else if (result.status === 'F' || options.verbose) {
         console.log(result.status + (result.details || ''));
     } else {
         console.log(result.status + (result.details || ''));

@@ -1,4 +1,10 @@
-# texvcjs x.x.x (not yet released)
+# texvcjs 0.5.0 (2022-08-23)
+
+* Remove low level API export as the internal structure has been refactored significantly.
+
+# texvcjs 0.4.0 (2022-07-14)
+
+* RenderT is removed from the AST
 
 # texvcjs 0.3.1 (2014-07-29)
 
