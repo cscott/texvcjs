@@ -51,3 +51,7 @@ crashlytics-build.properties
 # nyc
 .nyc_output
 coverage
+/doc/main.aux
+/doc/main.fdb_latexmk
+/doc/main.fls
+/doc/main.log
