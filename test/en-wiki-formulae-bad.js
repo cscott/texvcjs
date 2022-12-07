@@ -3,7 +3,7 @@ const assert = require('assert');
 const texvcjs = require('../');
 
 
-describe('All formulae from en-wiki:', function () {
+describe('Some broken formulae from en-wiki:', function () {
     const formulae = require('./en-wiki-formulae-bad.json');
     Object.keys(formulae).forEach(function (key) {
         it(formulae[key].substring(0,20) + ' ' + key, () => {
