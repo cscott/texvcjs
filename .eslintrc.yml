@@ -28,3 +28,5 @@ rules:
   space-in-parens:
     - error
     - never
+  es-x/no-hashbang:
+    - off
