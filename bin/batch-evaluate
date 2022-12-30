@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+
+const json = require('../package.json');
+
+program
+    .version(json.version)
+    .usage('[options] <input> <output>')
+    .description('Gets a json file with inputs in the form' +
+        ' key=>input and writes out a json file in the form' +
+        ' key=>output')
+;
+program.parse();
+
+const texvcjs = require('../');
+
+const formulae = require(program.args[0]);
+Object.keys(formulae).forEach((k) => {
+    formulae[k] = texvcjs.check(formulae[k]).output;
+})
+const fs = require('fs');
+fs.writeFileSync(
+    program.args[1],
+    JSON.stringify(formulae, null, 2));
+
+process.exit(0);
+
+
