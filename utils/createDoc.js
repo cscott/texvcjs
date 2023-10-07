@@ -87,10 +87,6 @@ x_{11} & x_{12} \\\\
     if (elem === '\\limits' || elem === '\\nolimits') {
         return `\\texttt{${textString}} is rendered for example as $\\mathop\\cap${elem}_a^b$`;
     }
-    if (elem === '\\strokeint') { // cf. https://phabricator.wikimedia.org/T137787
-        return '\\texttt{\\textbackslash stroked?int} currently not supported cf. \\newline' +
-            ' \\url{https://phabricator.wikimedia.org/T137787}';
-    }
     if (elem === '\\pagecolor') {
         return '\\texttt{\\textbackslash pagecolor} is not rendered.';
     }
@@ -124,6 +120,7 @@ const printLiteral = function (x) {
     return '\\texttt{' + textString + '} is rendered as $' + x + '$\n\n';
 };
 const write = function (fn, content) {
+    // eslint-disable-next-line security/detect-non-literal-fs-filename
     fs.writeFile('./../doc/' + fn + '.tex', content, function (err) {
         if (err) {
             console.log('error saving document', err);

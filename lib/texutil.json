@@ -2122,9 +2122,6 @@
     "nullary_macro_in_mbox": true,
     "teubner_required": true
   },
-  "\\strokeint": {
-    "nullary_macro": true
-  },
   "\\sub": {
     "nullary_macro_aliase": "\\subset"
   },
