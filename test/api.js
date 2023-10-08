@@ -108,7 +108,11 @@ describe('API', function () {
         { in: '\\ce{[Zn(OH)4]^2-}',
             output: '{\\ce {[Zn(OH)4]^{2}-}}',
             mhchem_required: true,
-            status: 'C' }
+            status: 'C' },
+        { in: '\\intbar',
+            output: '\\intbar ',
+            stix_required: true
+        }
     ];
     testcases.forEach(function (t) {
         it('should check ' + JSON.stringify(t.in), function () {

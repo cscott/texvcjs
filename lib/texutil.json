@@ -1184,8 +1184,13 @@
   "\\int": {
     "nullary_macro": true
   },
+  "\\intBar": {
+    "nullary_macro": true,
+    "stix_required": true
+  },
   "\\intbar": {
-    "nullary_macro": true
+    "nullary_macro": true,
+    "stix_required": true
   },
   "\\intercal": {
     "ams_required": true,
@@ -1738,19 +1743,19 @@
     "nullary_macro_in_mbox": true
   },
   "\\oiiint": {
-    "mathoid_required": true,
-    "nullary_macro": true
+    "nullary_macro": true,
+    "stix_required": true
   },
   "\\oiint": {
-    "mathoid_required": true,
-    "nullary_macro": true
+    "nullary_macro": true,
+    "stix_required": true
   },
   "\\oint": {
     "nullary_macro": true
   },
   "\\ointctrclockwise": {
-    "mathoid_required": true,
-    "nullary_macro": true
+    "nullary_macro": true,
+    "stix_required": true
   },
   "\\omega": {
     "is_literal": true,
@@ -2443,8 +2448,8 @@
     "nullary_macro": true
   },
   "\\varointclockwise": {
-    "mathoid_required": true,
-    "nullary_macro": true
+    "nullary_macro": true,
+    "stix_required": true
   },
   "\\varphi": {
     "is_literal": true,

@@ -1749,5 +1749,14 @@
     "input": "$",
     "texvcjs": "\\$",
     "warnCount": 1
+  },
+  {
+    "id": 213,
+    "input": "\\intBar",
+    "texvcjs": "\\intBar ",
+    "options": {
+      "usemathrm": true
+    }
   }
 ]
+

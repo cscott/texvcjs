@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner', 'mathoid'];
+const PACKAGES = ['ams', 'cancel', 'color', 'euro', 'teubner', 'stix'];
 
 const program = require('commander');
 

@@ -32,7 +32,6 @@ describe('texutil to json', function () {
             'ignore_identifier',
             'latex_function_names',
             'left_function',
-            'mathoid_required',
             'mediawiki_function_names',
             'mhchem_bond',
             'mhchem_macro_1p',
@@ -47,6 +46,7 @@ describe('texutil to json', function () {
             'other_delimiters2',
             'right_function',
             'teubner_required',
+            'stix_required'
         ];
         sets.forEach(set => Object.entries(Texutil[set]).forEach(([key, value]) => {
             if (out[key] === undefined) {
