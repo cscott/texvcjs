@@ -35,6 +35,12 @@ describe('API', function () {
         }, /SyntaxError/
         );
     });
+    it('should render non-utf8 chars', function () {
+        // test with  Unicode Character 'LINEAR B SYLLABLE B008 A' (U+10000)
+        var result = texvcjs.check('\\mbox{\ud800\udc00}');
+        assert.equal(result.status, '+');
+        assert.equal(result.output,'{\\mbox{𐀀}}');
+    });
 
     it('should accept parsed input', function () {
         var parsed = texvcjs.parse('y=x+2');
