@@ -1,6 +1,6 @@
 {
 	"name": "mathoid-texvcjs",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"description": "A TeX/LaTeX validator for MediaWiki.",
 	"main": "lib/index.js",
 	"scripts": {
@@ -29,7 +29,7 @@
 		"url": "https://phabricator.wikimedia.org/project/profile/1771/"
 	},
 	"dependencies": {
-		"commander": "~11.0.0"
+		"commander": "~11.1.0"
 	},
 	"devDependencies": {
 		"eslint-config-wikimedia": "0.25.1",

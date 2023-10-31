@@ -345,6 +345,65 @@ var testcases = [
                 }
             ]
         }
+    },
+    {
+        input: '\\ce{a{b^c}}',
+        options: {usemhchem: true},
+        out: {
+            "success": true,
+            "checked": "{\\ce {a{b^{c}}}}",
+            "requiredPackages": [
+                "mhchem"
+            ],
+            "identifiers": [
+                "a",
+                "b",
+                "c"
+            ],
+            "endsWithDot": false,
+            "warnings": [
+                {
+                    "details": {
+                        "column": 8,
+                        "details": "SyntaxError: Expected \"}\" or valid UTF-16 sequences but \"^\" found.",
+                        "error": {
+                            "expected": [
+                                {
+                                    "description": "valid UTF-16 sequences",
+                                    "type": "other"
+                                },
+                                {
+                                    "ignoreCase": false,
+                                    "text": "}",
+                                    "type": "literal",
+                                },
+                            ],
+                            "found": "^",
+                            "location": {
+                                "end": {
+                                    "column": 9,
+                                    "line": 1,
+                                    "offset": 8,
+                                },
+                                "start": {
+                                    "column": 8,
+                                    "line": 1,
+                                    "offset": 7,
+                                }
+                            },
+                            "message": "Expected \"}\" or valid UTF-16 sequences but \"^\" found.",
+                            "name": "SyntaxError",
+                        },
+                        "line": 1,
+                        "offset": 7,
+                        "status": "S",
+                        "success": false,
+                        "warnings": [],
+                    },
+                    "type": "mhchem-deprecation"
+                }
+            ]
+        }
     }
 ];
 
